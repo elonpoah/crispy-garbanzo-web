@@ -4,7 +4,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #ffffff;
   background-color: #24262b;
 }
@@ -49,17 +48,31 @@ html {
   border-radius: 4px;
   height: 34px;
   font-weight: 700;
+  text-align: center;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
   -webkit-transition: transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
   transition: transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
   background: #3d4049;
-  &.active {
-    background-color: #713a25b3;
-    background-image: conic-gradient(
-      from 1turn,
-      rgb(29 171 114),
-      rgba(29, 128, 58, 1)
-    );
-  }
+}
+.button.active {
+  background-color: #713a25b3;
+  background-image: conic-gradient(
+    from 1turn,
+    rgb(29 171 114),
+    rgba(29, 128, 58, 1)
+  );
+}
+.button.active:hover {
+  background-image: conic-gradient(from 1turn,rgba(88,175,16),rgba(29,128,58,1))
+}
+.button:active.button:not(:disabled) {
+  -webkit-transform: scale(.95);
+  -ms-transform: scale(.95);
+  transform: scale(.95)
+}
+
+.button:disabled.button:not(.is-loading) {
+  opacity: .5;
+  cursor: default
 }

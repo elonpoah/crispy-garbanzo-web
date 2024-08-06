@@ -13,6 +13,7 @@ const { increment } = store;
 
 <template>
   <main>
+    <h1>index</h1>
     <div @click="increment">increase</div>
     <div>{{ count }}</div>
   </main>
