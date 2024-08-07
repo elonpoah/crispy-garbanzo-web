@@ -79,7 +79,7 @@ function togglePassword() {
       text-transform: uppercase;
     }
     span {
-      color: #3BC117;
+      color: var(--primary-color);
     }
   }
 }
@@ -131,7 +131,7 @@ function togglePassword() {
   a{
     font-weight: 800;
     margin-left: 10px;
-    color: #3BC117;
+    color: var(--primary-color);
   }
 }
 .close-icon {

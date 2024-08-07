@@ -1,4 +1,4 @@
-import 'amfe-flexible'
+import './cusFlexible.js'
 import './assets/css/main.css'
 
 import { createApp } from 'vue'

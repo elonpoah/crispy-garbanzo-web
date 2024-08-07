@@ -5,9 +5,16 @@ import AppHeader from "@/components/AppHeader.vue";
 
 <template>
   <AppHeader />
-  <RouterView />
+  <main class="page-container">
+    <RouterView />
+  </main>
 </template>
 
 <style lang="less">
-
+.page-container  {
+  height: calc(100% - 50px);
+}
+.exclude-tabbar {
+  padding-bottom: 50px;
+}
 </style>

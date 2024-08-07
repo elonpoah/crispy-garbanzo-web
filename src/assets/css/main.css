@@ -6,38 +6,11 @@
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
   background-color: #24262b;
-}
-:focus {
-  outline: none;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+  height: 100%;
+  max-width: 428px;
+  margin: 0 auto;
 }
 
-button {
-  border: none;
-  padding: 0;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  font-size: 0.875rem;
-  background-color: transparent;
-}
-
-canvas {
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-html {
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  touch-action: manipulation;
-  width: 100%;
-}
 .button {
   display: block;
   width: 100%;
@@ -49,7 +22,6 @@ html {
   height: 34px;
   font-weight: 700;
   text-align: center;
-  cursor: pointer;
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
   -webkit-transition: transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
   transition: transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
@@ -75,4 +47,17 @@ html {
 .button:disabled.button:not(.is-loading) {
   opacity: .5;
   cursor: default
+}
+
+@keyframes rotate-infinite {
+  0% {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
 }

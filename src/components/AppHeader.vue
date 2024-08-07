@@ -15,21 +15,16 @@
       </div>
     </div>
   </nav>
-  <div class="empty-box"></div>
 </template>
 <script setup lang="ts">
 import SvgIcon from "./SvgIcon.vue";
 </script>
 <style lang="less" scoped>
-.empty-box {
-  height: 50px;
-}
 nav {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   z-index: 99;
-  left: 0;
   top: -1px;
-  right: 0;
   height: 50px;
   padding: 0 10px;
   background-color: #24262b;
