@@ -22,65 +22,23 @@
           </div>
         </div>
       </div>
-      <div class="game-class-wrap">
+      <div class="game-class-wrap" v-for="child in gameClassifyData" :key="child.category">
         <div class="game-class">
           <div class="game-class-aside">
-            <svg-icon name="HotGame" class="game-class-icon" />
-            <span class="txt">Popular</span>
+            <svg-icon :name="child.icon" class="game-class-icon" />
+            <span class="txt">{{ child.category || '' }}</span>
           </div>
           <span class="game-class-nav">View all</span>
         </div>
         <div class="game-list">
-          <div class="game-list-item purple" v-for="(item, index) in data" :key="index">
+          <div class="game-list-item" v-for="(item, index) in child.list" :key="index" :class="[child.className]">
             <span class="game-list-item-people">
               <svg-icon name="UserProfile" class="game-list-item-people-icon" />
               <span>{{ item.peopleCount }}/{{ item.count }}</span>
             </span>
             <div class="game-list-item-content">${{ item.bonus }}</div>
             <button class="button game-list-item-claim">
-              <div class="game-list-item-time">{{ item.openTime }}</div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="game-class-wrap">
-        <div class="game-class">
-          <div class="game-class-aside">
-            <svg-icon name="NewReleases" class="game-class-icon" />
-            <span class="txt">Huge bonus</span>
-          </div>
-          <span class="game-class-nav">View all</span>
-        </div>
-        <div class="game-list">
-          <div class="game-list-item green" v-for="(item, index) in data" :key="index">
-            <span class="game-list-item-people">
-              <svg-icon name="UserProfile" class="game-list-item-people-icon" />
-              <span>{{ item.peopleCount }}/{{ item.count }}</span>
-            </span>
-            <div class="game-list-item-content">${{ item.bonus }}</div>
-            <button class="button game-list-item-claim">
-              <div class="game-list-item-time">{{ item.openTime }}</div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="game-class-wrap">
-        <div class="game-class">
-          <div class="game-class-aside">
-            <svg-icon name="Like" class="game-class-icon" />
-            <span class="txt">Hight Winning Rate</span>
-          </div>
-          <span class="game-class-nav">View all</span>
-        </div>
-        <div class="game-list">
-          <div class="game-list-item orange" v-for="(item, index) in data" :key="index">
-            <span class="game-list-item-people">
-              <svg-icon name="UserProfile" class="game-list-item-people-icon" />
-              <span>{{ item.peopleCount }}/{{ item.count }}</span>
-            </span>
-            <div class="game-list-item-content">${{ item.bonus }}</div>
-            <button class="button game-list-item-claim">
-              <div class="game-list-item-time">{{ item.openTime }}</div>
+              <van-count-down class="game-list-item-time" format="DD d HH h mm m ss s" :time="item.openTime" />
             </button>
           </div>
         </div>
@@ -93,35 +51,55 @@ import SvgIcon from "@/components/SvgIcon.vue";
 
 const data  = [
   {
-    openTime: '0d:1h:10m:20s',
+    openTime: 10*60*1000,
     bonus: 100,
     count: 10,
     peopleCount: 2
   },
   {
-    openTime: '1d:1h:10m:20s',
+    openTime: 6*10*50*1000,
     bonus: 1000,
     count: 10,
     peopleCount: 2
   },
   {
-    openTime: '2d:10h:10m:20s',
+    openTime: 10*60*1000,
     bonus: '10K',
     count: 100,
     peopleCount: 19
   },
   {
-    openTime: '1d:1h:10m:20s',
+    openTime: 60*10*60*1000,
     bonus: 1000,
     count: 10,
     peopleCount: 2
   },
   {
-    openTime: '2d:10h:10m:20s',
+    openTime: 60*10*60*1000,
     bonus: '10K',
     count: 100,
     peopleCount: 19
   }
+]
+const gameClassifyData = [
+  {
+    category: "Popular",
+    icon: "HotGame",
+    className: "purple",
+    list: data,
+  },
+  {
+    category: "Huge bonus",
+    icon: "NewReleases",
+    className: "green",
+    list: data,
+  },
+  {
+    category: "Hight Winning Rate",
+    icon: "Like",
+    className: "orange",
+    list: data,
+  },
 ]
 </script>
 <style lang="less" scoped>
@@ -212,13 +190,14 @@ const data  = [
         display: flex;
         align-items: center;
         .txt{
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 700;
           padding-left: 5px;
         }
       }
       &-nav {
         font-size: 12px;
+        font-weight: 700;
         color: var(--primary-color);
       }
     }
@@ -285,17 +264,18 @@ const data  = [
       font-size: 12px;
       font-weight: 500;
       opacity: 0.8;
+      color: var(--default-color);
     }
     .game-list-item-people {
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
       background-color: rgba(0,0,0,.4);
       position: absolute;
       left: 0;
       top: 0;
-      padding: 2px;
+      padding: 0 4px 0 2px;
       &-icon {
         width: 12px;
       }

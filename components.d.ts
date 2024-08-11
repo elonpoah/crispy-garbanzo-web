@@ -13,6 +13,7 @@ declare module 'vue' {
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
     Tabbar: typeof import('./src/components/Tabbar.vue')['default']
     VanButton: typeof import('vant/es')['Button']
+    VanCountDown: typeof import('vant/es')['CountDown']
     VanNumberKeyboard: typeof import('vant/es')['NumberKeyboard']
   }
 }

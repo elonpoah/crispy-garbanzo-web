@@ -40,6 +40,9 @@
   --bg-linear-orange: linear-gradient(91deg,#cc6504 0%,#eb9c53 100%);
 
   --primary-color: #3BC117;
+  --purple-color: #8447f6;
+  --orange-color: #eb9c53;
+  --default-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,4 +94,22 @@ html,body {
   touch-action: manipulation;
   width: 100%;
   height: 100%;
+}
+
+.cus-scrollview {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-flex: 1 1 1px;
+  -ms-flex: 1 1 1px;
+  flex: 1 1 1px;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior: contain
+}
+
+.cus-scrollview.hide-bar.cus-scrollview::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent
 }

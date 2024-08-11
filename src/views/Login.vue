@@ -31,7 +31,7 @@
             </button>
         </div>
       </div>
-      <div class="b-tips"><p>New to HACHO.GAME?</p><router-link to="/register">Create account</router-link></div>
+      <div class="b-tips"><p>New to HACHO.GAME?</p><router-link :replace="true" to="/register">Create account</router-link></div>
     </div>
   </div>
 </template>
@@ -109,6 +109,7 @@ function togglePassword() {
       border: none;
       background-color: transparent;
       color: #f5f6f7;
+      font-size: 14px;
     }
   }
   .submit {

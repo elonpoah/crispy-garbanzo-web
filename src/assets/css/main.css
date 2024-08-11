@@ -2,7 +2,8 @@
 
 @media screen and (min-width: 600px) {
   html {
-      font-size:88px!important
+      font-size:88px!important;
+      background-color: #393b41;
   }
 
   .tabbar,.van-popup--bottom,.van-tabbar {

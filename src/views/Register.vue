@@ -37,7 +37,7 @@
               </button>
           </div>
         </div>
-        <div class="b-tips"><p>Already have an account?</p><router-link to="/login">Sign in</router-link></div>
+        <div class="b-tips"><p>Already have an account?</p><router-link :replace="true" to="/login">Sign in</router-link></div>
       </div>
     </div>
   </template>
@@ -115,6 +115,7 @@
         border: none;
         background-color: transparent;
         color: #f5f6f7;
+        font-size: 14px;
       }
     }
     .submit {

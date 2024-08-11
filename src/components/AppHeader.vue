@@ -11,13 +11,31 @@
             Sign up
           </router-link>
         </div>
-        <svg-icon name="Language" />
+        <div class="lang" @click="toggleLang">
+          <svg-icon name="Language" />
+        </div>
+      </div>
+      <div class="lang-toggle-wrap" :class="{active: showLang}">
+        <div class="cus-scrollview list">
+          <button class="lang-item active"><span>English</span></button>
+          <button class="lang-item"><span>Português</span></button>
+          <button class="lang-item"><span>日本語</span></button>
+          <button class="lang-item"><span>한국어</span></button>
+          <button class="lang-item"><span>ภาษาไทย</span></button>
+          <button class="lang-item"><span>Indonesian</span></button>
+        </div>
       </div>
     </div>
   </nav>
 </template>
 <script setup lang="ts">
+import { ref } from "vue";
 import SvgIcon from "./SvgIcon.vue";
+
+const showLang = ref(false);
+function toggleLang() {
+  showLang.value = !showLang.value
+}
 </script>
 <style lang="less" scoped>
 nav {
@@ -26,7 +44,7 @@ nav {
   z-index: 99;
   top: -1px;
   height: 50px;
-  padding: 0 10px;
+  padding-left: 10px;
   background-color: #24262b;
   box-shadow: 0 4px 14px 0 #00000040;
   .nav-wrap {
@@ -42,6 +60,9 @@ nav {
     .inner {
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 2;
+      background-color: #24262b;
     }
     .btn-group {
       display: flex;
@@ -52,8 +73,57 @@ nav {
         line-height: 34px;
         border-radius: 4px;
         font-size: 12px;
-        margin-right: 10px;
+        margin-left: 10px;
         color: #ffffff;
+      }
+    }
+    .lang {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+      position: relative;
+    }
+    .lang-toggle-wrap {
+      position: absolute;
+      top: 108%;
+      right: 0;
+      z-index: 1;
+      width: 150px;
+      height: 200px;
+      overflow: hidden;
+      background-color: #24262B;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px #00000040;
+      opacity: 0;
+      transform: translateY(-150%) translateZ(0px);
+      transition: transform .2s linear;
+      &.active {
+        opacity: 1;
+        transform: translateY(0%) translateZ(0px);
+      }
+      .list {
+        padding: 6px 10px;
+      }
+      .lang-item {
+        width: 100%;
+        height: 38px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        font-size: 14px;
+        padding-left: 10px;
+        &.active {
+          background: #2D3035;
+          span {
+            font-weight: 700;
+            color: var(--default-color);
+          }
+        }
       }
     }
   }

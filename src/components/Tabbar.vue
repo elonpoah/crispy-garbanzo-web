@@ -1,30 +1,34 @@
 <template>
 <div class="safe-area-inset-bottom tabbar">
-  <div class="tabbar-item" @click="tabbarClick('/')">
-    <svg-icon name="Home" class="tabbar-item-icon" />
-    <span>Home</span>
+  <div class="tabbar-item" :class="{active: routeName === 'Home'}" @click="tabbarClick('/')">
+    <svg-icon name="Home" class="tabbar-icon" />
+    <span>home</span>
   </div>
-  <div class="tabbar-item" @click="tabbarClick('/search')">
+  <div class="tabbar-item" :class="{active: routeName === 'Search'}" @click="tabbarClick('/search')">
     <div class="tabbar-item-middle-wrap">
       <div class="tabbar-item-middle-wrap-out">
         <div class="tabbar-item-middle-wrap-in">
-          <svg-icon name="Search" class="tabbar-item-icon" />
+          <svg-icon name="Search" class="tabbar-icon" />
         </div>
       </div>
     </div>
     <span>Search</span>
   </div>
-  <div class="tabbar-item" @click="tabbarClick('/account')">
-    <svg-icon name="UserProfile" class="tabbar-item-icon" />
+  <div class="tabbar-item" :class="{active: routeName === 'Account'}" @click="tabbarClick('/account')">
+    <svg-icon name="UserProfile" class="tabbar-icon" />
     <span>Account</span>
   </div>
 </div>
 </template>
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import SvgIcon from "./SvgIcon.vue";
+import { computed } from 'vue';
 
 const router = useRouter()
+const route = useRoute()
+const routeName = computed(()=> route.name)
+
 function tabbarClick(path: string) {
   router.push(path)
 }
@@ -47,6 +51,9 @@ function tabbarClick(path: string) {
     justify-content: center;
     flex-direction: column;
     position: relative;
+    &.active .tabbar-icon{
+      fill: var(--default-color);
+    }
     span{
       color: #ffffff;
       font-size: 10px;
