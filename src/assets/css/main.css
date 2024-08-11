@@ -1,5 +1,17 @@
 @import './base.css';
 
+@media screen and (min-width: 600px) {
+  html {
+      font-size:88px!important
+  }
+
+  .tabbar,.van-popup--bottom,.van-tabbar {
+      max-width: 428px;
+      left: 50%!important;
+      bottom: 0!important;
+      transform: translate(-50%)!important
+  }
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,6 +21,15 @@
   height: 100%;
   max-width: 428px;
   margin: 0 auto;
+  overflow-y: auto;
+  -webkit-scroll-snap-type: x mandatory;
+  -moz-scroll-snap-type: x mandatory;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .button {

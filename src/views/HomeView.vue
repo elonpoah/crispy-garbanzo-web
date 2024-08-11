@@ -18,7 +18,7 @@
           </div>
           <div class="bonus-item random-bonus">
             <svg-icon name="UltimateDice" class="bonus-item-icon" />
-            <p class="bonus-item-desc">Small bonus</p>
+            <p class="bonus-item-desc">Hight Rate</p>
           </div>
         </div>
       </div>
@@ -26,43 +26,106 @@
         <div class="game-class">
           <div class="game-class-aside">
             <svg-icon name="HotGame" class="game-class-icon" />
-            <span class="txt">Popular Games</span>
+            <span class="txt">Popular</span>
           </div>
           <span class="game-class-nav">View all</span>
         </div>
         <div class="game-list">
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
+          <div class="game-list-item purple" v-for="(item, index) in data" :key="index">
+            <span class="game-list-item-people">
+              <svg-icon name="UserProfile" class="game-list-item-people-icon" />
+              <span>{{ item.peopleCount }}/{{ item.count }}</span>
+            </span>
+            <div class="game-list-item-content">${{ item.bonus }}</div>
+            <button class="button game-list-item-claim">
+              <div class="game-list-item-time">{{ item.openTime }}</div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="game-class-wrap">
+        <div class="game-class">
+          <div class="game-class-aside">
+            <svg-icon name="NewReleases" class="game-class-icon" />
+            <span class="txt">Huge bonus</span>
+          </div>
+          <span class="game-class-nav">View all</span>
+        </div>
+        <div class="game-list">
+          <div class="game-list-item green" v-for="(item, index) in data" :key="index">
+            <span class="game-list-item-people">
+              <svg-icon name="UserProfile" class="game-list-item-people-icon" />
+              <span>{{ item.peopleCount }}/{{ item.count }}</span>
+            </span>
+            <div class="game-list-item-content">${{ item.bonus }}</div>
+            <button class="button game-list-item-claim">
+              <div class="game-list-item-time">{{ item.openTime }}</div>
+            </button>
+          </div>
         </div>
       </div>
       <div class="game-class-wrap">
         <div class="game-class">
           <div class="game-class-aside">
             <svg-icon name="Like" class="game-class-icon" />
-            <span class="txt">Recently Games</span>
+            <span class="txt">Hight Winning Rate</span>
           </div>
           <span class="game-class-nav">View all</span>
         </div>
-        <div class="game-list like">
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
-          <div class="game-list-item"></div>
+        <div class="game-list">
+          <div class="game-list-item orange" v-for="(item, index) in data" :key="index">
+            <span class="game-list-item-people">
+              <svg-icon name="UserProfile" class="game-list-item-people-icon" />
+              <span>{{ item.peopleCount }}/{{ item.count }}</span>
+            </span>
+            <div class="game-list-item-content">${{ item.bonus }}</div>
+            <button class="button game-list-item-claim">
+              <div class="game-list-item-time">{{ item.openTime }}</div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-  import SvgIcon from "@/components/SvgIcon.vue";
+import SvgIcon from "@/components/SvgIcon.vue";
+
+const data  = [
+  {
+    openTime: '0d:1h:10m:20s',
+    bonus: 100,
+    count: 10,
+    peopleCount: 2
+  },
+  {
+    openTime: '1d:1h:10m:20s',
+    bonus: 1000,
+    count: 10,
+    peopleCount: 2
+  },
+  {
+    openTime: '2d:10h:10m:20s',
+    bonus: '10K',
+    count: 100,
+    peopleCount: 19
+  },
+  {
+    openTime: '1d:1h:10m:20s',
+    bonus: 1000,
+    count: 10,
+    peopleCount: 2
+  },
+  {
+    openTime: '2d:10h:10m:20s',
+    bonus: '10K',
+    count: 100,
+    peopleCount: 19
+  }
+]
 </script>
 <style lang="less" scoped>
 .home-page {
-  height: 100%;
   padding: 17px 10px;
   .home-banner {
     p {
@@ -121,7 +184,7 @@
           
         }
         .huge-bonus {
-          background: linear-gradient(19.92deg, rgba(175, 13, 132, .511772) -6.45%, rgba(175, 13, 132, .04) 78.77%), rgba(216, 216, 216, .05);
+          background: linear-gradient(19.92deg, rgb(236 155 83 / 0.8) -6.45%, rgba(175, 13, 132, .04) 78.77%), rgba(216, 216, 216, .05);
           .bonus-item-icon {
             fill: #ea6518;
           }
@@ -161,7 +224,7 @@
     }
     .game-list {
       --grid-gap: 5px;
-      --grid-num: 2.3;
+      --grid-num: 2.5;
       display: grid;
       grid-template-rows: repeat(1,1fr);
       grid-auto-flow: column;
@@ -180,11 +243,28 @@
       overflow-y: hidden;
       .game-list-item {
         height: 100px;
-        border-radius: 4px;
-        background: linear-gradient(19.92deg, rgba(175, 13, 132, 0.511772) -6.45%, rgba(175, 13, 132, 0.04) 78.77%), rgba(216, 216, 216, 0.05);
-      }
-      &.like .game-list-item {
-        background: linear-gradient(26.79deg, rgba(109, 43, 255, 0.480402) 1.86%, rgba(109, 43, 255, 0.04) 85.25%, rgba(109, 43, 255, 0.04) 85.25%), rgba(216, 216, 216, 0.05)
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        padding: 2px;
+        &.purple {
+          background: linear-gradient(26.79deg, rgba(109, 43, 255, 0.480402) 1.86%, rgba(109, 43, 255, 0.04) 85.25%, rgba(109, 43, 255, 0.04) 85.25%), rgba(216, 216, 216, 0.05);
+          .game-list-item-claim {
+            background: #8447f6;
+          }
+        }
+        &.green {
+          background: linear-gradient(180deg,rgba(23,183,69,.2) 0%,rgba(30,130,59,0) 100%),#1C1E22;
+          .game-list-item-claim {
+            background: #2cae53;
+          }
+        }
+        &.orange {
+          background: linear-gradient(180deg,rgba(196,107,2,.2) 0%,rgba(196,107,2,0) 100%),#1C1E22;
+          .game-list-item-claim {
+            background: #eb9c53;
+          }
+        }
       }
     }
     .game-list::-webkit-scrollbar {
@@ -200,6 +280,44 @@
         -moz-scroll-snap-align: start;
         -ms-scroll-snap-align: start;
         scroll-snap-align: start
+    }
+    .game-list-item-time {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .game-list-item-people {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-left-radius: 8px;
+      background-color: rgba(0,0,0,.4);
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 2px;
+      &-icon {
+        width: 12px;
+      }
+      span{
+        margin-left: 2px;
+        font-size: 12px;
+        opacity: 0.6;
+      }
+    }
+    .game-list-item-content {
+      font-size: 30px;
+      font-weight: 700;
+      padding-top: 22px;
+      text-align: center;
+    }
+    .game-list-item-claim {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 30px;
+      border-radius: 0;
+      color: #ffffff;
     }
   }
 
