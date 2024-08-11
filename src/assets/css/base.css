@@ -96,20 +96,11 @@ html,body {
   height: 100%;
 }
 
-.cus-scrollview {
-  box-sizing: border-box;
-  height: 100%;
-  overflow-y: auto;
-  -webkit-flex: 1 1 1px;
-  -ms-flex: 1 1 1px;
-  flex: 1 1 1px;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
-  overscroll-behavior: contain
+input {
+  padding: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
 }
-
-.cus-scrollview.hide-bar.cus-scrollview::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  background-color: transparent
+.input-control:focus,input:hover {
+  border: 1px solid var(--primary-color);
 }

@@ -10,6 +10,7 @@ declare module 'vue' {
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SessionItem: typeof import('./src/components/SessionItem.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
     Tabbar: typeof import('./src/components/Tabbar.vue')['default']
     VanButton: typeof import('vant/es')['Button']

@@ -22,13 +22,17 @@
           <div class="ui-input">
             <div class="input-control">
               <input :type="showPwd ? 'text':'password'" placeholder="Password">
-              <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
+              <span class="eyes">
+                <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
+              </span>
             </div>
           </div>
           <div class="ui-input">
             <div class="input-control">
               <input :type="showPwd ? 'text':'password'" placeholder="Confirm Password">
-              <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
+              <span class="eyes">
+                <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
+              </span>
             </div>
           </div>
           <div class="submit">
@@ -97,7 +101,6 @@
       font-weight: 700;
     }
     .input-control {
-      padding: 0 10px;
       height: 40px;
       border: 1px solid transparent;
       background-color: #1A1C20;
@@ -110,12 +113,19 @@
         flex: 1;
         width: 100%;
         height: 100%;
+        padding: 0 10px;
         min-width: 1rem;
-        padding: 0;
-        border: none;
-        background-color: transparent;
         color: #f5f6f7;
         font-size: 14px;
+      }
+      .eyes{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
       }
     }
     .submit {
