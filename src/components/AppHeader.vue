@@ -1,7 +1,9 @@
 <template>
   <nav>
     <div class="nav-wrap">
-      <span class="logo">Hacho</span>
+      <span class="logo">
+        <img width="40px" src="@/assets/images/png.png" alt="">
+      </span>
       <div class="inner">
         <div class="btn-group">
           <router-link to="/login" class="button btn btn-sign-in">
@@ -12,17 +14,13 @@
           </router-link>
         </div>
         <div class="lang" @click="toggleLang">
-          <svg-icon name="Language" />
+          <svg-icon class="lang-icon" name="Language" />
         </div>
       </div>
       <div class="lang-toggle-wrap" :class="{active: showLang}">
         <div class="cus-scrollview list">
           <button class="lang-item active"><span>English</span></button>
           <button class="lang-item"><span>Português</span></button>
-          <button class="lang-item"><span>日本語</span></button>
-          <button class="lang-item"><span>한국어</span></button>
-          <button class="lang-item"><span>ภาษาไทย</span></button>
-          <button class="lang-item"><span>Indonesian</span></button>
         </div>
       </div>
     </div>
@@ -54,8 +52,8 @@ nav {
     color: #ffffff;
     height: 100%;
     .logo {
-      font-weight: 800;
-      font-size: 24px;
+      display: flex;
+      align-items: center;
     }
     .inner {
       display: flex;
@@ -84,6 +82,10 @@ nav {
       align-items: center;
       padding: 0 10px;
       position: relative;
+      .lang-icon {
+        width: 22px;
+        height: 22px;
+      }
     }
     .lang-toggle-wrap {
       position: absolute;
@@ -91,7 +93,7 @@ nav {
       right: 0;
       z-index: 1;
       width: 150px;
-      height: 200px;
+      height: 100px;
       overflow: hidden;
       background-color: #24262B;
       border-radius: 4px;
