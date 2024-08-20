@@ -33,7 +33,6 @@
             </button>
         </div>
       </div>
-      <div class="b-tips"><p>New to HACHO.GAME?</p><router-link :replace="true" to="/register">Create account</router-link></div>
     </div>
   </div>
 </template>
