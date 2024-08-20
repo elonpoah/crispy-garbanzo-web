@@ -58,12 +58,6 @@
   </script>
   <style lang="less" scoped>
   .page {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: #212327;
-    z-index: 100;
     .container {
       padding: 28px;
       padding-top: 80px;

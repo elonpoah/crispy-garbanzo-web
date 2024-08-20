@@ -60,6 +60,9 @@
 </template>
 <script setup lang="ts">
 import SvgIcon from "@/components/SvgIcon.vue";
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 const userInfo = {
   name: 'lcopo',
   userId: 48888390,
@@ -76,13 +79,13 @@ const actionLink = [
   },
   {
     icon: 'Withdraw',
-    name: 'Withdraw Record',
-    path: '/withdraw-record'
+    name: 'Withdraw History',
+    path: '/withdraw-history'
   },
   {
     icon: 'Deposit',
-    name: 'Deposit Record',
-    path: '/deposit-record'
+    name: 'Deposit History',
+    path: '/deposit-history'
   },
   {
     icon: 'View',
@@ -92,7 +95,7 @@ const actionLink = [
 ]
 
 function navigateFn(path: string) {
-  //to do
+  router.push(path)
 }
 </script>
 <style lang="less" scoped>
