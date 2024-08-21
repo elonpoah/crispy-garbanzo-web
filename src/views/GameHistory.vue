@@ -1,13 +1,13 @@
 <template>
     <div class="page">
-      <NavBack title="Deposit History" />
+      <NavBack title="Game History" />
       <div class="list">
         <div class="item" v-for="item in list" :key="item.orderId">
           <div class="top">
-            Open time: {{ item.openTime }}
+            Open Time: {{ item.openTime }}
           </div>
           <div class="middle">
-            <div>Session Id: {{ item.orderId }}</div>
+            <div>ID: {{ item.orderId }}</div>
             <div class="amount">${{ item.amount }}</div>
           </div>
           <div class="bottom">

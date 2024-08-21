@@ -26,12 +26,16 @@ const router = useRouter()
 </script>
 <style lang="less" scoped>
 .nav-back {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 99;
+  top: -1px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
   box-shadow: 0 4px 14px 0 #00000040;
-  position: relative;
+  background-color: #24262b;
   .close-icon {
     width: 50px;
     height: 50px;

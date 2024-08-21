@@ -12,11 +12,11 @@
           <p>Free spin</p>
         </div>
         <div class="fast-entry-other">
-          <div class="bonus-item huge-bonus">
+          <div class="bonus-item huge-bonus" @click="navigateFn('session-square?type=1')">
             <svg-icon name="Lottery" class="bonus-item-icon" />
             <p class="bonus-item-desc">Huge bonus</p>
           </div>
-          <div class="bonus-item random-bonus">
+          <div class="bonus-item random-bonus" @click="navigateFn('session-square?type=2')">
             <svg-icon name="UltimateDice" class="bonus-item-icon" />
             <p class="bonus-item-desc">Hight Rate</p>
           </div>
@@ -28,7 +28,7 @@
             <svg-icon :name="child.icon" class="game-class-icon" />
             <span class="txt">{{ child.category || '' }}</span>
           </div>
-          <span class="game-class-nav">View all</span>
+          <span class="game-class-nav" @click="navigateFn(child.path)">View all</span>
         </div>
         <div class="game-list">
           <session-item v-for="(item, index) in child.list" :key="index" :class="[child.className]" v-bind="item"></session-item>
@@ -40,6 +40,9 @@
 <script setup lang="ts">
 import SvgIcon from "@/components/SvgIcon.vue";
 import SessionItem from "@/components/SessionItem.vue";
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 const data  = [
   {
     openTime: 10*60*1000,
@@ -77,21 +80,27 @@ const gameClassifyData = [
     category: "Popular",
     icon: "HotGame",
     className: "purple",
+    path: "session-square?type=3",
     list: data,
   },
   {
     category: "Huge bonus",
     icon: "NewReleases",
     className: "green",
+    path: "session-square?type=1",
     list: data,
   },
   {
     category: "Hight Winning Rate",
     icon: "Like",
     className: "orange",
+    path: "session-square?type=2",
     list: data,
   },
 ]
+function navigateFn(path: string) {
+  router.push(path)
+}
 </script>
 <style lang="less" scoped>
 .home-page {
