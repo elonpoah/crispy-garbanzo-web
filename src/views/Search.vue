@@ -37,7 +37,8 @@ function searchSession() {
       openTime: 10*60*1000,
       bonus: 100,
       count: 10,
-      peopleCount: 2
+      peopleCount: 2,
+      sessionId: 239393900222,
     }
   } else {
     forkRst.value = {}

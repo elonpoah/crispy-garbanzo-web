@@ -1,9 +1,12 @@
 <template>
-  <div class="nav-back">
-    <button v-if="showBack" class="close-icon" @click="router.back()">
-      <svg-icon class="action-back-icon" name="Arrow" />
-    </button>
-    <span class="title">{{ title }}</span>
+  <div>
+    <div class="nav-back">
+      <button v-if="showBack" class="close-icon" @click="router.go(-1)">
+        <svg-icon class="action-back-icon" name="Arrow" />
+      </button>
+      <span class="title">{{ title }}</span>
+    </div>
+    <div class="size-box-nav"></div>
   </div>
 </template>
 <script setup lang="ts">
@@ -25,11 +28,17 @@ const props = withDefaults(
 const router = useRouter()
 </script>
 <style lang="less" scoped>
+.size-box-nav{
+  height: 50px;
+}
 .nav-back {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 428px;
   z-index: 99;
-  top: -1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +64,7 @@ const router = useRouter()
   .title {
     font-size: 16px;
     color: #ffffff;
+    font-weight: 600;
   }
 }
 </style>

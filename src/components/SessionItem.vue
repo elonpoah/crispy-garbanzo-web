@@ -1,5 +1,5 @@
 <template>
-<div class="game-list-item">
+<div class="game-list-item" @click="LinkToSessionPage">
   <span class="game-list-item-people">
     <svg-icon name="UserProfile" class="game-list-item-people-icon" />
     <span>{{ peopleCount || '0' }}/{{ count|| '0' }}</span>
@@ -11,16 +11,24 @@
 </div>
 </template>
 <script setup lang="ts">
-import SvgIcon from "./SvgIcon.vue";
 import { defineProps } from 'vue';
+import { useRouter } from 'vue-router';
+import SvgIcon from "./SvgIcon.vue";
+
 
 const props = defineProps<{
-  peopleCount?: number;
-  count?: number;
-  bonus?: string | number;
-  openTime?: number ;
+  peopleCount: number;
+  count: number;
+  bonus: string | number;
+  openTime: number ;
+  sessionId: string | number;
 }>();
 
+const router = useRouter()
+
+const LinkToSessionPage = () => {
+  router.push(`/session/${props.sessionId}`)
+}
 </script>
 <style lang="less" scoped>
 .game-list-item {

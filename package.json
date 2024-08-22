@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@soerenmartius/vue3-clipboard": "^0.1.2",
     "axios": "^1.2.2",
     "pinia": "^2.1.7",
     "pinia-plugin-persist": "^1.0.0",

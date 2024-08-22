@@ -37,10 +37,13 @@ function toggleLang() {
 </script>
 <style lang="less" scoped>
 nav {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 428px;
   z-index: 99;
-  top: -1px;
   height: 50px;
   padding-left: 10px;
   background-color: #24262b;

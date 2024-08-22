@@ -4,6 +4,7 @@ import { RouterView } from 'vue-router'
 
 <template>
   <RouterView />
+  <van-notify />
 </template>
 
 <style lang="less">

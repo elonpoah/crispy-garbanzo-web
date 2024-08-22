@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <NavBack :title="sessionInfo?.name" />
     <div class="square-container">
       <div class="inner">
@@ -37,91 +37,106 @@ const data  = [
     openTime: 10*60*1000,
     bonus: 100,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 6*10*50*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900222,
   },
   {
     openTime: 60*10*60*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 60*10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900222,
   },
   {
     openTime: 10*60*1000,
     bonus: 100,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 6*10*50*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900222,
   },
   {
     openTime: 60*10*60*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 60*10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900222,
   },
   {
     openTime: 10*60*1000,
     bonus: 100,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 6*10*50*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900222,
   },
   {
     openTime: 60*10*60*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 60*10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900222,
   }
 ]
 </script>

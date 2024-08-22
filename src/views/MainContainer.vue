@@ -6,7 +6,7 @@ import Tabbar from "@/components/Tabbar.vue"
 
 <template>
   <AppHeader />
-  <main class="page-container exclude-tabbar">
+  <main class="page-container">
     <RouterView />
   </main>
   <Tabbar />
@@ -15,9 +15,8 @@ import Tabbar from "@/components/Tabbar.vue"
 <style lang="less">
 .page-container  {
   position: relative;
-  min-height: calc(100% - 50px);
-}
-.exclude-tabbar {
   padding-bottom: 56px;
+  padding-top: 50px;
+
 }
 </style>

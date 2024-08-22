@@ -91,14 +91,20 @@ const router = createRouter({
       component: () => import('../views/SessionDetail.vue')
     },
     {
-      path: '/session-square',
+      path: '/square',
       name: 'SessionSquare',
       // route level code-splitting
       // this generates a separate chunk (sessionSquare.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/SessionSquare.vue')
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if(savedPosition) {      
+      return savedPosition
+    } else {
+      return { left: 0, top: 0 }
+    }
+  }
 })
-
 export default router

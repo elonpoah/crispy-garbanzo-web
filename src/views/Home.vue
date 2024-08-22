@@ -12,11 +12,11 @@
           <p>Free spin</p>
         </div>
         <div class="fast-entry-other">
-          <div class="bonus-item huge-bonus" @click="navigateFn('session-square?type=1')">
+          <div class="bonus-item huge-bonus" @click="navigateFn('/square?type=1')">
             <svg-icon name="Lottery" class="bonus-item-icon" />
             <p class="bonus-item-desc">Huge bonus</p>
           </div>
-          <div class="bonus-item random-bonus" @click="navigateFn('session-square?type=2')">
+          <div class="bonus-item random-bonus" @click="navigateFn('/square?type=2')">
             <svg-icon name="UltimateDice" class="bonus-item-icon" />
             <p class="bonus-item-desc">Hight Rate</p>
           </div>
@@ -48,31 +48,36 @@ const data  = [
     openTime: 10*60*1000,
     bonus: 100,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900222,
   },
   {
     openTime: 6*10*50*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900221,
   },
   {
     openTime: 10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900223,
   },
   {
     openTime: 60*10*60*1000,
     bonus: 1000,
     count: 10,
-    peopleCount: 2
+    peopleCount: 2,
+    sessionId: 239393900224,
   },
   {
     openTime: 60*10*60*1000,
     bonus: '10K',
     count: 100,
-    peopleCount: 19
+    peopleCount: 19,
+    sessionId: 239393900225,
   }
 ]
 const gameClassifyData = [
@@ -80,21 +85,21 @@ const gameClassifyData = [
     category: "Popular",
     icon: "HotGame",
     className: "purple",
-    path: "session-square?type=3",
+    path: "/square?type=3",
     list: data,
   },
   {
     category: "Huge bonus",
     icon: "NewReleases",
     className: "green",
-    path: "session-square?type=1",
+    path: "/square?type=1",
     list: data,
   },
   {
     category: "Hight Winning Rate",
     icon: "Like",
     className: "orange",
-    path: "session-square?type=2",
+    path: "/square?type=2",
     list: data,
   },
 ]
