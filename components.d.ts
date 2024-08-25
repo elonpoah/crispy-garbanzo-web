@@ -12,14 +12,17 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SessionItem: typeof import('./src/components/SessionItem.vue')['default']
+    SubmitSuccess: typeof import('./src/components/SubmitSuccess.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
     Tabbar: typeof import('./src/components/Tabbar.vue')['default']
     VanButton: typeof import('vant/es')['Button']
     VanCircle: typeof import('vant/es')['Circle']
+    VanCol: typeof import('vant/es')['Col']
     VanCountDown: typeof import('vant/es')['CountDown']
     VanDivider: typeof import('vant/es')['Divider']
     VanNotify: typeof import('vant/es')['Notify']
     VanNumberKeyboard: typeof import('vant/es')['NumberKeyboard']
+    VanRow: typeof import('vant/es')['Row']
     VanSticky: typeof import('vant/es')['Sticky']
   }
 }

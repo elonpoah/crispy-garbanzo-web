@@ -33,6 +33,9 @@
   scroll-behavior: smooth;
   position: relative;
 }
+.page {
+  min-height: 100vh;
+}
 
 .button {
   display: block;

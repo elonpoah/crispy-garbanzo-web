@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="nav-wrap">
-      <span class="logo">
+      <span class="logo" @click="router.back()">
         <img width="40px" src="@/assets/images/png.png" alt="">
       </span>
       <div class="inner">
@@ -28,8 +28,10 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from 'vue-router'
 import SvgIcon from "./SvgIcon.vue";
 
+const router = useRouter()
 const showLang = ref(false);
 function toggleLang() {
   showLang.value = !showLang.value

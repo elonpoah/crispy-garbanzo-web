@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="balance-btn-group">
-        <button class="button submit-btn" @click="navigateFn('/widthdraw')">
+        <button class="button submit-btn" @click="navigateFn('/withdraw')">
           Withdraw
         </button>
         <div class="gap-10"></div>

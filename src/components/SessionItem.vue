@@ -17,11 +17,11 @@ import SvgIcon from "./SvgIcon.vue";
 
 
 const props = defineProps<{
-  peopleCount: number;
-  count: number;
-  bonus: string | number;
-  openTime: number ;
-  sessionId: string | number;
+  peopleCount?: number;
+  count?: number;
+  bonus?: string | number;
+  openTime?: number ;
+  sessionId?: string | number;
 }>();
 
 const router = useRouter()
