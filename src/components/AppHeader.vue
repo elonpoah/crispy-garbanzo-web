@@ -5,7 +5,13 @@
         <img width="40px" src="@/assets/images/png.png" alt="">
       </span>
       <div class="inner">
-        <div class="btn-group">
+        <div v-if="userStore.isLogin" class="user-info">
+          <div class="wallet">
+            <p class="coin">${{ userStore.info?.balance || '0.00' }}</p>
+            <svg-icon class="wallet-icon" name="Wallet" />
+          </div>
+        </div>
+        <div v-else class="btn-group">
           <router-link to="/login" class="button btn btn-sign-in">
             Sign in
           </router-link>
@@ -30,9 +36,11 @@
 import { ref } from "vue";
 import { useRouter } from 'vue-router'
 import SvgIcon from "./SvgIcon.vue";
+import useUserStore from '@/stores/user'
 
 const router = useRouter()
 const showLang = ref(false);
+const userStore = useUserStore()
 function toggleLang() {
   showLang.value = !showLang.value
 }
@@ -66,6 +74,26 @@ nav {
       position: relative;
       z-index: 2;
       background-color: #24262b;
+    }
+    .user-info {
+      padding-left: 100px;
+      .wallet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #394348;
+        border-radius: 4px;
+        padding: 5px 8px;
+        .coin {
+          font-size: 14px;
+          font-weight: bold;
+          color: var(--primary-color);
+        }
+        .wallet-icon {
+          margin-left: 5px;
+          fill: #ffffff;
+        }
+      }
     }
     .btn-group {
       display: flex;

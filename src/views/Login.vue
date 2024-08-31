@@ -16,19 +16,21 @@
         <p class="form-title">Sign in</p>
         <div class="ui-input">
           <div class="input-control">
-            <input type="text" placeholder="Email / Phone Number">
+            <input @input="validateForm('username')" v-model="loginForm.username" type="text" placeholder="Username">
           </div>
+          <p class="ui-error-tip">{{ formErr.username }}</p>
         </div>
         <div class="ui-input">
           <div class="input-control">
-            <input :type="showPwd ? 'text':'password'" placeholder="Login Password">
+            <input @input="validateForm('password')" v-model="loginForm.password" :type="showPwd ? 'text':'password'" placeholder="Login Password">
             <span class="eyes">
               <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
             </span>
           </div>
+          <p class="ui-error-tip">{{ formErr.password }}</p>
         </div>
         <div class="submit">
-          <button class="button active submit-btn">
+          <button class="button active submit-btn" @click="onSubmit">
               Sign in
             </button>
         </div>
@@ -38,14 +40,55 @@
 </template>
 <script setup lang="ts">
 import SvgIcon from "@/components/SvgIcon.vue";
-import { ref } from "vue";
-import { useRouter } from 'vue-router'
+import { ref, computed } from "vue";
+import { useRoute, useRouter } from 'vue-router';
+import { login } from '@/api/api';
+import storage from '@/utils/storage';
+import useUserStore from '@/stores/user'
+import { isUsername, isPassword } from '@/utils/validate'
 
 const router = useRouter()
+const route = useRoute()
+const userStore = useUserStore()
 const showPwd = ref(false)
-function togglePassword() {
+const togglePassword = () => {
   showPwd.value = !showPwd.value
 }
+
+const loginForm = ref({
+  username: '',
+  password: ''
+})
+const formErr = ref({
+  username: '',
+  password: ''
+})
+
+const isCanSubmit = computed(()=> formErr.value.username === '' && formErr.value.password === '')
+
+const validateForm = (type: string) => {
+  if(type === 'username') {
+    formErr.value.username = isUsername(loginForm.value.username) ? '':'包含数字和字母，长度为5-10位'
+  } else if(type === 'password') {
+    formErr.value.password = isPassword(loginForm.value.password) ? '':'数字,字母,特殊符号，长度为5-10位'
+  } else {
+    formErr.value.username = isUsername(loginForm.value.username) ? '':'包含数字和字母，长度为5-10位'
+    formErr.value.password = isPassword(loginForm.value.password) ? '':'数字,字母,特殊符号，长度为5-10位'
+    return Promise.resolve(true)
+  }
+}
+const onSubmit = async () => {
+  await validateForm('all')
+  if(!isCanSubmit.value) return
+  try {
+    const res = await login({username: loginForm.value.username, password: loginForm.value.password})
+    storage.setItem('token', res.data.token)
+    userStore.setUserInfo(res.data.user)
+    router.replace(typeof route.query.redirect === 'string' ? route.query.redirect : '/')
+  } catch (error) {
+  }
+};
+
 </script>
 <style lang="less" scoped>
 .page {
@@ -85,6 +128,11 @@ function togglePassword() {
     font-size: 14px;
     font-weight: 700;
   }
+  .ui-error-tip {
+    font-size: 12px;
+    color: red;
+    height: 5px;
+  }
   .input-control {
     height: 40px;
     border: 1px solid transparent;
@@ -114,7 +162,7 @@ function togglePassword() {
     }
   }
   .submit {
-    margin-top: 17px;
+    margin-top: 30px;
     .submit-btn {
       font-size: 14px;
       font-weight: 700;

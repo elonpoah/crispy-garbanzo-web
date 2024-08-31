@@ -4,8 +4,8 @@
       <div class="top">
         <img class="avatar" src="@/assets/images/user_avatar.png" alt="avatar">
         <div class="name-wrap">
-          <div class="name">{{ userInfo.name || 'Welcome To HACHO.GAME' }}</div>
-          <div class="id">User ID: {{ userInfo.userId || '-' }}</div>
+          <div class="name">{{ userStore.userInfo?.userName || 'Welcome To HACHO.GAME' }}</div>
+          <div class="id">User ID: {{ userStore.userInfo?.uid || '-' }}</div>
         </div>
       </div>
       <div class="content">
@@ -27,11 +27,11 @@
       <div class="balance-item-wrap">
         <div class="balance-item">
           <div class="label">available</div>
-          <div class="value">${{ userInfo.balance || '-' }}</div>
+          <div class="value">${{ userStore.userInfo?.balance || '0.00' }}</div>
         </div>
         <div class="balance-item">
           <div class="label">freeze</div>
-          <div class="value">${{ userInfo.freezeBalace || '-' }}</div>
+          <div class="value">${{ userStore.userInfo?.freezeBalance || '0.00' }}</div>
         </div>
       </div>
       <div class="balance-btn-group">
@@ -61,15 +61,14 @@
 <script setup lang="ts">
 import SvgIcon from "@/components/SvgIcon.vue";
 import { useRouter } from 'vue-router'
+import useUserStore from '@/stores/user'
 
 const router = useRouter()
+const userStore = useUserStore()
+
 const userInfo = {
-  name: 'lcopo',
-  userId: 48888390,
   unDrawnCount: 2,
   freeSpinCount: 1,
-  balance: 128,
-  freezeBalace: 20,
 }
 const actionLink = [
   {

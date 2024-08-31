@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainContainer from '../views/MainContainer.vue'
 import HomeView from '../views/Home.vue'
+import storage from '@/utils/storage';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,7 @@ const router = createRouter({
         {
           path: '/account',
           name: 'Account',
+          meta: {auth: true},
           // route level code-splitting
           // this generates a separate chunk (account.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
@@ -53,6 +55,7 @@ const router = createRouter({
     {
       path: '/change-pwd',
       name: 'ChangePwd',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (changePwd.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -61,6 +64,7 @@ const router = createRouter({
     {
       path: '/deposit-history',
       name: 'DepositHistory',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (depositHistory.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -69,6 +73,7 @@ const router = createRouter({
     {
       path: '/withdraw-history',
       name: 'WithdrawHistory',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (withdrawHistory.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -77,6 +82,7 @@ const router = createRouter({
     {
       path: '/game-history',
       name: 'GameHistory',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (gameHistory.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -101,6 +107,7 @@ const router = createRouter({
     {
       path: '/withdraw',
       name: 'Withdraw',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (withdraw.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -109,6 +116,7 @@ const router = createRouter({
     {
       path: '/deposit',
       name: 'Deposit',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (deposit.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -123,4 +131,24 @@ const router = createRouter({
     }
   }
 })
+
+router.beforeEach((to, from, next) => {
+  const token = storage.getItem('token');
+
+  if (token && (to.path === '/login' || to.path === '/register')) {
+    next({ path: '/' });
+  } else if (to.meta.auth) {
+    if (token) {
+      next();
+    } else {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath },
+      });
+    }
+  } else {
+    next();
+  }
+});
+
 export default router
