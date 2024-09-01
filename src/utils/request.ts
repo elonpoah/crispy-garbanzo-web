@@ -1,6 +1,7 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig, AxiosError } from 'axios'
-import { showNotify } from 'vant';
+import { showNotify } from 'vant'
+import storage from '@/utils/storage'
 
 const instance: AxiosInstance = axios.create({
     baseURL: "/api",
@@ -9,7 +10,7 @@ const instance: AxiosInstance = axios.create({
 
 instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
-        const token = localStorage.getItem('app_token')
+        const token = storage.getItem('token')
         if(token) {
             config.headers['Authorization'] = token
         }

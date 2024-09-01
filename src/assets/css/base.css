@@ -46,6 +46,10 @@
   --default-color: #ffffff;
 }
 
+:root:root {
+  --van-primary-color: #3BC117
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);

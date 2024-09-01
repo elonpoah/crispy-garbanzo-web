@@ -7,6 +7,11 @@ interface RegisterRequest extends LoginRequest {
 	
 }
 
+interface ChangepwdRequest {
+  password: string;
+  newPassword: string;
+}
+
 interface UserInfo {
   uid: number;
   userName: string;

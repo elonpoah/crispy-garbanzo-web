@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <button class="close-icon" @click="router.back()">
+    <button class="close-icon" @click="goback">
       <svg-icon name="Close" />
     </button>
     <div class="container">
@@ -92,6 +92,14 @@ const onSubmit = async () => {
   } catch (error) {
   }
 };
+
+const goback = () => {
+  if(route.query.redirect) {
+    router.replace(route.query.redirect as string)
+  } else {
+    router.back()
+  }
+}
 
 </script>
 <style lang="less" scoped>

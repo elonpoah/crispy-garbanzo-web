@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-
+import storage from '@/utils/storage'
+import { getUserInfo } from '@/api/api'
 interface UserSate  {
   info: UserInfo | null
 }
@@ -15,6 +16,16 @@ export default defineStore('user', {
   actions: {
     setUserInfo(info:any) {
       this.info = info
+    },
+    getInfo() {
+      getUserInfo().then(res => {
+        if(res.code === 0) this.info = res.data
+      })
+    },
+    loginOut() {
+      this.info = null
+      storage.clearItem('token')
+      return Promise.resolve(true)
     }
   },
   persist: {

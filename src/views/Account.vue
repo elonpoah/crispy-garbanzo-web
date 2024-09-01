@@ -54,7 +54,7 @@
       </div>
     </div>
     <div>
-      <button class="login-out button submit-btn">{{ $t('account.loginout') }}</button>
+      <button class="login-out button submit-btn" @click="loginout">{{ $t('account.loginout') }}</button>
     </div>
   </div>
 </template>
@@ -95,6 +95,9 @@ const actionLink = [
 
 function navigateFn(path: string) {
   router.push(path)
+}
+const loginout = () => {
+  userStore.loginOut().then(_res => router.replace('/'))
 }
 </script>
 <style lang="less" scoped>

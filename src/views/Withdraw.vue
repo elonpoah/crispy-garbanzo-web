@@ -9,33 +9,59 @@
             <div class="value">USDT</div>
             <svg-icon class="arrow-icon" name="Arrow" />
           </div>
-          <div class="header-item">
-            <div class="value">ERC20</div>
+          <div class="header-item" @click="showPicker = !showPicker">
+            <div class="value">{{ usdtType }}</div>
             <svg-icon class="arrow-icon" name="Arrow" />
           </div>
         </div>
         <div class="fast-number">
-          <div class="fast-title">{{ $t('account.availableBalance') }} <span>102</span></div>
+          <div class="fast-title">{{ $t('account.availableBalance') }} <span>{{ userStore.info?.balance || '0.00' }}</span></div>
           <div class="input-control">
             <input type="text" :placeholder="$t('account.entervalue')">
           </div>
         </div>
+        <div class="ui-input">
+          <div class="input-control">
+            <input type="textarea" placeholder="wallet address">
+          </div>
+        </div>
         <div class="submit">
-          <button class="button active submit-btn" @click="submitForm">
+          <button class="button active submit-btn" :disabled="userStore.info?.balance == 0" @click="submitForm">
               {{ $t('common.submit') }}
             </button>
         </div>
       </div>
       <SubmitSuccess v-else />
     </div>
+    <van-popup v-model:show="showPicker" round position="bottom">
+      <van-picker
+        :columns="columns"
+        @cancel="showPicker = false"
+        @confirm="onConfirm"
+      />
+    </van-popup>
   </div>
   </template>
   <script setup lang="ts">
   import SvgIcon from "@/components/SvgIcon.vue";
   import SubmitSuccess from "@/components/SubmitSuccess.vue";
   import { ref } from "vue"
+  import useUserStore from '@/stores/user'
   
+  const userStore = useUserStore()
   const success = ref(false)
+
+  const columns = [
+    { text: 'ERC20', value: 'ERC20' },
+    { text: 'TRC20', value: 'TRC20' },
+  ];
+  const usdtType = ref('TRC20');
+  const showPicker = ref(false);
+
+  const onConfirm = ({ selectedOptions }: any) => {
+    showPicker.value = false;
+    usdtType.value = selectedOptions[0].value;
+  };
   const submitForm = () => {
     success.value = true
   }

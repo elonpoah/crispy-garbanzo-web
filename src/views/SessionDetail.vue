@@ -63,6 +63,7 @@ import SvgIcon from "@/components/SvgIcon.vue";
 import NavBack from "@/components/NavBack.vue";
 import { ref, onMounted } from "vue";
 import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n'
 
 const route = useRoute()
 const currentRate = ref(0);
@@ -70,16 +71,17 @@ const gradientColor = {
   '0%': 'gold',
   '100%': '#97ec80',
 };
+const { t } = useI18n()
 const shareURL = ref('')
 const sessionInfo = ref()
 
 const onSuccess = () => {
   
-  showNotify({ type: 'success', teleport: '#app', message: 'Copy url success' });
+  showNotify({ type: 'success', teleport: '#app', message: t('others.copysuccess') });
 }
 const onError = () => {
   
-  showNotify({ type: 'warning', teleport: '#app', message: 'Copy fail' });
+  showNotify({ type: 'warning', teleport: '#app', message: t('others.copyfail') });
 }
 const getSessionInfo =(id:string | string[])=> {
   sessionInfo.value = {
@@ -93,7 +95,6 @@ const getSessionInfo =(id:string | string[])=> {
 
 onMounted(()=> {
   shareURL.value = location.href
-  console.log(sessionInfo.value);
   
   getSessionInfo(route.params.id)
 })

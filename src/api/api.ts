@@ -7,3 +7,11 @@ export const login = (data:LoginRequest) => {
 export const register = (data:RegisterRequest) => {
     return http.post('/register',data)
 }
+
+export const changePassword = (data:ChangepwdRequest) => {
+  return http.post('/change_password',data)
+}
+
+export const getUserInfo = () => {
+  return http.get('/user_info')
+}

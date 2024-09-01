@@ -92,11 +92,11 @@ const validateForm = (type: string) => {
   } else if (type === 'password') {
     formErr.value.password = isPassword(form.value.password) ? '' : t('common.passwordErr')
   } else if (type === 'confirmPassword') {
-    formErr.value.confirmPassword = form.value.password !== form.value.confirmPassword ? '' : t('register.confirmPasswordErr')
+    formErr.value.confirmPassword = form.value.password === form.value.confirmPassword ? '' : t('register.confirmPasswordErr')
   } else {
     formErr.value.username = isUsername(form.value.username) ? '' : t('common.usernameErr')
     formErr.value.password = isPassword(form.value.password) ? '' : t('common.passwordErr')
-    formErr.value.confirmPassword = form.value.password !== form.value.confirmPassword ? '' : t('register.confirmPasswordErr')
+    formErr.value.confirmPassword = form.value.password === form.value.confirmPassword ? '' : t('register.confirmPasswordErr')
     return Promise.resolve(true)
   }
 }

@@ -2,39 +2,41 @@
 <div class="page">
   <NavBack :title="$t('account.deposit')" />
   <div class="container">
-    <div v-if="!success">
+    <div>
       <div class="header">
         <div class="header-item">
           <img class="usdt-icon" src="@/assets/images/USDT.webp" alt="">
           <div class="value">USDT</div>
           <svg-icon class="arrow-icon" name="Arrow" />
         </div>
-        <div class="header-item">
-          <div class="value">ERC20</div>
+        <div class="header-item" @click="openTypePicker">
+          <div class="value">{{ usdtType }}</div>
           <svg-icon class="arrow-icon" name="Arrow" />
         </div>
       </div>
-      <div class="fast-number">
-        <div class="fast-title">{{ $t('account.fastvalue') }}</div>
-        <van-row class="number-wrap" :gutter="[5,5]">
-          <van-col span="8" v-for="e in fastNum" :key="e">
-            <div class="number-item" :class="{active: coinValue == e}" @click="coinValue = e">{{ e }}</div>
-          </van-col>
-        </van-row>
-      </div>
-      <div class="fast-number">
-        <div class="fast-title">{{ $t('account.entervalue') }}</div>
-        <div class="input-control">
-          <input v-model="coinValue" type="text" :placeholder="$t('account.entervalue')">
+      <div v-if="!success">
+        <div class="fast-number">
+          <div class="fast-title">{{ $t('account.fastvalue') }}</div>
+          <van-row class="number-wrap" :gutter="[5,5]">
+            <van-col span="8" v-for="e in fastNum" :key="e">
+              <div class="number-item" :class="{active: coinValue == e}" @click="coinValue = e">{{ e }}</div>
+            </van-col>
+          </van-row>
+        </div>
+        <div class="fast-number">
+          <div class="fast-title">{{ $t('account.entervalue') }}</div>
+          <div class="input-control">
+            <input v-model="coinValue" type="text" :placeholder="$t('account.entervalue')">
+          </div>
+        </div>
+        <div class="submit">
+          <button class="button active submit-btn" @click="submitForm">
+            {{ $t('common.submit') }}
+            </button>
         </div>
       </div>
-      <div class="submit">
-        <button class="button active submit-btn" @click="submitForm">
-          {{ $t('common.submit') }}
-          </button>
-      </div>
     </div>
-    <div class="success-container" v-else >
+    <div class="success-container"  v-if="success" >
       <p class="time-down">
         {{ $t('account.depositTitle') }}
       </p>
@@ -60,6 +62,13 @@
       </div>
     </div>
   </div>
+  <van-popup v-model:show="showPicker" round position="bottom">
+    <van-picker
+      :columns="columns"
+      @cancel="showPicker = false"
+      @confirm="onConfirm"
+    />
+  </van-popup>
 </div>
 </template>
 <script setup lang="ts">
@@ -78,6 +87,23 @@ const router = useRouter()
 const fastNum = [10, 50, 100, 200, 500, 1000]
 const coinValue = ref()
 const success = ref(false)
+
+const columns = [
+  { text: 'ERC20', value: 'ERC20' },
+  { text: 'TRC20', value: 'TRC20' },
+];
+const usdtType = ref('TRC20');
+const showPicker = ref(false);
+
+const onConfirm = ({ selectedOptions }: any) => {
+  showPicker.value = false;
+  usdtType.value = selectedOptions[0].value;
+};
+
+const openTypePicker = () => {
+  if(success.value) return;
+  showPicker.value = !showPicker.value
+}
 
 
 const onSuccess = () => {

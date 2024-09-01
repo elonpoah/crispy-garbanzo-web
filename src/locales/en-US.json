@@ -75,5 +75,10 @@
     "old": "Old password",
     "new": "New password",
     "cnew": "Confirm new password"
+  },
+  "others": {
+    "loginAgain": "Update Success Login Again!",
+    "copysuccess": "Copy url success",
+    "copyfail": "Copy fail"
   }
 }

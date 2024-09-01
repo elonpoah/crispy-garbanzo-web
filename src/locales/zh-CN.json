@@ -75,5 +75,10 @@
     "old": "旧密码",
     "new": "新密码",
     "cnew": "确认新密码"
+  },
+  "others": {
+    "loginAgain": "修改成功，请重新登录!",
+    "copysuccess": "链接复制成功",
+    "copyfail": "链接复制失败"
   }
 }

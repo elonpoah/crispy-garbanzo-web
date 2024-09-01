@@ -75,5 +75,10 @@
     "old": "Senha antiga",
     "new": "Nova senha",
     "cnew": "Confirmar nova senha"
+  },
+  "others": {
+    "loginAgain": "Atualização bem-sucedida, faça login novamente!",
+    "copysuccess": "URL copiada com sucesso",
+    "copyfail": "Falha ao copiar"
   }
 }
