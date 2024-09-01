@@ -10,11 +10,11 @@
       </div>
       <div class="content">
         <div class="item">
-          <p class="title">To Be Drawn</p>
+          <p class="title">{{ $t('account.tobedrawn') }}</p>
           <p class="value" @click="navigateFn('/game-history?status=0')">{{ userInfo.unDrawnCount || '0' }}</p>
         </div>
         <div class="item">
-          <p class="title">Free Spin</p>
+          <p class="title">{{ $t('account.freespintimes') }}</p>
           <p class="value"@click="navigateFn('/free-spin')">{{ userInfo.freeSpinCount || '0' }}</p>
         </div>
       </div>
@@ -22,25 +22,25 @@
     <div class="balance-wrap">
       <div class="balance-title">
         <svg-icon class="wallet-icon" name="Wallet" />
-        <p>Wallet</p>
+        <p>{{ $t('account.wallet') }}</p>
       </div>
       <div class="balance-item-wrap">
         <div class="balance-item">
-          <div class="label">available</div>
+          <div class="label">{{ $t('account.available') }}</div>
           <div class="value">${{ userStore.userInfo?.balance || '0.00' }}</div>
         </div>
         <div class="balance-item">
-          <div class="label">freeze</div>
+          <div class="label">{{ $t('account.frozen') }}</div>
           <div class="value">${{ userStore.userInfo?.freezeBalance || '0.00' }}</div>
         </div>
       </div>
       <div class="balance-btn-group">
         <button class="button submit-btn" @click="navigateFn('/withdraw')">
-          Withdraw
+          {{ $t('account.withdraw') }}
         </button>
         <div class="gap-10"></div>
         <button class="button active submit-btn" @click="navigateFn('/deposit')">
-          Deposit
+          {{ $t('account.deposit') }}
         </button>
       </div>
     </div>
@@ -48,13 +48,13 @@
       <div class="action-item" v-for="e in actionLink" :key="e.name" @click="navigateFn(e.path)">
         <div class="action-aside">
           <svg-icon class="action-icon" :name="e.icon" />
-          <p class="action-name">{{ e.name }}</p>
+          <p class="action-name">{{ $t(e.name) }}</p>
         </div>
         <svg-icon class="action-link" name="Arrow" />
       </div>
     </div>
     <div>
-      <button class="login-out button submit-btn">Login Out</button>
+      <button class="login-out button submit-btn">{{ $t('account.loginout') }}</button>
     </div>
   </div>
 </template>
@@ -73,22 +73,22 @@ const userInfo = {
 const actionLink = [
   {
     icon: 'History',
-    name: 'Game History',
+    name: 'account.gameh',
     path: '/game-history'
   },
   {
     icon: 'Withdraw',
-    name: 'Withdraw History',
+    name: 'account.withdrawh',
     path: '/withdraw-history'
   },
   {
     icon: 'Deposit',
-    name: 'Deposit History',
+    name: 'account.deposith',
     path: '/deposit-history'
   },
   {
     icon: 'View',
-    name: 'Change Password',
+    name: 'account.changepwd',
     path: '/change-pwd'
   }
 ]

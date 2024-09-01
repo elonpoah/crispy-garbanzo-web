@@ -1,10 +1,10 @@
 <template>
   <div class="search-page">
     <div class="search-box-container">
-      <h1 class="search-title">Seach session code</h1>
+      <h1 class="search-title">{{ $t('search.desc') }}</h1>
       <div class="search-box">
         <div class="input-wrap">
-          <input v-model="sessionCode" type="text" placeholder="input session code">
+          <input v-model="sessionCode" type="text" :placeholder="$t('search.placeholder')">
         </div>
         <span class="search-btn" @click="searchSession">
           <svg-icon name="Pure_Search" class="search-icon" />
@@ -14,7 +14,7 @@
         <session-item v-if="isEmptyData" class="green search-result-item" v-bind="forkRst" />
          <div v-show="!isEmptyData" class="empty-result">
           <svg-icon name="Record" class="empty-icon" />
-          <p>Empty result...</p>
+          <p>{{ $t('search.emptyData') }}</p>
         </div>
       </div>
     </div>

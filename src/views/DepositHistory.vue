@@ -1,10 +1,10 @@
 <template>
   <div class="page">
-    <NavBack title="Deposit History" />
+    <NavBack :title="$t('account.deposith')" />
     <div class="list">
       <div class="item" v-for="item in list" :key="item.orderId">
         <div class="top">
-          Order Id: {{ item.orderId }}
+          Order ID: {{ item.orderId }}
         </div>
         <div class="middle">
           <div>{{ item.type }}</div>

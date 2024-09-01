@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <NavBack title="Withdraw" />
+    <NavBack :title="$t('account.withdraw')" />
     <div class="container">
       <div v-if="!success">
         <div class="header">
@@ -15,14 +15,14 @@
           </div>
         </div>
         <div class="fast-number">
-          <div class="fast-title">Available balance: <span>102</span></div>
+          <div class="fast-title">{{ $t('account.availableBalance') }} <span>102</span></div>
           <div class="input-control">
-            <input type="text" placeholder="Enter Number">
+            <input type="text" :placeholder="$t('account.entervalue')">
           </div>
         </div>
         <div class="submit">
           <button class="button active submit-btn" @click="submitForm">
-              Confirm
+              {{ $t('common.submit') }}
             </button>
         </div>
       </div>

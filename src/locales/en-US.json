@@ -1,0 +1,79 @@
+{
+  "common": {
+    "tabbarHome": "Home",
+    "tabbarSearch": "Search",
+    "tabbarAccount": "Account",
+    "detail": "Detail",
+    "submit": "Submit",
+    "signup": "Sign up",
+    "signin": "Sign in",
+    "welcome": "Welcome to",
+    "start": "Start your game journey now!",
+    "username": "Username",
+    "password": "Password",
+    "usernameErr": "Contains numbers and letters,5-10 length",
+    "passwordErr": "Numbers,letters,special symbols,5-10 length"
+  },
+  "register": {
+    "alreadyhaveaccount": "Already have an account?",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordErr": "The passwords entered twice are inconsistent"
+  },
+  "home": {
+    "get2": "Get up to",
+    "bonus": "bonus",
+    "tobeRich": "Ready to be new rich ?",
+    "freespin": "Free spin",
+    "hugebonus": "Huge bonus",
+    "hightrate": "Hight Rate",
+    "popular": "Popular",
+    "hightwrate": "Hight Winning Rate",
+    "viewall": "View all"
+  },
+  "search": {
+    "desc": "Seach session code",
+    "placeholder": "input session code",
+    "emptyData": "Empty result..."
+  },
+  "account": {
+    "tobedrawn": "To Be Drawn",
+    "freespintimes": "Free Spin Times",
+    "wallet": "Wallet",
+    "available": "Available",
+    "frozen": "Frozen",
+    "withdraw": " Withdraw ",
+    "deposit": " Deposit ",
+    "gameh": "Game History",
+    "withdrawh": "Withdraw History",
+    "deposith": "Deposit History",
+    "changepwd": "Change Password",
+    "loginout": "Login Out",
+    "availableBalance": "Available balance: ",
+    "fastvalue": "Fast Value",
+    "entervalue": "Enter Value",
+    "depositTitle": " Please send before the countdown ends ",
+    "tokenaddress": "Deposit Address",
+    "depositTips": " Send only USDT to this deposit address. Coins will be deposited automatically after 6 network confirmations. Smart contract addresses are not supported(Contact us). ",
+    "notice": "NOTICE:",
+    "copy": "copy",
+    "alreadysend": "Already Send"
+  },
+  "session_detail": {
+    "pay": "PAY",
+    "getaticket": "Get a Ticket",
+    "share2friend": "Share to friends ?",
+    "title": "How to Participate",
+    "desc1": "1.Before the open time, Buy a ticket",
+    "desc2": "2.Every account can buy one ticket only",
+    "title2": "When will the lottery be drawn?",
+    "desc3": "1.After all tickets are sold, the lottery will be drawn automatically and will not be affected by the final draw time.",
+    "desc4": "example: this is $100 session, 10 tickets for sale, Finally, 10 tickets were sold, bonus is $99",
+    "desc5": "2.When the lottery drawing time arrives and the tickets are not sold out, the final prize will be based on sales.",
+    "desc6": "example: this is $100 session, 10 tickets for sale, Finally, 9 tickets were sold, bonus is $89"
+  },
+  "resetpwd": {
+    "old": "Old password",
+    "new": "New password",
+    "cnew": "Confirm new password"
+  }
+}

@@ -5,15 +5,15 @@
     </button>
     <div class="container">
       <div class="form">
-        <p class="form-title">Change password</p>
+        <p class="form-title">{{ $t('account.changepwd') }}</p>
         <div class="ui-input">
           <div class="input-control">
-            <input type="text" placeholder="Old password">
+            <input type="text" :placeholder="$t('resetpwd.old')">
           </div>
         </div>
         <div class="ui-input">
           <div class="input-control">
-            <input :type="showPwd ? 'text':'password'" placeholder="New password">
+            <input :type="showPwd ? 'text':'password'" :placeholder="$t('resetpwd.new')">
             <span class="eyes">
               <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
             </span>
@@ -21,7 +21,7 @@
         </div>
         <div class="ui-input">
           <div class="input-control">
-            <input :type="showPwd ? 'text':'password'" placeholder="Confirm new password">
+            <input :type="showPwd ? 'text':'password'" :placeholder="$t('resetpwd.cnew')">
             <span class="eyes">
               <svg-icon :name="showPwd ? 'View':'Hide'" @click="togglePassword" />
             </span>
@@ -29,7 +29,7 @@
         </div>
         <div class="submit">
           <button class="button active submit-btn">
-              Submit
+              {{ $t('common.submit') }}
             </button>
         </div>
       </div>

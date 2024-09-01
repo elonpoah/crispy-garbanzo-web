@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <NavBack :title="sessionInfo?.name" />
+    <NavBack :title="$t(sessionInfo?.name || 'common.detail')" />
     <div class="square-container">
       <div class="inner">
         <session-item 
@@ -22,11 +22,11 @@ const sessionInfo = computed(()=> {
   const type = route.query.type
   switch (type) {
     case '1':
-      return {name: 'Huge Bonus Square', type, className: 'green' };
+      return {name: 'home.hugebonus', type, className: 'green' };
     case '2':
-      return {name: 'Hight Rate Square', type, className: 'orange' }
+      return {name: 'home.hightrate', type, className: 'orange' }
     case '3':
-      return {name: 'Popular Square', type, className: 'purple' }
+      return {name: 'home.popular', type, className: 'purple' }
   
     default:
       break;

@@ -1,0 +1,79 @@
+{
+  "common": {
+    "tabbarHome": "首页",
+    "tabbarSearch": "搜索",
+    "tabbarAccount": "个人中心",
+    "detail": "详情",
+    "submit": "确认提交",
+    "signup": "注册",
+    "signin": "登录",
+    "welcome": "欢迎来到",
+    "start": "现在就开始你的欢乐游戏之旅吧!",
+    "username": "用户名",
+    "password": "密码",
+    "usernameErr": "包含数字和字母，长度为5-10位",
+    "passwordErr": "数字,字母,特殊符号，长度为5-10位"
+  },
+  "register": {
+    "alreadyhaveaccount": "已有账号?",
+    "confirmPassword": "确认密码",
+    "confirmPasswordErr": "两次输入的密码不一致"
+  },
+  "home": {
+    "get2": "累计高达",
+    "bonus": "奖金",
+    "tobeRich": "准备好成为新的富翁了吗 ?",
+    "freespin": "免费抽奖",
+    "hugebonus": "巨额奖金",
+    "hightrate": "高中奖率",
+    "popular": "热门",
+    "hightwrate": "高中奖率",
+    "viewall": "更多"
+  },
+  "search": {
+    "desc": "搜索活动场次",
+    "placeholder": "请输入活动场次编码",
+    "emptyData": "搜索结果为空..."
+  },
+  "account": {
+    "tobedrawn": "待开奖",
+    "freespintimes": "免费抽奖",
+    "wallet": "钱包",
+    "available": "可用金额",
+    "frozen": "冻结金额",
+    "withdraw": " 提现 ",
+    "deposit": " 充值 ",
+    "gameh": "抽奖记录",
+    "withdrawh": "提现记录",
+    "deposith": "充值记录",
+    "changepwd": "修改密码",
+    "loginout": "退出登录",
+    "availableBalance": "可提现金额: ",
+    "fastvalue": "快捷金额",
+    "entervalue": "输入金额",
+    "depositTitle": "请您在倒计时结束之前完成转账",
+    "tokenaddress": "充值钱包地址",
+    "depositTips": "请您转账USDT至该充值地址。 6次网络确认后自动存币。不支持智能合约地址。",
+    "notice": "提醒:",
+    "copy": "复制",
+    "alreadysend": "我已完成转账"
+  },
+  "session_detail": {
+    "pay": "支付",
+    "getaticket": "参与抽奖",
+    "share2friend": "更快开奖，分享给朋友?",
+    "title": "怎么参与",
+    "desc1": "1.开奖时间之前，支付入场费参与",
+    "desc2": "2.每个账户一场抽奖只能参与一次",
+    "title2": "什么时候开奖?",
+    "desc3": "1.所有门票售完后，抽奖将自动进行，不受最终抽奖时间的影响",
+    "desc4": "例如：这是 $100 场次，出售 10 张门票，最终售出10张门票，则奖金为 $99",
+    "desc5": "2.当抽奖时间到来且门票未售完时，最终奖金将根据销量而定。",
+    "desc6": "例如：这是 $100 场次，总共 10 张门票，最终售出 7 张门票，则奖金为 $69"
+  },
+  "resetpwd": {
+    "old": "旧密码",
+    "new": "新密码",
+    "cnew": "确认新密码"
+  }
+}

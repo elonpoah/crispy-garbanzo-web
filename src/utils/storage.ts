@@ -5,7 +5,8 @@ export default{
         localStorage.setItem(prefix+key,JSON.stringify(val))
     },
     getItem(key: string){
-        return localStorage.getItem(prefix+key)
+        const value = localStorage.getItem(prefix+key)
+        return value && JSON.parse(value)
     },
     clearItem(key: string){
         localStorage.removeItem(prefix+key)

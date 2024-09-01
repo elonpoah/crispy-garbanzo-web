@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <NavBack title="Detail" />
+    <NavBack :title="$t('common.detail')" />
     <div class="container">
       <div class="card">
         <div class="top">
@@ -34,25 +34,25 @@
       <van-divider :style="{ width: '100%', marginTop: '20px', padding: '0 16px' }" />
       <div class="action">
         <button class="button active submit-btn">
-          PAY<span class="small-tip">${{ sessionInfo?.bonus/sessionInfo?.count }}</span>Get a Ticket
+          {{ $t('session_detail.pay') }}<span class="small-tip">${{ sessionInfo?.bonus/sessionInfo?.count }}</span>{{ $t('session_detail.getaticket') }}
         </button>
       </div>
       <van-divider :style="{ width: '100%', marginTop: '20px', padding: '0 16px' }">
-        Share to friends ? 
+        {{ $t('session_detail.share2friend') }}
         <span v-clipboard:copy="shareURL"
         v-clipboard:success="onSuccess"
         v-clipboard:error="onError">
         <svg-icon name="Share" class="share-icon" /></span>
       </van-divider>
       <div class="desc-content">
-        <h2>How to Participate</h2>
-        <p>1.Before the open time, Buy a ticket</p>
-        <p>2.Every account can buy one ticket only</p>
-        <h2>When will the lottery be drawn?</h2>
-        <p>1.After all tickets are sold, the lottery will be drawn automatically and will not be affected by the final draw time.</p>
-        <p>example: this is $100 session, 10 tickets for sale, Finally, 10 tickets were sold, bonus is $99</p>
-        <p>2.When the lottery drawing time arrives and the tickets are not sold out, the final prize will be based on sales.</p>
-        <p>example: this is $100 session, 10 tickets for sale, Finally, 9 tickets were sold, bonus is $89</p>
+        <h2>{{ $t('session_detail.title') }}</h2>
+        <p>{{ $t('session_detail.desc1') }}</p>
+        <p>{{ $t('session_detail.desc2') }}</p>
+        <h2>{{ $t('session_detail.title2') }}</h2>
+        <p>{{ $t('session_detail.desc3') }}</p>
+        <p>{{ $t('session_detail.desc4') }}</p>
+        <p>{{ $t('session_detail.desc5') }}</p>
+        <p>{{ $t('session_detail.desc6') }}</p>
       </div>
     </div>
   </div>

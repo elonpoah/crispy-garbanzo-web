@@ -15,4 +15,6 @@ interface UserInfo {
   email: string;
   balance: number;
   freezeBalance: number;
-  }
+}
+
+type SupportedLanguages = 'en-US' | 'zh-CN' | 'pt-BR';

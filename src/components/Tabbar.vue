@@ -2,7 +2,7 @@
 <div class="safe-area-inset-bottom tabbar">
   <div class="tabbar-item" :class="{active: routeName === 'Home'}" @click="tabbarClick('/')">
     <svg-icon name="Home" class="tabbar-icon" />
-    <span>home</span>
+    <span>{{ $t('common.tabbarHome') }}</span>
   </div>
   <div class="tabbar-item" :class="{active: routeName === 'Search'}" @click="tabbarClick('/search')">
     <div class="tabbar-item-middle-wrap">
@@ -12,11 +12,11 @@
         </div>
       </div>
     </div>
-    <span>Search</span>
+    <span>{{ $t('common.tabbarSearch') }}</span>
   </div>
   <div class="tabbar-item" :class="{active: routeName === 'Account'}" @click="tabbarClick('/account')">
     <svg-icon name="UserProfile" class="tabbar-icon" />
-    <span>Account</span>
+    <span>{{ $t('common.tabbarAccount') }}</span>
   </div>
 </div>
 </template>

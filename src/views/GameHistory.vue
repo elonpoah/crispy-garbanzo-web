@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-      <NavBack title="Game History" />
+      <NavBack :title="$t('account.gameh')" />
       <div class="list">
         <div class="item" v-for="item in list" :key="item.orderId">
           <div class="top">

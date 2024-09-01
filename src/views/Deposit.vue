@@ -1,6 +1,6 @@
 <template>
 <div class="page">
-  <NavBack title="Deposit" />
+  <NavBack :title="$t('account.deposit')" />
   <div class="container">
     <div v-if="!success">
       <div class="header">
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="fast-number">
-        <div class="fast-title">Fast Value</div>
+        <div class="fast-title">{{ $t('account.fastvalue') }}</div>
         <van-row class="number-wrap" :gutter="[5,5]">
           <van-col span="8" v-for="e in fastNum" :key="e">
             <div class="number-item" :class="{active: coinValue == e}" @click="coinValue = e">{{ e }}</div>
@@ -23,41 +23,39 @@
         </van-row>
       </div>
       <div class="fast-number">
-        <div class="fast-title">Enter Number</div>
+        <div class="fast-title">{{ $t('account.entervalue') }}</div>
         <div class="input-control">
-          <input v-model="coinValue" type="text" placeholder="Enter Number">
+          <input v-model="coinValue" type="text" :placeholder="$t('account.entervalue')">
         </div>
       </div>
       <div class="submit">
         <button class="button active submit-btn" @click="submitForm">
-            Confirm
+          {{ $t('common.submit') }}
           </button>
       </div>
     </div>
     <div class="success-container" v-else >
       <p class="time-down">
-        Please send before the countdown ends 
+        {{ $t('account.depositTitle') }}
       </p>
       <div class="qr-code">
         <qrcode-vue :value="tokenAddress" :level="level" :margin="2" :size="140" :render-as="renderAs" />
         <van-count-down class="time-down-value" format="mm m ss s" :time="5*60*1000" />
       </div>
-      <p class="address-tip">Deposit Address</p>
+      <p class="address-tip">{{ $t('account.tokenaddress') }}</p>
       <div class="address-block">
         <p class="text">0x5C99737e2B13ed6f268eeffcd2E9Fb486b9414b1</p>
         <span class="copy-btn" v-clipboard:copy="0x5C99737e2B13ed6f268eeffcd2E9Fb486b9414b1"
         v-clipboard:success="onSuccess"
-        v-clipboard:error="onError">copy</span>
+        v-clipboard:error="onError">{{ $t('account.copy') }}</span>
       </div>
       <p class="warning-wrap">
-        <span class="title">NOTICE:</span> 
-        Send only USDT to this deposit address. 
-        Coins will be deposited automatically after 6 network confirmations. 
-        Smart contract addresses are not supported(Contact us).
+        <span class="title">{{ $t('account.notice') }}</span> 
+        {{ $t('account.depositTips') }}
       </p>
       <div class="submit">
         <button class="button active submit-btn" @click="transformConfim">
-            Already Send
+          {{ $t('account.alreadysend') }}
           </button>
       </div>
     </div>
