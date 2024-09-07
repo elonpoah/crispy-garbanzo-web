@@ -28,22 +28,18 @@ import SessionItem from "@/components/SessionItem.vue";
 const pageInit = ref(true)
 const sessionCode = ref('')
 const forkRst = ref({})
+import { getSessionById } from '@/api/api'
 const isEmptyData = computed(()=> Object.keys(forkRst.value).length)
 
 function searchSession() {
   pageInit.value = false
-  if(sessionCode.value === '2024') {
-    forkRst.value = {
-      openTime: 10*60*1000,
-      bonus: 100,
-      count: 10,
-      peopleCount: 2,
-      sessionId: 239393900222,
-    }
+  if(sessionCode.value) {
+    getSessionById(Number(sessionCode.value)).then(res => {
+      forkRst.value = res.data
+    })
   } else {
     forkRst.value = {}
   }
-  
 }
 </script>
 <style lang="less" scoped>

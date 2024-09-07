@@ -72,13 +72,15 @@
 </div>
 </template>
 <script setup lang="ts">
-import SvgIcon from "@/components/SvgIcon.vue";
+import SvgIcon from "@/components/SvgIcon.vue"
 import { ref } from "vue"
 import QrcodeVue from 'qrcode.vue'
-import { showNotify } from 'vant';
+import { showNotify } from 'vant'
+import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import type { Level, RenderAs } from 'qrcode.vue'
 
+const { t } = useI18n()
 const tokenAddress = ref('qrcode')
 const level = ref<Level>('M')
 const renderAs = ref<RenderAs>('svg')
@@ -107,11 +109,11 @@ const openTypePicker = () => {
 
 
 const onSuccess = () => {
-  showNotify({ type: 'success', teleport: '#app', message: 'Copy url success' });
+  showNotify({ type: 'success', teleport: '#app', message: t('others.copysuccess') });
 }
 const onError = () => {
   
-  showNotify({ type: 'warning', teleport: '#app', message: 'Copy fail' });
+  showNotify({ type: 'warning', teleport: '#app', message: t('others.copyfail') });
 }
 const submitForm = () => {
   success.value = true

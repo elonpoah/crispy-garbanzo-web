@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <van-pull-refresh class="home-page" v-model="loading" @refresh="onRefresh">
     <div class="home-banner">
       <p>{{ $t('home.get2') }}</p>
       <p><span class="usd">$1,000,000</span> {{ $t('home.bonus') }}</p>
@@ -26,7 +26,7 @@
         <div class="game-class">
           <div class="game-class-aside">
             <svg-icon :name="child.icon" class="game-class-icon" />
-            <span class="txt">{{ $t(child.category) }}</span>
+            <span class="txt">{{ $t(child.label) }}</span>
           </div>
           <span class="game-class-nav" @click="navigateFn(child.path)">{{ $t('home.viewall') }}</span>
         </div>
@@ -35,77 +35,62 @@
         </div>
       </div>
     </div>
-  </div>
+  </van-pull-refresh>
 </template>
 <script setup lang="ts">
 import SvgIcon from "@/components/SvgIcon.vue";
 import SessionItem from "@/components/SessionItem.vue";
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
+import { getHomeRecommand } from '@/api/api'
+import { onMounted, ref } from "vue";
+import { SessionType } from '@/constant'
 
 const router = useRouter()
-const data  = [
+const gameClassifyData = ref<HomeRecommandSessionList[]>(
+  [
   {
-    openTime: 10*60*1000,
-    bonus: 100,
-    count: 10,
-    peopleCount: 2,
-    sessionId: 239393900222,
-  },
-  {
-    openTime: 6*10*50*1000,
-    bonus: 1000,
-    count: 10,
-    peopleCount: 2,
-    sessionId: 239393900221,
-  },
-  {
-    openTime: 10*60*1000,
-    bonus: '10K',
-    count: 100,
-    peopleCount: 19,
-    sessionId: 239393900223,
-  },
-  {
-    openTime: 60*10*60*1000,
-    bonus: 1000,
-    count: 10,
-    peopleCount: 2,
-    sessionId: 239393900224,
-  },
-  {
-    openTime: 60*10*60*1000,
-    bonus: '10K',
-    count: 100,
-    peopleCount: 19,
-    sessionId: 239393900225,
-  }
-]
-const gameClassifyData = [
-  {
-    category: 'home.popular',
+    category: SessionType.hot,
+    label: 'home.popular',
     icon: "HotGame",
     className: "purple",
     path: "/square?type=3",
-    list: data,
+    list: [],
   },
   {
-    category: 'home.hugebonus',
+    category: SessionType.hugebonus,
+    label: 'home.hugebonus',
     icon: "NewReleases",
     className: "green",
     path: "/square?type=1",
-    list: data,
+    list: [],
   },
   {
-    category: 'home.hightwrate',
+    category: SessionType.hightwrate,
+    label: 'home.hightwrate',
     icon: "Like",
     className: "orange",
     path: "/square?type=2",
-    list: data,
+    list: [],
   },
-]
+])
 function navigateFn(path: string) {
   router.push(path)
 }
+const loading = ref(false)
+const onRefresh = () => {
+  getHomeRecommand().then(res => {
+    gameClassifyData.value = gameClassifyData.value.map(e => {
+      return {
+        ...e,
+        list: res.data[e.category]
+      }
+    })
+    loading.value = false
+  })
+}
+onMounted(()=> {
+  onRefresh()
+})
 </script>
 <style lang="less" scoped>
 .home-page {

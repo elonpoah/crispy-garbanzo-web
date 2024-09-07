@@ -2,11 +2,11 @@
 <div class="game-list-item" @click="LinkToSessionPage">
   <span class="game-list-item-people">
     <svg-icon name="UserProfile" class="game-list-item-people-icon" />
-    <span>{{ peopleCount || '0' }}/{{ count|| '0' }}</span>
+    <span>{{ uids || '0' }}/{{ activityLimitCount|| '0' }}</span>
   </span>
-  <div class="game-list-item-content">${{ bonus || '' }}</div>
+  <div class="game-list-item-content">${{ activityBonus || '' }}</div>
   <button class="button game-list-item-claim">
-    <van-count-down class="game-list-item-time" format="DD d HH h mm m ss s" :time="openTime || 0" />
+    <van-count-down class="game-list-item-time" format="DD d HH h mm m ss s" :time="openTimeCount" />
   </button>
 </div>
 </template>
@@ -14,20 +14,28 @@
 import { defineProps } from 'vue';
 import { useRouter } from 'vue-router';
 import SvgIcon from "./SvgIcon.vue";
+import { computed } from 'vue';
 
 
 const props = defineProps<{
-  peopleCount?: number;
-  count?: number;
-  bonus?: string | number;
+  id?: number;
+  uids?: number;
+  activityLimitCount?: number;
+  activityBonus?: string | number;
   openTime?: number ;
-  sessionId?: string | number;
 }>();
 
+const openTimeCount = computed(()=> {
+  if(props.openTime) {
+    return props.openTime - new Date().getTime()
+  } else {
+    return 0
+  }
+})
 const router = useRouter()
 
 const LinkToSessionPage = () => {
-  router.push(`/session/${props.sessionId}`)
+  router.push(`/session/${props.id}`)
 }
 </script>
 <style lang="less" scoped>

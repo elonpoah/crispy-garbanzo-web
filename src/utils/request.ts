@@ -53,7 +53,7 @@ export interface Result<T = unknown> {
 export const http = {
     // axios.get('api_url',{params:{}})
     get<T = any>(url: string, params?: object): Promise<Result<T>> {
-        return instance.get<T, Result<T>>(url, params)
+        return instance.get<T, Result<T>>(url, {params})
     },
     post<T = any>(url:string,data?:object): Promise<Result<T>> {
         return instance.post<T, Result<T>>(url, data);

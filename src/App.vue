@@ -20,4 +20,10 @@ onMounted(()=> {
 </template>
 
 <style lang="less">
+.load-more {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
 </style>

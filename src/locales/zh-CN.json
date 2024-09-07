@@ -12,7 +12,8 @@
     "username": "用户名",
     "password": "密码",
     "usernameErr": "包含数字和字母，长度为5-10位",
-    "passwordErr": "数字,字母,特殊符号，长度为5-10位"
+    "passwordErr": "数字,字母,特殊符号，长度为5-10位",
+    "loadMore": "加载更多"
   },
   "register": {
     "alreadyhaveaccount": "已有账号?",
@@ -22,7 +23,7 @@
   "home": {
     "get2": "累计高达",
     "bonus": "奖金",
-    "tobeRich": "准备好成为新的富翁了吗 ?",
+    "tobeRich": "财运亨通，好运连连",
     "freespin": "免费抽奖",
     "hugebonus": "巨额奖金",
     "hightrate": "高中奖率",
@@ -61,6 +62,7 @@
   "session_detail": {
     "pay": "支付",
     "getaticket": "参与抽奖",
+    "algetaticket": "已参与，等待开奖",
     "share2friend": "更快开奖，分享给朋友?",
     "title": "怎么参与",
     "desc1": "1.开奖时间之前，支付入场费参与",
@@ -79,6 +81,16 @@
   "others": {
     "loginAgain": "修改成功，请重新登录!",
     "copysuccess": "链接复制成功",
-    "copyfail": "链接复制失败"
+    "copyfail": "链接复制失败",
+    "balanceNEnough": " 余额不足，请充值"
+  },
+  "record": {
+    "OpenTime": "开奖时间",
+    "SessionID": "场次ID",
+    "TotalBonus": "累计奖金",
+    "TicketPrice": "入场费",
+    "underOpen": "待开奖",
+    "win": "已中奖",
+    "lose": "未中奖"
   }
 }

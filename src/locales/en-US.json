@@ -12,7 +12,8 @@
     "username": "Username",
     "password": "Password",
     "usernameErr": "Contains numbers and letters,5-10 length",
-    "passwordErr": "Numbers,letters,special symbols,5-10 length"
+    "passwordErr": "Numbers,letters,special symbols,5-10 length",
+    "loadMore": "Loading More"
   },
   "register": {
     "alreadyhaveaccount": "Already have an account?",
@@ -22,7 +23,7 @@
   "home": {
     "get2": "Get up to",
     "bonus": "bonus",
-    "tobeRich": "Ready to be new rich ?",
+    "tobeRich": "Luck with Money, To be Rich",
     "freespin": "Free spin",
     "hugebonus": "Huge bonus",
     "hightrate": "Hight Rate",
@@ -61,6 +62,7 @@
   "session_detail": {
     "pay": "PAY",
     "getaticket": "Get a Ticket",
+    "algetaticket": "Already Got",
     "share2friend": "Share to friends ?",
     "title": "How to Participate",
     "desc1": "1.Before the open time, Buy a ticket",
@@ -78,7 +80,17 @@
   },
   "others": {
     "loginAgain": "Update Success Login Again!",
-    "copysuccess": "Copy url success",
-    "copyfail": "Copy fail"
+    "copysuccess": "Copy success",
+    "copyfail": "Copy fail",
+    "balanceNEnough": "balance not enough"
+  },
+  "record": {
+    "OpenTime": "Open Time",
+    "SessionID": "Session ID",
+    "TotalBonus": "Total Bonus",
+    "TicketPrice": "Ticket Price",
+    "underOpen": "To be drawn",
+    "win": "Won",
+    "lose": "Fail"
   }
 }

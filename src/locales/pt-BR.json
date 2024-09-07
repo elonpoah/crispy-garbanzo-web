@@ -12,7 +12,8 @@
     "username": "Nome de usuário",
     "password": "Senha",
     "usernameErr": "Contém números e letras, de 5 a 10 caracteres",
-    "passwordErr": "Números, letras, símbolos especiais, de 5 a 10 caracteres"
+    "passwordErr": "Números, letras, símbolos especiais, de 5 a 10 caracteres",
+    "loadMore": "Carregar mais"
   },
   "register": {
     "alreadyhaveaccount": "Já tem uma conta?",
@@ -22,7 +23,7 @@
   "home": {
     "get2": "Obtenha até",
     "bonus": "bônus",
-    "tobeRich": "Pronto para ser o novo rico?",
+    "tobeRich": "Sorte com Dinheiro, Ser Rico",
     "freespin": "Giro grátis",
     "hugebonus": "Bônus enorme",
     "hightrate": "Alta taxa",
@@ -61,6 +62,7 @@
   "session_detail": {
     "pay": "PAGAR",
     "getaticket": "Obter um Ingresso",
+    "algetaticket": "já tenho",
     "share2friend": "Compartilhar com amigos?",
     "title": "Como Participar",
     "desc1": "1.Antes da hora de abertura, compre um ingresso",
@@ -79,6 +81,16 @@
   "others": {
     "loginAgain": "Atualização bem-sucedida, faça login novamente!",
     "copysuccess": "URL copiada com sucesso",
-    "copyfail": "Falha ao copiar"
+    "copyfail": "Falha ao copiar",
+    "balanceNEnough": "Saldo insuficiente, por favor recarregue"
+  },
+  "record": {
+    "OpenTime": "Hora de Abertura",
+    "SessionID": "ID da Sessão",
+    "TotalBonus": "Bônus Total",
+    "TicketPrice": "Preço do Ingresso",
+    "underOpen": "A ser sorteado",
+    "win": "Ganhou",
+    "lose": "Falhou"
   }
 }

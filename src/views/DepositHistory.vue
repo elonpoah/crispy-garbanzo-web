@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <NavBack :title="$t('account.deposith')" />
+    <van-pull-refresh class="page-inner" v-model="loading" @refresh="onRefresh">
     <div class="list">
       <div class="item" v-for="item in list" :key="item.orderId">
         <div class="top">
@@ -17,9 +18,11 @@
         </div>
       </div>
     </div>
+    </van-pull-refresh>
   </div>
 </template>
 <script setup lang="ts">
+import { ref } from 'vue';
 import NavBack from "@/components/NavBack.vue";
 const list = [
   {
@@ -44,9 +47,18 @@ const list = [
     status: 'pending'
   }
 ]
+const loading = ref(false)
+const onRefresh = () => {
+  setTimeout(()=> {
+    loading.value = false
+  },2000)
+}
 </script>
 <style lang="less" scoped>
 .page {
+  .page-inner {
+    min-height: calc(100vh - 55px);
+  }
   .list {
     padding: 0 10px;
   }
