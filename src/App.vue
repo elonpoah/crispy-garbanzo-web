@@ -17,6 +17,7 @@ onMounted(()=> {
 <template>
   <RouterView />
   <van-notify />
+  <van-dialog />
 </template>
 
 <style lang="less">

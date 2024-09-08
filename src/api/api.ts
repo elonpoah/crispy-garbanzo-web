@@ -9,19 +9,19 @@ export const register = (data:RegisterRequest) => {
 }
 
 export const changePassword = (data:ChangepwdRequest) => {
-  return http.post('/change_password',data)
+  return http.post('/change/password',data)
 }
 
 export const getUserInfo = () => {
-  return http.get('/user_info')
+  return http.get('/user/info')
 }
 
 export const getDepositHistory = (data: Paginatin) => {
-  return http.get('/deposit_history', data)
+  return http.get('/deposit/history', data)
 }
 
 export const getWithdrawHistory = (data: Paginatin) => {
-  return http.get('/withdraw_history', data)
+  return http.get('/withdraw/history', data)
 }
 
 export const getHomeRecommand = () => {

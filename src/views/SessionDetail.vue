@@ -65,7 +65,7 @@
 import { ref, computed, onMounted, watchEffect } from "vue";
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { showNotify } from 'vant';
+import { showNotify, showDialog } from 'vant';
 import SvgIcon from "@/components/SvgIcon.vue";
 import NavBack from "@/components/NavBack.vue";
 import useUserStore from '@/stores/user'
@@ -124,13 +124,18 @@ const buyTicket = () => {
   const id = route.params.id
   if(userStore.isLogin) {
     if((userStore.info?.balance || 0) < (sessionInfo.value?.activitySpend || 0)) {
-      showNotify({ type: 'danger', teleport: '#app', message: t('others.balanceNEnough') });
+      showDialog({
+        message: t('others.balanceNEnough'),
+      }).then(() => {
+        router.push('/deposit')
+      });
       submiting.value = false
       return
     }
     buySessionTicket(Number(id)).then(res => {
       onRefresh()
       checkCurrentSession()
+      userStore.getInfo()
       submiting.value = false
     })
   } else {
