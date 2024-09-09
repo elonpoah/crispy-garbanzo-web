@@ -18,17 +18,21 @@
         </div>
         <div v-show="showLoadMore" @click="loadMore" class="load-more">{{ $t('common.loadMore') }}</div>
       </div>
+      <EmptyData :height="60" v-show="!dataList.length" />
     </van-pull-refresh>
   </div>
 </template>
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
 import { ref, computed, onMounted } from 'vue';
 import NavBack from "@/components/NavBack.vue";
+import EmptyData from "@/components/EmptyData.vue";
 import { getGameHistory } from '@/api/api';
 import dayjs from 'dayjs'
 
 const loading = ref(false)
+const route = useRoute()
 const { t } = useI18n()
 const formatStatus = (status: number) => {
   if (status == 0) return t('record.underOpen')
@@ -56,7 +60,8 @@ const loadMore = () => {
 }
 
 const getDataList = (isMore = false) => {
-  getGameHistory(searchParams.value).then((res)=> {
+  const status = route.query.status ? Number(route.query.status) : undefined
+  getGameHistory({...searchParams.value, status}).then((res)=> {
     dataList.value = isMore ? dataList.value.concat(res.data.list) : res.data.list
     total.value = res.data.total
     loading.value = false

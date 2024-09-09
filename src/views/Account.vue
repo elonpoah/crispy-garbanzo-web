@@ -11,11 +11,11 @@
       <div class="content">
         <div class="item">
           <p class="title">{{ $t('account.tobedrawn') }}</p>
-          <p class="value" @click="navigateFn('/game-history?status=0')">{{ userInfo.unDrawnCount || '0' }}</p>
+          <p class="value" @click="navigateFn('/game-history?status=0')">{{ sessionSummary?.sessionCount || '0' }}</p>
         </div>
         <div class="item">
           <p class="title">{{ $t('account.freespintimes') }}</p>
-          <p class="value"@click="navigateFn('/free-spin')">{{ userInfo.freeSpinCount || '0' }}</p>
+          <p class="value"@click="navigateFn('/free-spin')">{{ sessionSummary?.freeCount || '0' }}</p>
         </div>
       </div>
     </div>
@@ -59,17 +59,14 @@
   </div>
 </template>
 <script setup lang="ts">
+import { computed, onMounted } from 'vue'
 import SvgIcon from "@/components/SvgIcon.vue";
 import { useRouter } from 'vue-router'
 import useUserStore from '@/stores/user'
 
 const router = useRouter()
 const userStore = useUserStore()
-
-const userInfo = {
-  unDrawnCount: 2,
-  freeSpinCount: 1,
-}
+const sessionSummary = computed(()=> userStore.sessionSummary)
 const actionLink = [
   {
     icon: 'History',
@@ -99,6 +96,11 @@ function navigateFn(path: string) {
 const loginout = () => {
   userStore.loginOut().then(_res => router.replace('/'))
 }
+
+onMounted(()=> {
+  userStore.getUserSummary()
+})
+
 </script>
 <style lang="less" scoped>
 .account-page {

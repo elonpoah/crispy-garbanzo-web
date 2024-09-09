@@ -44,7 +44,12 @@ export const checkSession = (id: number) => {
   return http.post('/session/check', {id})
 }
 
-export const getGameHistory = (data: Paginatin) => {
+export const getGameHistory = (data: GameHistoryRequest) => {
   return http.post<GameHistoryRes>('/game/history', data)
 }
+
+export const getSessionSummary = () => {
+  return http.get<UserSummary>('session/summary')
+}
+
 

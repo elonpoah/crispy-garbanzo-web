@@ -25,6 +25,11 @@ interface UserInfo {
   freezeBalance: number;
 }
 
+interface UserSummary {
+	sessionCount: number;
+	freeCount:    number
+}
+
 interface SessionList {
   page: number;
   pageSize: number;
@@ -64,6 +69,10 @@ interface HomeRecommandSessionListRes {
 interface SessionListRes extends Paginatin {
   list: SessionItem[],
   total: number
+}
+
+interface GameHistoryRequest extends Paginatin {
+  status?: number
 }
 
 interface GameHistoryItem {

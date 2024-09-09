@@ -1,13 +1,15 @@
 import { defineStore } from 'pinia'
 import storage from '@/utils/storage'
-import { getUserInfo } from '@/api/api'
+import { getUserInfo, getSessionSummary } from '@/api/api'
 interface UserSate  {
   info: UserInfo | null
+  sessionSummary: UserSummary | null
 }
 
 export default defineStore('user', {
   state: (): UserSate => ({
     info: null,
+    sessionSummary: null
   }),
   getters: {
     isLogin: (state) => state.info !== null,
@@ -20,6 +22,11 @@ export default defineStore('user', {
     getInfo() {
       getUserInfo().then(res => {
         if(res.code === 0) this.info = res.data
+      })
+    },
+    getUserSummary() {
+      getSessionSummary().then(res => {
+        if(res.code === 0) this.sessionSummary = res.data
       })
     },
     loginOut() {

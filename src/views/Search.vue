@@ -12,10 +12,7 @@
       </div>
       <div class="search-result" v-show="!pageInit">
         <session-item v-if="isEmptyData" class="green search-result-item" v-bind="forkRst" />
-         <div v-show="!isEmptyData" class="empty-result">
-          <svg-icon name="Record" class="empty-icon" />
-          <p>{{ $t('search.emptyData') }}</p>
-        </div>
+        <EmptyData v-show="!isEmptyData" />
       </div>
     </div>
   </div>
@@ -24,6 +21,7 @@
 import { ref, computed } from "vue"
 import SvgIcon from "@/components/SvgIcon.vue";
 import SessionItem from "@/components/SessionItem.vue";
+import EmptyData from "@/components/EmptyData.vue";
 
 const pageInit = ref(true)
 const sessionCode = ref('')
@@ -96,22 +94,6 @@ function searchSession() {
     margin-top: 20px;
     .search-result-item{
       width: 200px;
-    }
-    .empty-result {
-      padding: 30px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      p {
-        color: #8e93a0;
-        margin-top: 10px;
-        font-size: 16px;
-      }
-      .empty-icon {
-        width: 40px;
-        height: 40px;
-      }
     }
   }
 }
