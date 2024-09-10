@@ -4,20 +4,26 @@ import { getUserInfo, getSessionSummary } from '@/api/api'
 interface UserSate  {
   info: UserInfo | null
   sessionSummary: UserSummary | null
+  loading: boolean
 }
 
 export default defineStore('user', {
   state: (): UserSate => ({
     info: null,
-    sessionSummary: null
+    sessionSummary: null,
+    loading: true
   }),
   getters: {
     isLogin: (state) => state.info !== null,
     userInfo: (state) => state.info,
+    loadingPage: (state) => state.loading,
   },
   actions: {
     setUserInfo(info:any) {
       this.info = info
+    },
+    setLoadingPage() {
+      this.loading = !this.loading
     },
     getInfo() {
       getUserInfo().then(res => {

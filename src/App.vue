@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { onMounted } from 'vue'
 import useUserStore from '@/stores/user'
+import Loading from '@/components/Loading.vue'
 
 const userStore = useUserStore()
 const { locale } = useI18n()
@@ -12,12 +13,17 @@ onMounted(()=> {
     userStore.getInfo()
   }
 })
+
+setTimeout(()=> {
+  userStore.setLoadingPage()
+},1000)
 </script>
 
 <template>
   <RouterView />
   <van-notify />
   <van-dialog />
+  <Loading v-show="userStore.loadingPage" />
 </template>
 
 <style lang="less">
