@@ -1,14 +1,14 @@
 import { http } from '@/utils/request'
 
-export const login = (data:LoginRequest) => {
+export const login = (data:TypeLoginRequest) => {
     return http.post('/login',data)
 }
 
-export const register = (data:RegisterRequest) => {
+export const register = (data:TypeRegisterRequest) => {
     return http.post('/register',data)
 }
 
-export const changePassword = (data:ChangepwdRequest) => {
+export const changePassword = (data:TypeChangepwdRequest) => {
   return http.post('/change/password',data)
 }
 
@@ -16,44 +16,48 @@ export const getUserInfo = () => {
   return http.get('/user/info')
 }
 
-export const userDeposit = (data: UserDeposit) => {
+export const userDeposit = (data: TypeUserDeposit) => {
   return http.post('/user/deposit', data)
 }
 
-export const getDepositHistory = (data: Paginatin) => {
+export const userWithdraw = (data: TypeUserWithdraw) => {
+  return http.post('/user/withdraw', data)
+}
+
+export const getDepositHistory = (data: TypePaginatin) => {
   return http.get('/deposit/history', data)
 }
 
-export const getWithdrawHistory = (data: Paginatin) => {
+export const getWithdrawHistory = (data: TypePaginatin) => {
   return http.get('/withdraw/history', data)
 }
 
 export const getHomeRecommand = () => {
-  return http.post<HomeRecommandSessionListRes>('/home/data')
+  return http.post<TypeHomeRecommandSessionListRes>('/home/data')
 }
 
-export const getSessionListByType = (data: SessionList) => {
-  return http.post<SessionListRes>('/session/list', data)
+export const getSessionListByType = (data: TypeSessionList) => {
+  return http.post<TypeSessionListRes>('/session/list', data)
 }
 
 export const getSessionById = (id: number) => {
-  return http.post<SessionItem>('/session/detail', {id})
+  return http.post<TypeSessionItem>('/session/detail', {id})
 }
 
 export const buySessionTicket = (id: number) => {
-  return http.post<SessionItem>('/session/ticket', {id})
+  return http.post<TypeSessionItem>('/session/ticket', {id})
 }
 
 export const checkSession = (id: number) => {
   return http.post('/session/check', {id})
 }
 
-export const getGameHistory = (data: GameHistoryRequest) => {
-  return http.post<GameHistoryRes>('/game/history', data)
+export const getGameHistory = (data: TypeGameHistoryRequest) => {
+  return http.post<TypeGameHistoryRes>('/game/history', data)
 }
 
 export const getSessionSummary = () => {
-  return http.get<UserSummary>('session/summary')
+  return http.get<TypeUserSummary>('session/summary')
 }
 
 

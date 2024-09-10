@@ -75,7 +75,7 @@ const route = useRoute()
 const router = useRouter()
 const { t } = useI18n()
 const shareURL = ref('')
-const sessionInfo = ref<SessionItem | null>(null)
+const sessionInfo = ref<TypeSessionItem | null>(null)
 const userStore = useUserStore()
 
 const openTimeCount = computed(()=> {

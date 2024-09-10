@@ -35,16 +35,16 @@ const loading = ref(false)
 const route = useRoute()
 const { t } = useI18n()
 const formatStatus = (status: number) => {
-  if (status == 0) return t('record.underOpen')
-  if (status == 1) return t('record.win')
-  if (status == 2) return t('record.lose')
+  if (status == 1) return t('record.underOpen')
+  if (status == 2) return t('record.win')
+  if (status == 3) return t('record.lose')
 }
 const searchParams = ref({
   page: 1,
   pageSize: 20,
 })
 const total = ref(0)
-const dataList = ref<GameHistoryItem[]>([])
+const dataList = ref<TypeGameHistoryItem[]>([])
 const showLoadMore = computed(()=> searchParams.value.page * searchParams.value.pageSize < total.value)
 
 const onRefresh = () => {

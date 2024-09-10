@@ -93,11 +93,11 @@ const fastNum = [10, 50, 100, 200, 500, 1000]
 const coinValue = ref()
 const success = ref(false)
 
-const columns:NetworkType[] = [
+const columns:TypeNetworkType[] = [
   { text: 'ERC20', value: 1 },
   { text: 'TRC20', value: 2 },
 ];
-const selectNetworkType = ref<NetworkType>(columns[1]);
+const selectNetworkType = ref<TypeNetworkType>(columns[1]);
 const showPicker = ref(false);
 
 const onConfirm = ({ selectedOptions }: any) => {

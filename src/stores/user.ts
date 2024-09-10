@@ -2,8 +2,8 @@ import { defineStore } from 'pinia'
 import storage from '@/utils/storage'
 import { getUserInfo, getSessionSummary } from '@/api/api'
 interface UserSate  {
-  info: UserInfo | null
-  sessionSummary: UserSummary | null
+  info: TypeUserInfo | null
+  sessionSummary: TypeUserSummary | null
   loading: boolean
 }
 

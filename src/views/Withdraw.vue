@@ -10,19 +10,19 @@
             <svg-icon class="arrow-icon" name="Arrow" />
           </div>
           <div class="header-item" @click="showPicker = !showPicker">
-            <div class="value">{{ usdtType }}</div>
+            <div class="value">{{ selectNetworkType.text || '' }}</div>
             <svg-icon class="arrow-icon" name="Arrow" />
           </div>
         </div>
         <div class="fast-number">
           <div class="fast-title">{{ $t('account.availableBalance') }} <span>{{ userStore.info?.balance || '0.00' }}</span></div>
           <div class="input-control">
-            <input type="text" :placeholder="$t('account.entervalue')">
+            <input v-model="form.amount" type="text" :placeholder="$t('account.entervalue')">
           </div>
         </div>
         <div class="ui-input">
           <div class="input-control">
-            <input type="textarea" placeholder="wallet address">
+            <input v-model="form.address" type="textarea" placeholder="wallet address">
           </div>
         </div>
         <div class="submit">
@@ -47,23 +47,37 @@
   import SubmitSuccess from "@/components/SubmitSuccess.vue";
   import { ref } from "vue"
   import useUserStore from '@/stores/user'
+  import { userWithdraw } from '@/api/api'
   
   const userStore = useUserStore()
   const success = ref(false)
 
-  const columns = [
-    { text: 'ERC20', value: 'ERC20' },
-    { text: 'TRC20', value: 'TRC20' },
+  const columns:TypeNetworkType[] = [
+    { text: 'ERC20', value: 1 },
+    { text: 'TRC20', value: 2 },
   ];
-  const usdtType = ref('TRC20');
+  const form = ref({
+    amount: '',
+    address: ''
+  })
+  const selectNetworkType = ref<TypeNetworkType>(columns[1]);
   const showPicker = ref(false);
 
   const onConfirm = ({ selectedOptions }: any) => {
     showPicker.value = false;
-    usdtType.value = selectedOptions[0].value;
+    selectNetworkType.value = selectedOptions[0];
   };
   const submitForm = () => {
-    success.value = true
+    if(form.value.address && form.value.amount) {
+      userWithdraw({
+        amount: +form.value.amount,
+        address: form.value.address,
+        type: selectNetworkType.value.value,
+        userName: userStore.userInfo?.userName || ''
+      }).then(()=> {
+        success.value = true
+      })
+    }
   }
   </script>
   <style lang="less" scoped>

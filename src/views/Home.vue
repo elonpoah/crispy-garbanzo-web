@@ -46,7 +46,7 @@ import { onMounted, ref } from "vue";
 import { SessionType } from '@/constant'
 
 const router = useRouter()
-const gameClassifyData = ref<HomeRecommandSessionList[]>(
+const gameClassifyData = ref<TypeHomeRecommandSessionList[]>(
   [
   {
     category: SessionType.hot,

@@ -37,7 +37,7 @@ const sessionInfo = computed(()=> {
   }
 })
 const loading = ref(false)
-const sessionList = ref<SessionItem[]>([])
+const sessionList = ref<TypeSessionItem[]>([])
 const searchParams = ref({
   page: 1,
   pageSize: 20,

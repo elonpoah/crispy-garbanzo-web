@@ -1,27 +1,34 @@
-interface LoginRequest {
+interface TypeLoginRequest {
 	username: string;
 	password: string;
 }
 
-interface RegisterRequest extends LoginRequest {}
+interface TypeRegisterRequest extends TypeLoginRequest {}
 
-interface Paginatin {
+interface TypePaginatin {
   page: number;
   pageSize: number;
 }
 
-interface ChangepwdRequest {
+interface TypeChangepwdRequest {
   password: string;
   newPassword: string;
 }
 
-interface UserDeposit {
+interface TypeUserDeposit {
   userName: string;
   type: number;
   amount: number;
 }
 
-interface UserInfo {
+interface TypeUserWithdraw {
+  userName: string;
+  type: number;
+  amount: number;
+  address: string;
+}
+
+interface TypeUserInfo {
   uid: number;
   userName: string;
   nickName: string;
@@ -31,23 +38,23 @@ interface UserInfo {
   freezeBalance: number;
 }
 
-interface UserSummary {
+interface TypeUserSummary {
 	sessionCount: number;
 	freeCount:    number
 }
 
-interface NetworkType {
+interface TypeNetworkType {
   text: string;
   value: number;
 }
 
-interface SessionList {
+interface TypeSessionList {
   page: number;
   pageSize: number;
   type: number;
 }
 
-interface SessionItem {
+interface TypeSessionItem {
   id: number;
   uids: number;
   activityLimitCount: number;
@@ -56,13 +63,13 @@ interface SessionItem {
   activitySpend: number ;
 }
 
-interface HomeRecommandSessionList {
+interface TypeHomeRecommandSessionList {
   category: SessionType,
   label: string,
   icon: string,
   className: string,
   path: string,
-  list: SessionItem[]
+  list: TypeSessionItem[]
 }
 
 enum SessionType {
@@ -71,22 +78,22 @@ enum SessionType {
   hightwrate = 'hightwrate'
 }
 
-interface HomeRecommandSessionListRes {
-  [SessionType.hot]: SessionItem[],
-  [SessionType.hightwrate]: SessionItem[],
-  [SessionType.hugebonus]: SessionItem[]
+interface TypeHomeRecommandSessionListRes {
+  [SessionType.hot]: TypeSessionItem[],
+  [SessionType.hightwrate]: TypeSessionItem[],
+  [SessionType.hugebonus]: TypeSessionItem[]
 }
 
-interface SessionListRes extends Paginatin {
-  list: SessionItem[],
+interface TypeSessionListRes extends TypePaginatin {
+  list: TypeSessionItem[],
   total: number
 }
 
-interface GameHistoryRequest extends Paginatin {
+interface TypeGameHistoryRequest extends TypePaginatin {
   status?: number
 }
 
-interface GameHistoryItem {
+interface TypeGameHistoryItem {
   "id": string,
   "sessionId": number,
   "activityName": string,
@@ -99,8 +106,8 @@ interface GameHistoryItem {
   "createdAt": string,
 }
 
-interface GameHistoryRes extends Paginatin {
-  list: GameHistoryItem[],
+interface TypeGameHistoryRes extends TypePaginatin {
+  list: TypeGameHistoryItem[],
   total: number
 }
 
