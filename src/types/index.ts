@@ -15,6 +15,12 @@ interface ChangepwdRequest {
   newPassword: string;
 }
 
+interface UserDeposit {
+  userName: string;
+  type: number;
+  amount: number;
+}
+
 interface UserInfo {
   uid: number;
   userName: string;
@@ -28,6 +34,11 @@ interface UserInfo {
 interface UserSummary {
 	sessionCount: number;
 	freeCount:    number
+}
+
+interface NetworkType {
+  text: string;
+  value: number;
 }
 
 interface SessionList {

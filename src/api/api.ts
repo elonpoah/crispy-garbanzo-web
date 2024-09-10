@@ -16,6 +16,10 @@ export const getUserInfo = () => {
   return http.get('/user/info')
 }
 
+export const userDeposit = (data: UserDeposit) => {
+  return http.post('/user/deposit', data)
+}
+
 export const getDepositHistory = (data: Paginatin) => {
   return http.get('/deposit/history', data)
 }

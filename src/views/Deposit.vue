@@ -10,7 +10,7 @@
           <svg-icon class="arrow-icon" name="Arrow" />
         </div>
         <div class="header-item" @click="openTypePicker">
-          <div class="value">{{ usdtType }}</div>
+          <div class="value">{{ selectNetworkType?.text || '' }}</div>
           <svg-icon class="arrow-icon" name="Arrow" />
         </div>
       </div>
@@ -46,8 +46,8 @@
       </div>
       <p class="address-tip">{{ $t('account.tokenaddress') }}</p>
       <div class="address-block">
-        <p class="text">0x5C99737e2B13ed6f268eeffcd2E9Fb486b9414b1</p>
-        <span class="copy-btn" v-clipboard:copy="0x5C99737e2B13ed6f268eeffcd2E9Fb486b9414b1"
+        <p class="text">{{ tokenAddress }}</p>
+        <span class="copy-btn" v-clipboard:copy="tokenAddress"
         v-clipboard:success="onSuccess"
         v-clipboard:error="onError">{{ $t('account.copy') }}</span>
       </div>
@@ -79,7 +79,10 @@ import { showNotify } from 'vant'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import type { Level, RenderAs } from 'qrcode.vue'
+import useUserStore from '@/stores/user'
+import { userDeposit } from '@/api/api'
 
+const userStore = useUserStore()
 const { t } = useI18n()
 const tokenAddress = ref('qrcode')
 const level = ref<Level>('M')
@@ -90,16 +93,16 @@ const fastNum = [10, 50, 100, 200, 500, 1000]
 const coinValue = ref()
 const success = ref(false)
 
-const columns = [
-  { text: 'ERC20', value: 'ERC20' },
-  { text: 'TRC20', value: 'TRC20' },
+const columns:NetworkType[] = [
+  { text: 'ERC20', value: 1 },
+  { text: 'TRC20', value: 2 },
 ];
-const usdtType = ref('TRC20');
+const selectNetworkType = ref<NetworkType>(columns[1]);
 const showPicker = ref(false);
 
 const onConfirm = ({ selectedOptions }: any) => {
   showPicker.value = false;
-  usdtType.value = selectedOptions[0].value;
+  selectNetworkType.value = selectedOptions[0];
 };
 
 const openTypePicker = () => {
@@ -116,8 +119,15 @@ const onError = () => {
   showNotify({ type: 'warning', teleport: '#app', message: t('others.copyfail') });
 }
 const submitForm = () => {
-  success.value = true
-  tokenAddress.value = '0x5C99737e2B13ed6f268eeffcd2E9Fb486b9414b1'
+  if(!coinValue.value || coinValue.value <= 0) return
+  userDeposit({
+    userName: userStore.userInfo?.userName || '',
+    type: selectNetworkType.value?.value,
+    amount: coinValue.value || 0
+  }).then((res)=> {
+    success.value = true
+    tokenAddress.value = res.data
+  })
 }
 const transformConfim = () => {
   router.back()
