@@ -3,3 +3,9 @@ export enum SessionType {
   hugebonus = 'hugebonus',
   hightwrate = 'hightwrate'
 }
+
+export enum FreeType {
+  daily = 'daily',
+  weekly = 'weekly',
+  monthly = 'monthly'
+}

@@ -92,5 +92,27 @@
     "underOpen": "To be drawn",
     "win": "Won",
     "lose": "Fail"
+  },
+  "free": {
+    "jinnw": "Join now",
+    "join": " you will be eligible to participate",
+    "upt": "Up to",
+    "bnus": "bonus",
+    "validusers": "Valid users",
+    "daily": {
+      "title": "Daily Free Spin",
+      "desc1": "By the end of the week, if the number of [valid users] who have cumulatively registered through the link reaches at least ",
+      "desc3": "A user who registers on the same day and participates in a lottery once"
+    },
+    "weekly": {
+      "title": "Weekly Free Spin",
+      "desc1": "By the end of the month, if the number of [valid users] who have cumulatively registered through the link reaches at least ",
+      "desc3": "A user who registers within a week and participates in a lottery once"
+    },
+    "monthly": {
+      "title": "Monthly Free Spin",
+      "desc1": "By the end of the day, if the number of [valid users] who have cumulatively registered through the link reaches at least ",
+      "desc3": "A user who registers within a month and participates in a lottery once"
+    }
   }
 }

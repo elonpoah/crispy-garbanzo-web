@@ -13,7 +13,7 @@
           </div>
           <div class="bottom">
             <div>{{ $t('record.TicketPrice') }}: ${{ item.activitySpend }}</div>
-            <div>{{ formatStatus(item.status) }}</div>
+            <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
           </div>
         </div>
         <div v-show="showLoadMore" @click="loadMore" class="load-more">{{ $t('common.loadMore') }}</div>
@@ -35,9 +35,22 @@ const loading = ref(false)
 const route = useRoute()
 const { t } = useI18n()
 const formatStatus = (status: number) => {
-  if (status == 1) return t('record.underOpen')
-  if (status == 2) return t('record.win')
-  if (status == 3) return t('record.lose')
+  if (status == 1) return {
+    statusStr: t('record.underOpen'),
+    statusClass: 'none'
+  }
+  if (status == 2) return {
+    statusStr: t('record.win'),
+    statusClass: 'win'
+  }
+  if (status == 3) return {
+    statusStr: t('record.lose'),
+    statusClass: 'lose'
+  }
+  return {
+    statusStr: '',
+    statusClass: 'none'
+  }
 }
 const searchParams = ref({
   page: 1,
@@ -62,7 +75,15 @@ const loadMore = () => {
 const getDataList = (isMore = false) => {
   const status = route.query.status ? Number(route.query.status) : undefined
   getGameHistory({...searchParams.value, status}).then((res)=> {
-    dataList.value = isMore ? dataList.value.concat(res.data.list) : res.data.list
+    const data = res.data.list.map(e => {
+      const sjsn = formatStatus(e.status)
+      return {
+        ...e,
+        statusStr: sjsn.statusStr,
+        statusClass: sjsn.statusClass
+      }
+    })
+    dataList.value = isMore ? dataList.value.concat(data) : data
     total.value = res.data.total
     loading.value = false
   })
@@ -103,6 +124,13 @@ onMounted(()=> {
       font-size: 14px;
       padding-top: 5px;
       border-top: 1px solid #34363a;
+      font-weight: 700;
+      .win {
+        color: var(--primary-color);
+      }
+      .lose {
+        color: red;
+      }
     }
     .amount {
       font-size: 18px;

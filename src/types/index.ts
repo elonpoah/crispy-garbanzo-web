@@ -94,16 +94,18 @@ interface TypeGameHistoryRequest extends TypePaginatin {
 }
 
 interface TypeGameHistoryItem {
-  "id": string,
-  "sessionId": number,
-  "activityName": string,
-  "activityBonus": number,
-  "activitySpend": number,
-  "activityLimitCount": number,
-  "openTime": number,
-  "uids": number,
-  "status": number,
-  "createdAt": string,
+  id: string,
+  sessionId: number,
+  activityName: string,
+  activityBonus: number,
+  activitySpend: number,
+  activityLimitCount: number,
+  openTime: number,
+  uids: number,
+  status: number,
+  createdAt: string,
+  statusStr?: string,
+  statusClass?: string,
 }
 
 interface TypeGameHistoryRes extends TypePaginatin {

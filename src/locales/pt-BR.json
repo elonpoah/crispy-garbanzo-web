@@ -92,5 +92,27 @@
     "underOpen": "A ser sorteado",
     "win": "Ganhou",
     "lose": "Falhou"
+  },
+  "free": {
+    "jinnw": "participar",
+    "join": "você estará elegível para participar",
+    "upt": "Até ",
+    "bnus": "bônus",
+    "validusers": "Usuário válido: ",
+    "daily": {
+      "title": "Diário Giro Grátis",
+      "desc1": "Até o final da semana, se o número de usuários válidos que se cadastraram cumulativamente através do link atingir pelo menos ",
+      "desc3": "Um usuário que se cadastra no mesmo dia e participa de um sorteio uma vez"
+    },
+    "weekly": {
+      "title": "Semanal Giro Grátis",
+      "desc1": "Até o final do mês, se o número de usuários válidos que se cadastraram cumulativamente através do link atingir pelo menos ",
+      "desc3": "Um usuário que se cadastra dentro de uma semana e participa de um sorteio uma vez"
+    },
+    "monthly": {
+      "title": "Mensal Giro Grátis",
+      "desc1": "Até o final do dia, se o número de usuários válidos que se cadastraram cumulativamente através do link atingir pelo menos ",
+      "desc3": "Um usuário que se cadastra dentro de um mês e participa de um sorteio uma vez"
+    }
   }
 }

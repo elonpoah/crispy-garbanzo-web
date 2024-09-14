@@ -201,7 +201,7 @@ onMounted(()=> {
       height: 100%;
       left: 0;
       top: 0;
-      background-image: url(/src/assets/images/common_header_bg.png);
+      background-image: url(/src/assets/images/bgif.png);
       background-repeat: no-repeat;
       background-size: contain;
       background-position-y: 80px;

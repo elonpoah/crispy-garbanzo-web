@@ -11,7 +11,7 @@
       <div class="content">
         <div class="item">
           <p class="title">{{ $t('account.tobedrawn') }}</p>
-          <p class="value" @click="navigateFn('/game-history?status=0')">{{ sessionSummary?.sessionCount || '0' }}</p>
+          <p class="value" @click="navigateFn('/game-history?status=1')">{{ sessionSummary?.sessionCount || '0' }}</p>
         </div>
         <div class="item">
           <p class="title">{{ $t('account.freespintimes') }}</p>

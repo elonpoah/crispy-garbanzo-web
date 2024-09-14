@@ -35,7 +35,22 @@ const router = createRouter({
         },
       ]
     },
-    
+    {
+      path: '/freespin',
+      name: 'Freespin',
+      // route level code-splitting
+      // this generates a separate chunk (freespin.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/Freespin.vue')
+    },
+    {
+      path: '/freespin/:type',
+      name: 'FreespinDetail',
+      // route level code-splitting
+      // this generates a separate chunk (freespinDetail.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/FreespinDetail.vue')
+    },
     {
       path: '/login',
       name: 'Login',

@@ -27,21 +27,21 @@ import NavBack from "@/components/NavBack.vue";
 const list = [
   {
     orderId: '2020200200101',
-    type: 'ERC-20',
+    type: 'ERC20',
     amount: 200,
     createTime: '2024-08-24 10:23:30',
     status: 'success'
   },
   {
     orderId: '2020200200121',
-    type: 'TRC-20',
+    type: 'TRC20',
     amount: 100,
     createTime: '2024-08-24 10:23:30',
     status: 'fail'
   },
   {
     orderId: '2020200200145',
-    type: 'ERC-20',
+    type: 'ERC20',
     amount: 500,
     createTime: '2024-08-24 10:23:30',
     status: 'pending'

@@ -16,7 +16,7 @@ onMounted(()=> {
 
 setTimeout(()=> {
   userStore.setLoadingPage()
-},1000)
+},500)
 </script>
 
 <template>
