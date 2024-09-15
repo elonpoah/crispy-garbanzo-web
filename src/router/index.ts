@@ -46,6 +46,7 @@ const router = createRouter({
     {
       path: '/freespin/:type',
       name: 'FreespinDetail',
+      meta: {auth: true},
       // route level code-splitting
       // this generates a separate chunk (freespinDetail.[hash].js) for this route
       // which is lazy-loaded when the route is visited.

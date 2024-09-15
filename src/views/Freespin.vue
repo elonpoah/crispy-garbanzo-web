@@ -2,27 +2,27 @@
   <div class="page">
     <NavBack title="Freespin" />
     <div class="page-inner">
-      <div class="pitem green">
+      <div class="pitem green" @click="router.push('/freespin/daily')">
         <div class="content">
           <p class="title">{{ $t('free.daily.title') }}</p>
           <p class="bonus">{{ $t('free.upt') }} 5 {{ $t('free.bnus') }}</p>
-          <button class="button active join" @click="router.push('/freespin/daily')">{{ $t('free.jinnw') }}</button>
+          <button class="button active join">{{ $t('free.jinnw') }}</button>
         </div>
         <img class="img" src="@/assets/images/bg1.png" alt="">
       </div>
-      <div class="pitem purple">
+      <div class="pitem purple" @click="router.push('/freespin/weekly')">
         <img class="img" src="@/assets/images/bg2.png" alt="">
         <div class="content">
           <p class="title">{{ $t('free.weekly.title') }}</p>
           <p class="bonus">{{ $t('free.upt') }} 30 {{ $t('free.bnus') }}</p>
-          <button class="button active join purple" @click="router.push('/freespin/weekly')"> {{ $t('free.jinnw') }}</button>
+          <button class="button active join purple"> {{ $t('free.jinnw') }}</button>
         </div>
       </div>
-      <div class="pitem orange">
+      <div class="pitem orange" @click="router.push('/freespin/monthly')">
         <div class="content">
           <p class="title">{{ $t('free.monthly.title') }}</p>
           <p class="bonus">{{ $t('free.upt') }} 100 {{ $t('free.bnus') }}</p>
-          <button class="button active join orange" @click="router.push('/freespin/monthly')"> {{ $t('free.jinnw') }}</button>
+          <button class="button active join orange"> {{ $t('free.jinnw') }}</button>
         </div>
         <img class="img" src="@/assets/images/bg3.png" alt="">
       </div>

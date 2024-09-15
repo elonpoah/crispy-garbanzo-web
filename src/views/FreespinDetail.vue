@@ -7,7 +7,6 @@
           <p class="title">{{ descripCur.title }}</p>
           <p class="bonus">{{ $t('free.upt') }} {{ descripCur.bonus }} {{ $t('free.bnus') }}</p>
         </div>
-        <img class="img" src="@/assets/images/bg1.png" alt="">
       </div>
       <div>
         <button class="button active submit-btn">
@@ -18,7 +17,7 @@
         <h2>{{ $t('session_detail.title') }}</h2>
         <p>1.{{ descripCur.desc1 }} <span class="warning">{{ descripCur.count }}</span> {{ $t('free.join')}}</p>
         <h2>{{ descripCur.validusers }}</h2>
-        <p class="active">2.{{ descripCur.desc3 }}</p>
+        <p class="active">2.{{ $t('free.desc3') }}</p>
       </div>
     </div>
   </div>
@@ -66,6 +65,7 @@ const descripCur = computed(()=> descrip[route.params.type as FreeType])
 .page-inner {
   min-height: calc(100vh - 55px);
   padding: 10px;
+  background: linear-gradient(180deg,rgba(23,183,69,.2) 0%,rgba(30,130,59,0) 100%),#1C1E22;
   .content-rule {
     font-size: 14px;
     h2 {

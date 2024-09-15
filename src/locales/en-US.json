@@ -94,25 +94,23 @@
     "lose": "Fail"
   },
   "free": {
-    "jinnw": "Join now",
+    "jinnw": "Spin Now",
     "join": " you will be eligible to participate",
     "upt": "Up to",
     "bnus": "bonus",
     "validusers": "Valid users",
+    "desc3": "Register within the valid period and participate in a lucky draw",
     "daily": {
       "title": "Daily Free Spin",
-      "desc1": "By the end of the week, if the number of [valid users] who have cumulatively registered through the link reaches at least ",
-      "desc3": "A user who registers on the same day and participates in a lottery once"
+      "desc1": "By the end of the day, number of new account registered through the link reaches at least "
     },
     "weekly": {
       "title": "Weekly Free Spin",
-      "desc1": "By the end of the month, if the number of [valid users] who have cumulatively registered through the link reaches at least ",
-      "desc3": "A user who registers within a week and participates in a lottery once"
+      "desc1": "By the end of the week, number of new account registered through the link reaches at least "
     },
     "monthly": {
       "title": "Monthly Free Spin",
-      "desc1": "By the end of the day, if the number of [valid users] who have cumulatively registered through the link reaches at least ",
-      "desc3": "A user who registers within a month and participates in a lottery once"
+      "desc1": "By the end of the month, number of new account registered through the link reaches at least "
     }
   }
 }
