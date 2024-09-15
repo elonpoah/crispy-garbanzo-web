@@ -4,6 +4,12 @@ import enUS from './locales/en-US.json'
 import ptBR from './locales/pt-BR.json'
 import zhCN from './locales/zh-CN.json'
 
+import idID from './locales/id-ID.json'
+import jaJP from './locales/ja-JP.json'
+import koKR from './locales/ko-KR.json'
+import thTH from './locales/th-TH.json'
+import viVN from './locales/vi-VN.json'
+
 const i18n = createI18n({
   legacy: false,
   globalInjection: true,
@@ -12,7 +18,12 @@ const i18n = createI18n({
   messages: {
       'en-US': enUS,
       'zh-CN': zhCN,
-      'pt-BR': ptBR
+      'pt-BR': ptBR,
+      'id-ID': idID,
+      'ja-JP': jaJP,
+      'ko-KR': koKR,
+      'th-TH': thTH,
+      'vi-VN': viVN
   }
 })
 

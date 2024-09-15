@@ -113,4 +113,4 @@ interface TypeGameHistoryRes extends TypePaginatin {
   total: number
 }
 
-type SupportedLanguages = 'en-US' | 'zh-CN' | 'pt-BR';
+type SupportedLanguages = 'id-ID' | 'en-US' | 'zh-CN' | 'pt-BR' | 'ja-JP' | 'ko-KR' | 'th-TH' | 'vi-VN';

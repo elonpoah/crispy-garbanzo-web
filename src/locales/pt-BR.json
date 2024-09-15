@@ -94,25 +94,28 @@
     "lose": "Falhou"
   },
   "free": {
+    "registrationInfo": "Estatísticas de registo através deste link",
+    "registrations": "registos",
+    "participants": "participantes no sorteio",
     "congratulations": "Parabéns",
     "srry": "Desculpe, melhor da próxima vez",
     "jinnw": "participar",
-    "join": "você estará elegível para participar",
+    "join": "nova conta registrada",
     "upt": "Até ",
     "bnus": "bônus",
     "validusers": "Usuários válidos",
-    "desc3": "Registre-se dentro do período válido e participe de um sorteio",
+    "desc3": "Compartilhe o link de registro, pelo menos",
     "daily": {
       "title": "Giro Diário Grátis",
-      "desc1": "Até o final do dia, o número de novas contas registradas através do link atinge pelo menos "
+      "desc1": "Nova conta registrada deve participar de um sorteio "
     },
     "weekly": {
       "title": "Giro Semanal Grátis",
-      "desc1": "Até o final da semana, o número de novas contas registradas através do link atinge pelo menos "
+      "desc1": "Nova conta registrada deve participar de um sorteio "
     },
     "monthly": {
       "title": "Giro Mensal Grátis",
-      "desc1": "Até o final do mês, o número de novas contas registradas através do link atinge pelo menos "
+      "desc1": "Nova conta registrada deve participar de um sorteio "
     }
   }
 }

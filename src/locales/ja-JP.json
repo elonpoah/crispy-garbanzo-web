@@ -1,0 +1,121 @@
+{
+  "common": {
+    "tabbarHome": "ホーム",
+    "tabbarSearch": "検索",
+    "tabbarAccount": "アカウント",
+    "detail": "詳細",
+    "submit": "送信",
+    "signup": "サインアップ",
+    "signin": "サインイン",
+    "welcome": "ようこそ",
+    "start": "今すぐゲームの旅を始めよう！",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "usernameErr": "数字と文字を含む、5～10文字の長さ",
+    "passwordErr": "数字、文字、特殊記号を含む、5～10文字の長さ",
+    "loadMore": "もっと読み込む"
+  },
+  "register": {
+    "alreadyhaveaccount": "すでにアカウントをお持ちですか？",
+    "confirmPassword": "パスワードを確認する",
+    "confirmPasswordErr": "入力されたパスワードが一致しません"
+  },
+  "home": {
+    "get2": "総計",
+    "bonus": "ボーナス",
+    "tobeRich": "金運、豊かになる",
+    "freespin": "無料スピン",
+    "hugebonus": "巨大ボーナス",
+    "hightrate": "高レート",
+    "popular": "人気",
+    "hightwrate": "高勝率",
+    "viewall": "すべて表示"
+  },
+  "search": {
+    "desc": "セッションコードを検索",
+    "placeholder": "セッションコードを入力",
+    "emptyData": "結果がありません..."
+  },
+  "account": {
+    "tobedrawn": "抽選待ち",
+    "freespintimes": "無料スピン回数",
+    "wallet": "ウォレット",
+    "available": "利用可能",
+    "frozen": "凍結中",
+    "withdraw": "出金",
+    "deposit": "入金",
+    "gameh": "ゲーム履歴",
+    "withdrawh": "出金履歴",
+    "deposith": "入金履歴",
+    "changepwd": "パスワードを変更",
+    "loginout": "ログアウト",
+    "availableBalance": "利用可能な残高：",
+    "fastvalue": "クイック値",
+    "entervalue": "値を入力",
+    "depositTitle": "カウントダウンが終了する前に送金してください",
+    "tokenaddress": "入金アドレス",
+    "depositTips": "この入金アドレスにはUSDTのみを送信してください。6回のネットワーク確認後に自動的に入金されます。スマートコントラクトアドレスはサポートされていません（お問い合わせください）。",
+    "notice": "注意：",
+    "copy": "コピー",
+    "alreadysend": "すでに送信済み"
+  },
+  "session_detail": {
+    "pay": "支払う",
+    "getaticket": "チケットを取得",
+    "algetaticket": "すでに取得済み",
+    "share2friend": "友達にシェアしますか？",
+    "title": "参加方法",
+    "desc1": "1. 抽選時間前にチケットを購入してください",
+    "desc2": "2. 各アカウントは1枚のチケットしか購入できません",
+    "title2": "抽選はいつ行われますか？",
+    "desc3": "1. すべてのチケットが売り切れた後、抽選は自動的に行われ、最終的な抽選時間には影響されません。",
+    "desc4": "例：これは100ドルのセッションで、10枚のチケットが販売されています。最終的に10枚のチケットが売れ、ボーナスは99ドルです。",
+    "desc5": "2. 抽選時間が到達し、チケットが完売していない場合、最終賞金は販売状況に基づきます。",
+    "desc6": "例：これは100ドルのセッションで、10枚のチケットが販売されています。最終的に9枚のチケットが売れ、ボーナスは89ドルです。"
+  },
+  "resetpwd": {
+    "old": "古いパスワード",
+    "new": "新しいパスワード",
+    "cnew": "新しいパスワードを確認"
+  },
+  "others": {
+    "loginAgain": "更新成功！再度ログインしてください！",
+    "copysuccess": "コピー成功",
+    "copyfail": "コピー失敗",
+    "balanceNEnough": "残高が不足しています"
+  },
+  "record": {
+    "OpenTime": "オープン時間",
+    "SessionID": "セッションID",
+    "TotalBonus": "総ボーナス",
+    "TicketPrice": "チケット価格",
+    "underOpen": "抽選待ち",
+    "win": "勝利",
+    "lose": "敗北"
+  },
+  "free": {
+    "registrationInfo": "このリンク経由の登録統計",
+    "registrations": "登録数",
+    "participants": "抽選参加者",
+    "congratulations": "おめでとうございます🎉",
+    "srry": "残念、次回に期待してください",
+    "jinnw": "今すぐスピン",
+    "join": "新規登録アカウント",
+    "upt": "最大",
+    "bnus": "ボーナス",
+    "rules": "無料スピンを取得する方法は？",
+    "desc3": "新規登録アカウントは抽選に参加する必要があります",
+    "daily": {
+      "title": "毎日の無料スピン",
+      "desc1": "登録リンクをシェア、少なくとも"
+    },
+    "weekly": {
+      "title": "毎週の無料スピン",
+      "desc1": "登録リンクをシェア、少なくとも"
+    },
+    "monthly": {
+      "title": "毎月の無料スピン",
+      "desc1": "登録リンクをシェア、少なくとも"
+    }
+  }
+}

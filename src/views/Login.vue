@@ -95,7 +95,7 @@ const onSubmit = async () => {
 
 const goback = () => {
   if(route.query.redirect) {
-    router.replace(route.query.redirect as string)
+    router.replace('/')
   } else {
     router.back()
   }

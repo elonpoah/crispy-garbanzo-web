@@ -1,0 +1,121 @@
+{
+  "common": {
+    "tabbarHome": "Trang chủ",
+    "tabbarSearch": "Tìm kiếm",
+    "tabbarAccount": "Tài khoản",
+    "detail": "Chi tiết",
+    "submit": "Gửi",
+    "signup": "Đăng ký",
+    "signin": "Đăng nhập",
+    "welcome": "Chào mừng bạn đến với",
+    "start": "Bắt đầu hành trình trò chơi của bạn ngay bây giờ!",
+    "username": "Tên người dùng",
+    "password": "Mật khẩu",
+    "usernameErr": "Chứa số và chữ cái, dài từ 5-10 ký tự",
+    "passwordErr": "Số, chữ cái, ký tự đặc biệt, dài từ 5-10 ký tự",
+    "loadMore": "Đang tải thêm"
+  },
+  "register": {
+    "alreadyhaveaccount": "Đã có tài khoản?",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "confirmPasswordErr": "Mật khẩu nhập hai lần không khớp"
+  },
+  "home": {
+    "get2": "Nhận lên đến",
+    "bonus": "thưởng",
+    "tobeRich": "May mắn với tiền bạc, Trở nên giàu có",
+    "freespin": "Quay miễn phí",
+    "hugebonus": "tiền thưởng cao",
+    "hightrate": "Tỷ lệ cao",
+    "popular": "Phổ biến",
+    "hightwrate": "Tỷ lệ thắng cao",
+    "viewall": "Xem tất cả"
+  },
+  "search": {
+    "desc": "Tìm mã phiên",
+    "placeholder": "Nhập mã phiên",
+    "emptyData": "Kết quả trống..."
+  },
+  "account": {
+    "tobedrawn": "Chờ rút thăm",
+    "freespintimes": "Số lần quay miễn phí",
+    "wallet": "Ví",
+    "available": "Có sẵn",
+    "frozen": "Bị đóng băng",
+    "withdraw": "Rút tiền",
+    "deposit": "Nạp tiền",
+    "gameh": "Lịch sử trò chơi",
+    "withdrawh": "Lịch sử rút tiền",
+    "deposith": "Lịch sử nạp tiền",
+    "changepwd": "Đổi mật khẩu",
+    "loginout": "Đăng xuất",
+    "availableBalance": "Số dư khả dụng: ",
+    "fastvalue": "Giá trị nhanh",
+    "entervalue": "Nhập giá trị",
+    "depositTitle": " Vui lòng gửi trước khi đồng hồ đếm ngược kết thúc ",
+    "tokenaddress": "Địa chỉ nạp tiền",
+    "depositTips": " Chỉ gửi USDT vào địa chỉ nạp tiền này. Tiền sẽ được nạp tự động sau 6 xác nhận mạng. Địa chỉ hợp đồng thông minh không được hỗ trợ (Liên hệ với chúng tôi). ",
+    "notice": "THÔNG BÁO:",
+    "copy": "sao chép",
+    "alreadysend": "Đã gửi"
+  },
+  "session_detail": {
+    "pay": "THANH TOÁN",
+    "getaticket": "Nhận vé",
+    "algetaticket": "Đã nhận",
+    "share2friend": "Chia sẻ với bạn bè?",
+    "title": "Cách tham gia",
+    "desc1": "1.Trước thời gian mở, Mua một vé",
+    "desc2": "2.Mỗi tài khoản chỉ có thể mua một vé",
+    "title2": "Khi nào xổ số sẽ được rút?",
+    "desc3": "1.Sau khi tất cả vé được bán hết, xổ số sẽ được rút tự động và không bị ảnh hưởng bởi thời gian rút cuối cùng.",
+    "desc4": "ví dụ: đây là phiên $100, có 10 vé bán, Cuối cùng, 10 vé được bán, tiền thưởng là $99",
+    "desc5": "2.Khi đến giờ rút thăm và các vé chưa bán hết, giải thưởng cuối cùng sẽ dựa trên doanh số bán hàng.",
+    "desc6": "ví dụ: đây là phiên $100, có 10 vé bán, Cuối cùng, 9 vé được bán, tiền thưởng là $89"
+  },
+  "resetpwd": {
+    "old": "Mật khẩu cũ",
+    "new": "Mật khẩu mới",
+    "cnew": "Xác nhận mật khẩu mới"
+  },
+  "others": {
+    "loginAgain": "Cập nhật thành công! Đăng nhập lại!",
+    "copysuccess": "Sao chép thành công",
+    "copyfail": "Sao chép thất bại",
+    "balanceNEnough": "Số dư không đủ"
+  },
+  "record": {
+    "OpenTime": "Thời gian mở",
+    "SessionID": "ID phiên",
+    "TotalBonus": "Tổng tiền thưởng",
+    "TicketPrice": "Giá vé",
+    "underOpen": "Chờ rút thăm",
+    "win": "Thắng",
+    "lose": "Thua"
+  },
+  "free": {
+    "registrationInfo": "Thống kê đăng ký qua liên kết này",
+    "registrations": "đăng ký",
+    "participants": "người tham gia rút thăm",
+    "congratulations": "Chúc mừng🎉",
+    "srry": "Xin lỗi, may mắn lần sau",
+    "jinnw": "Quay ngay",
+    "join": " tài khoản đăng ký mới",
+    "upt": "Lên đến",
+    "bnus": "tiền thưởng",
+    "rules": "Làm thế nào để nhận quay miễn phí?",
+    "desc3": "Tài khoản đăng ký mới phải tham gia rút thăm",
+    "daily": {
+      "title": "Quay miễn phí hàng ngày",
+      "desc1": "Chia sẻ liên kết đăng ký, ít nhất "
+    },
+    "weekly": {
+      "title": "Quay miễn phí hàng tuần",
+      "desc1": "Chia sẻ liên kết đăng ký, ít nhất "
+    },
+    "monthly": {
+      "title": "Quay miễn phí hàng tháng",
+      "desc1": "Chia sẻ liên kết đăng ký, ít nhất "
+    }
+  }
+}

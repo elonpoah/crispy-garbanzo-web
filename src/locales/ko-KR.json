@@ -1,0 +1,121 @@
+{
+  "common": {
+    "tabbarHome": "홈",
+    "tabbarSearch": "검색",
+    "tabbarAccount": "계정",
+    "detail": "세부사항",
+    "submit": "제출",
+    "signup": "가입하기",
+    "signin": "로그인",
+    "welcome": "환영합니다",
+    "start": "지금 게임 여정을 시작하세요!",
+    "username": "사용자 이름",
+    "password": "비밀번호",
+    "usernameErr": "숫자와 문자 포함, 5-10자",
+    "passwordErr": "숫자, 문자, 특수 기호 포함, 5-10자",
+    "loadMore": "더 로드하기"
+  },
+  "register": {
+    "alreadyhaveaccount": "이미 계정이 있습니까?",
+    "confirmPassword": "비밀번호 확인",
+    "confirmPasswordErr": "입력한 두 비밀번호가 일치하지 않습니다"
+  },
+  "home": {
+    "get2": "최대",
+    "bonus": "보너스",
+    "tobeRich": "돈에 행운을, 부자가 되세요",
+    "freespin": "무료 스핀",
+    "hugebonus": "거대한 보너스",
+    "hightrate": "높은 비율",
+    "popular": "인기",
+    "hightwrate": "높은 당첨률",
+    "viewall": "모두 보기"
+  },
+  "search": {
+    "desc": "세션 코드 검색",
+    "placeholder": "세션 코드 입력",
+    "emptyData": "결과 없음..."
+  },
+  "account": {
+    "tobedrawn": "추첨 예정",
+    "freespintimes": "무료 스핀 횟수",
+    "wallet": "지갑",
+    "available": "사용 가능",
+    "frozen": "동결됨",
+    "withdraw": "출금",
+    "deposit": "입금",
+    "gameh": "게임 기록",
+    "withdrawh": "출금 기록",
+    "deposith": "입금 기록",
+    "changepwd": "비밀번호 변경",
+    "loginout": "로그아웃",
+    "availableBalance": "사용 가능한 잔액: ",
+    "fastvalue": "빠른 가치",
+    "entervalue": "값 입력",
+    "depositTitle": "카운트다운이 끝나기 전에 송금해 주세요",
+    "tokenaddress": "입금 주소",
+    "depositTips": "이 입금 주소로 USDT만 송금하세요. 6회 네트워크 확인 후 자동으로 입금됩니다. 스마트 계약 주소는 지원되지 않습니다(문의해 주세요).",
+    "notice": "알림:",
+    "copy": "복사",
+    "alreadysend": "이미 송금됨"
+  },
+  "session_detail": {
+    "pay": "결제",
+    "getaticket": "티켓 받기",
+    "algetaticket": "이미 받음",
+    "share2friend": "친구에게 공유하시겠습니까?",
+    "title": "참여 방법",
+    "desc1": "1. 오픈 시간 전에 티켓을 구매하세요",
+    "desc2": "2. 각 계정당 한 장의 티켓만 구매할 수 있습니다",
+    "title2": "추첨은 언제 이루어지나요?",
+    "desc3": "1. 모든 티켓이 판매된 후 추첨이 자동으로 진행되며, 최종 추첨 시간에 영향을 받지 않습니다.",
+    "desc4": "예: $100 세션, 10장 티켓 판매, 최종적으로 10장 판매, 보너스는 $99",
+    "desc5": "2. 추첨 시간에 도달했으나 티켓이 다 팔리지 않은 경우, 최종 상금은 판매량에 따라 결정됩니다.",
+    "desc6": "예: $100 세션, 10장 티켓 판매, 최종적으로 9장 판매, 보너스는 $89"
+  },
+  "resetpwd": {
+    "old": "기존 비밀번호",
+    "new": "새 비밀번호",
+    "cnew": "새 비밀번호 확인"
+  },
+  "others": {
+    "loginAgain": "업데이트 성공, 다시 로그인하세요!",
+    "copysuccess": "복사 성공",
+    "copyfail": "복사 실패",
+    "balanceNEnough": "잔액 부족"
+  },
+  "record": {
+    "OpenTime": "오픈 시간",
+    "SessionID": "세션 ID",
+    "TotalBonus": "총 보너스",
+    "TicketPrice": "티켓 가격",
+    "underOpen": "추첨 예정",
+    "win": "당첨",
+    "lose": "실패"
+  },
+  "free": {
+    "registrationInfo": "이 링크를 통한 등록 통계",
+    "registrations": "등록",
+    "participants": "추첨 참가자",
+    "congratulations": "축하합니다🎉",
+    "srry": "죄송합니다, 다음에 더 잘하세요",
+    "jinnw": "지금 스핀",
+    "join": "새 계정 등록",
+    "upt": "최대",
+    "bnus": "보너스",
+    "rules": "무료 스핀을 얻으려면 어떻게 해야 하나요?",
+    "desc3": "새로 등록한 계정이 추첨에 참여해야 합니다",
+    "daily": {
+      "title": "일일 무료 스핀",
+      "desc1": "등록 링크를 공유하고, 최소 "
+    },
+    "weekly": {
+      "title": "주간 무료 스핀",
+      "desc1": "등록 링크를 공유하고, 최소 "
+    },
+    "monthly": {
+      "title": "월간 무료 스핀",
+      "desc1": "등록 링크를 공유하고, 최소 "
+    }
+  }
+}

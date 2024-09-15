@@ -1,0 +1,121 @@
+{
+  "common": {
+    "tabbarHome": "Beranda",
+    "tabbarSearch": "Cari",
+    "tabbarAccount": "Akun",
+    "detail": "Detail",
+    "submit": "Kirim",
+    "signup": "Daftar",
+    "signin": "Masuk",
+    "welcome": "Selamat datang di",
+    "start": "Mulai perjalanan permainan Anda sekarang!",
+    "username": "Nama Pengguna",
+    "password": "Kata Sandi",
+    "usernameErr": "Berisi angka dan huruf, panjang 5-10",
+    "passwordErr": "Angka, huruf, simbol khusus, panjang 5-10",
+    "loadMore": "Memuat Lebih Banyak"
+  },
+  "register": {
+    "alreadyhaveaccount": "Sudah punya akun?",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "confirmPasswordErr": "Kata sandi yang dimasukkan tidak konsisten"
+  },
+  "home": {
+    "get2": "Dapatkan hingga",
+    "bonus": "bonus",
+    "tobeRich": "Beruntung dengan Uang, Menjadi Kaya",
+    "freespin": "Putaran Gratis",
+    "hugebonus": "Bonus Besar",
+    "hightrate": "Tingkat Tinggi",
+    "popular": "Populer",
+    "hightwrate": "Tingkat Kemenangan Tinggi",
+    "viewall": "Lihat semua"
+  },
+  "search": {
+    "desc": "Cari kode sesi",
+    "placeholder": "masukkan kode sesi",
+    "emptyData": "Hasil kosong..."
+  },
+  "account": {
+    "tobedrawn": "Akan Diundi",
+    "freespintimes": "Jumlah Putaran Gratis",
+    "wallet": "Dompet",
+    "available": "Tersedia",
+    "frozen": "Dibekukan",
+    "withdraw": "Tarik",
+    "deposit": "Setor",
+    "gameh": "Riwayat Permainan",
+    "withdrawh": "Riwayat Penarikan",
+    "deposith": "Riwayat Setoran",
+    "changepwd": "Ganti Kata Sandi",
+    "loginout": "Keluar",
+    "availableBalance": "Saldo tersedia: ",
+    "fastvalue": "Nilai Cepat",
+    "entervalue": "Masukkan Nilai",
+    "depositTitle": " Harap kirim sebelum hitungan mundur berakhir ",
+    "tokenaddress": "Alamat Setoran",
+    "depositTips": " Kirim hanya USDT ke alamat setoran ini. Koin akan disetor secara otomatis setelah 6 konfirmasi jaringan. Alamat kontrak pintar tidak didukung (Hubungi kami). ",
+    "notice": "PEMBERITAHUAN:",
+    "copy": "salin",
+    "alreadysend": "Sudah Dikirim"
+  },
+  "session_detail": {
+    "pay": "BAYAR",
+    "getaticket": "Dapatkan Tiket",
+    "algetaticket": "Sudah Didapat",
+    "share2friend": "Bagikan ke teman?",
+    "title": "Cara Berpartisipasi",
+    "desc1": "1.Sebelum waktu buka, beli tiket",
+    "desc2": "2.Setiap akun hanya bisa membeli satu tiket",
+    "title2": "Kapan undian akan diundi?",
+    "desc3": "1.Setelah semua tiket terjual, undian akan diundi secara otomatis dan tidak akan dipengaruhi oleh waktu undian akhir.",
+    "desc4": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 10 tiket terjual, bonus adalah $99",
+    "desc5": "2.Ketika waktu undian tiba dan tiket tidak terjual habis, hadiah akhir akan didasarkan pada penjualan.",
+    "desc6": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 9 tiket terjual, bonus adalah $89"
+  },
+  "resetpwd": {
+    "old": "Kata sandi lama",
+    "new": "Kata sandi baru",
+    "cnew": "Konfirmasi kata sandi baru"
+  },
+  "others": {
+    "loginAgain": "Pembaruan Berhasil, Masuk Lagi!",
+    "copysuccess": "Salin berhasil",
+    "copyfail": "Salin gagal",
+    "balanceNEnough": "Saldo tidak cukup"
+  },
+  "record": {
+    "OpenTime": "Waktu Buka",
+    "SessionID": "ID Sesi",
+    "TotalBonus": "Bonus Total",
+    "TicketPrice": "Harga Tiket",
+    "underOpen": "Akan Diundi",
+    "win": "Menang",
+    "lose": "Gagal"
+  },
+  "free": {
+    "registrationInfo": "Statistik pendaftaran melalui tautan ini",
+    "registrations": "pendaftaran",
+    "participants": "peserta dalam undian",
+    "congratulations": "Selamat🎉",
+    "srry": "Maaf, semoga berhasil lain kali",
+    "jinnw": "Putar Sekarang",
+    "join": " akun baru terdaftar",
+    "upt": "Hingga",
+    "bnus": "bonus",
+    "rules": "Bagaimana cara mendapatkan putaran gratis?",
+    "desc3": "Akun baru terdaftar harus berpartisipasi dalam undian",
+    "daily": {
+      "title": "Putaran Gratis Harian",
+      "desc1": "Bagikan tautan pendaftaran, setidaknya "
+    },
+    "weekly": {
+      "title": "Putaran Gratis Mingguan",
+      "desc1": "Bagikan tautan pendaftaran, setidaknya "
+    },
+    "monthly": {
+      "title": "Putaran Gratis Bulanan",
+      "desc1": "Bagikan tautan pendaftaran, setidaknya "
+    }
+  }
+}

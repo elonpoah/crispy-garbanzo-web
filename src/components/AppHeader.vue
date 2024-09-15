@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="nav-wrap">
-      <span class="logo" @click="router.back()">
+      <span class="logo">
         <img width="40px" src="@/assets/images/png.png" alt="">
       </span>
       <div class="inner">
@@ -47,8 +47,13 @@ function toggleLang() {
 }
 const languageList = [
   { name: 'English', key: 'en-US' },
-  { name: 'Português', key: 'pt-BR' },
-  { name: '简体中文', key: 'zh-CN' }
+  { name: '日本語', key: 'ja-JP' },
+  { name: '한국어', key: 'ko-KR' },
+  { name: 'ภาษาไทย', key: 'th-TH' },
+  { name: 'Tiếng việt', key: 'vi-VN' },
+  { name: 'Indonesian', key: 'id-ID' },
+  { name: '简体中文', key: 'zh-CN' },
+  { name: 'Português', key: 'pt-BR' }
 ]
 const setLang = (lang: SupportedLanguages) => {
   setCurrentLang(lang)
@@ -176,12 +181,15 @@ nav {
         position: relative;
         font-size: 14px;
         padding-left: 10px;
+        span {
+          font-weight: 500;
+        }
 
         &.active {
           background: #2D3035;
 
           span {
-            font-weight: 700;
+            font-weight: 500;
             color: var(--default-color);
           }
         }

@@ -94,6 +94,9 @@
     "lose": "Fail"
   },
   "free": {
+    "registrationInfo": "Registration statistics via this link",
+    "registrations": "registrations",
+    "participants": "participants in the draw",
     "congratulations": "Congratulations🎉",
     "srry": "Sorry, better next time",
     "jinnw": "Spin Now",
