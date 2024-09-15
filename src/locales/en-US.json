@@ -94,23 +94,25 @@
     "lose": "Fail"
   },
   "free": {
+    "congratulations": "Congratulations🎉",
+    "srry": "Sorry, better next time",
     "jinnw": "Spin Now",
-    "join": " you will be eligible to participate",
+    "join": " new register account",
     "upt": "Up to",
     "bnus": "bonus",
-    "validusers": "Valid users",
-    "desc3": "Register within the valid period and participate in a lucky draw",
+    "rules": "How can I get the free spin？",
+    "desc3": "New register account must participate in a lucky draw",
     "daily": {
       "title": "Daily Free Spin",
-      "desc1": "By the end of the day, number of new account registered through the link reaches at least "
+      "desc1": "Share registration link, at least "
     },
     "weekly": {
       "title": "Weekly Free Spin",
-      "desc1": "By the end of the week, number of new account registered through the link reaches at least "
+      "desc1": "Share registration link, at least "
     },
     "monthly": {
       "title": "Monthly Free Spin",
-      "desc1": "By the end of the month, number of new account registered through the link reaches at least "
+      "desc1": "Share registration link, at least "
     }
   }
 }
