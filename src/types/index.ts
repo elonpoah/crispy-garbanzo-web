@@ -107,6 +107,23 @@ interface TypeGameHistoryItem {
   statusStr?: string,
   statusClass?: string,
 }
+interface TypeHashTrade {
+  id: string,
+  type: number,
+  amount: number,
+  fromAddress: string,
+  toAddress: string,
+  txHash: string,
+  status: number,
+  createTime: number,
+  statusStr?: string,
+  statusClass?: string,
+}
+
+interface TypeHashTradeRes extends TypePaginatin {
+  list: TypeHashTrade[],
+  total: number
+}
 
 interface TypeGameHistoryRes extends TypePaginatin {
   list: TypeGameHistoryItem[],

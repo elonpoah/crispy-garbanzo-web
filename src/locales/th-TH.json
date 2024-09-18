@@ -91,7 +91,10 @@
     "TicketPrice": "ราคาตั๋ว",
     "underOpen": "รอการจับรางวัล",
     "win": "ชนะ",
-    "lose": "แพ้"
+    "lose": "แพ้",
+    "underConfirm": "อยู่ระหว่างการยืนยัน",
+    "success": "สำเร็จ",
+    "fail": "ล้มเหลว"
   },
   "free": {
     "registrationInfo": "สถิติการลงทะเบียนผ่านลิงค์นี้",

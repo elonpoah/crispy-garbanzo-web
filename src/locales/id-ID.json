@@ -91,7 +91,10 @@
     "TicketPrice": "Harga Tiket",
     "underOpen": "Akan Diundi",
     "win": "Menang",
-    "lose": "Gagal"
+    "lose": "Gagal",
+    "underConfirm": "sedang dikonfirmasi",
+    "success": "berhasil",
+    "fail": "gagal"
   },
   "free": {
     "registrationInfo": "Statistik pendaftaran melalui tautan ini",

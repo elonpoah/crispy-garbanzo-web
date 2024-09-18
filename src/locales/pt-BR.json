@@ -91,7 +91,10 @@
     "TicketPrice": "Preço do Ingresso",
     "underOpen": "A ser sorteado",
     "win": "Ganhou",
-    "lose": "Falhou"
+    "lose": "Falhou",
+    "underConfirm": "em confirmação",
+    "success": "sucesso",
+    "fail": "falha"
   },
   "free": {
     "registrationInfo": "Estatísticas de registo através deste link",

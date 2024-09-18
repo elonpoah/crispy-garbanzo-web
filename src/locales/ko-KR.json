@@ -91,7 +91,10 @@
     "TicketPrice": "티켓 가격",
     "underOpen": "추첨 예정",
     "win": "당첨",
-    "lose": "실패"
+    "lose": "실패",
+    "underConfirm": "확인 중",
+    "success": "성공",
+    "fail": "실패"
   },
   "free": {
     "registrationInfo": "이 링크를 통한 등록 통계",

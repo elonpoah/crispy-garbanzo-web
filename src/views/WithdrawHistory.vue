@@ -3,56 +3,93 @@
       <NavBack :title="$t('account.withdrawh')" />
       <van-pull-refresh class="page-inner" v-model="loading" @refresh="onRefresh">
         <div class="list">
-          <div class="item" v-for="item in list" :key="item.orderId">
+          <div class="item" v-for="item in dataList" :key="item.id">
             <div class="top">
-              Order ID: {{ item.orderId }}
+              Order ID: {{ item.id }}
             </div>
             <div class="middle">
-              <div>{{ item.type }}</div>
+              <div :dataid="item.type">{{ item.type == 1 ? 'ERC20':'TRC20' }}</div>
               <div class="amount">${{ item.amount }}</div>
-              
             </div>
             <div class="bottom">
               <div>{{ item.createTime }}</div>
-              <div :class="[item.status]">{{ item.status }}</div>
+              <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
             </div>
           </div>
+          <div v-show="showLoadMore" @click="loadMore" class="load-more">{{ $t('common.loadMore') }}</div>
         </div>
+        <EmptyData :height="60" v-show="!dataList.length" />
       </van-pull-refresh>
     </div>
   </template>
   <script setup lang="ts">
-  import { ref } from 'vue';
+  import { useI18n } from 'vue-i18n';
+  import { ref, onMounted, computed } from 'vue';
+  // import { useRoute } from 'vue-router';
   import NavBack from "@/components/NavBack.vue";
-  const list = [
-    {
-      orderId: '2020200200101',
-      type: 'ERC20',
-      amount: 200,
-      createTime: '2024-08-24 10:23:30',
-      status: 'success'
-    },
-    {
-      orderId: '2020200200121',
-      type: 'TRC20',
-      amount: 100,
-      createTime: '2024-08-24 10:23:30',
-      status: 'fail'
-    },
-    {
-      orderId: '2020200200145',
-      type: 'ERC20',
-      amount: 500,
-      createTime: '2024-08-24 10:23:30',
-      status: 'pending'
-    }
-  ]
+  import EmptyData from "@/components/EmptyData.vue";
+  import { getWithdrawHistory } from '@/api/api';
+
   const loading = ref(false)
-  const onRefresh = () => {
-    setTimeout(()=> {
-      loading.value = false
-    },2000)
+  const { t } = useI18n()
+  const formatStatus = (status: number) => {
+    if (status == 0) return {
+      statusStr: t('record.underConfirm'),
+      statusClass: 'none'
+    }
+    if (status == 1) return {
+      statusStr: t('record.success'),
+      statusClass: 'win'
+    }
+    if (status == 2) return {
+      statusStr: t('record.fail'),
+      statusClass: 'lose'
+    }
+    return {
+      statusStr: '',
+      statusClass: 'none'
+    }
   }
+  // const route = useRoute()
+  const searchParams = ref({
+    page: 1,
+    pageSize: 20,
+  })
+  const total = ref(0)
+  const dataList = ref<TypeHashTrade[]>([])
+  const showLoadMore = computed(()=> searchParams.value.page * searchParams.value.pageSize < total.value)
+
+  const onRefresh = () => {
+    searchParams.value.page = 1
+    getDataList()
+  }
+
+  const loadMore = () => {
+    if(showLoadMore.value) {
+      searchParams.value.page += 1
+      getDataList(true)
+    }
+  }
+  const getDataList = (isMore = false) => {
+    // const status = route.query.status ? Number(route.query.status) : undefined
+    getWithdrawHistory({...searchParams.value}).then((res)=> {
+      const data = res.data.list.map(e => {
+        const sjsn = formatStatus(e.status)
+        return {
+          ...e,
+          statusStr: sjsn.statusStr,
+          statusClass: sjsn.statusClass
+        }
+      })
+      dataList.value = isMore ? dataList.value.concat(data) : data
+      total.value = res.data.total
+      loading.value = false
+    })
+  }
+
+  onMounted(()=> {
+    onRefresh()
+  })
   </script>
   <style lang="less" scoped>
   .page {
@@ -85,19 +122,16 @@
         font-size: 14px;
         padding-top: 5px;
         border-top: 1px solid #34363a;
+        .win {
+          color: var(--primary-color);
+        }
+        .lose {
+          color: red;
+        }
       }
       .amount {
         font-size: 16px;
         font-weight: 700;
-      }
-      .pending {
-        color: var(--orange-color);
-      }
-      .success {
-        color: var(--primary-color);
-      }
-      .fail {
-        color: var(--purple-color);
       }
     }
   }

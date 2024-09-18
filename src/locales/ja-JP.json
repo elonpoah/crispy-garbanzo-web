@@ -91,7 +91,10 @@
     "TicketPrice": "チケット価格",
     "underOpen": "抽選待ち",
     "win": "勝利",
-    "lose": "敗北"
+    "lose": "敗北",
+    "underConfirm": "確認中",
+    "success": "成功",
+    "fail": "失敗"
   },
   "free": {
     "registrationInfo": "このリンク経由の登録統計",

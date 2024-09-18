@@ -136,15 +136,6 @@ onMounted(()=> {
       font-size: 18px;
       font-weight: 700;
     }
-    .pending {
-      color: var(--purple-color);
-    }
-    .success {
-      color: var(--primary-color);
-    }
-    .fail {
-      color: var(--purple-color);
-    }
   }
 }
 </style>

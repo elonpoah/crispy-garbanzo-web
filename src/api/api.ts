@@ -25,11 +25,11 @@ export const userWithdraw = (data: TypeUserWithdraw) => {
 }
 
 export const getDepositHistory = (data: TypePaginatin) => {
-  return http.get('/deposit/history', data)
+  return http.get<TypeHashTradeRes>('/deposit/history', data)
 }
 
 export const getWithdrawHistory = (data: TypePaginatin) => {
-  return http.get('/withdraw/history', data)
+  return http.get<TypeHashTradeRes>('/withdraw/history', data)
 }
 
 export const getHomeRecommand = () => {

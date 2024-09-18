@@ -91,7 +91,10 @@
     "TicketPrice": "Giá vé",
     "underOpen": "Chờ rút thăm",
     "win": "Thắng",
-    "lose": "Thua"
+    "lose": "Thua",
+    "underConfirm": "đang xác nhận",
+    "success": "thành công",
+    "fail": "thất bại"
   },
   "free": {
     "registrationInfo": "Thống kê đăng ký qua liên kết này",

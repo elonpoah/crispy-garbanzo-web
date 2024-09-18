@@ -91,7 +91,10 @@
     "TicketPrice": "Ticket Price",
     "underOpen": "To be drawn",
     "win": "Won",
-    "lose": "Fail"
+    "lose": "Fail",
+    "underConfirm": "pedding",
+    "success": "success",
+    "fail": "fail"   
   },
   "free": {
     "registrationInfo": "Registration statistics via this link",
