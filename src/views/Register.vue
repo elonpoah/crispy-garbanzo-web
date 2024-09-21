@@ -59,13 +59,14 @@ import { showNotify } from 'vant';
 import { useI18n } from 'vue-i18n'
 import SvgIcon from "@/components/SvgIcon.vue";
 import { ref, computed } from "vue";
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { register } from '@/api/api';
 import storage from '@/utils/storage';
 import useUserStore from '@/stores/user';
 import { isUsername, isPassword } from '@/utils/validate';
 
 const router = useRouter()
+const route = useRoute()
 const userStore = useUserStore()
 const { t } = useI18n()
 
@@ -105,7 +106,8 @@ const onSubmit = async () => {
   await validateForm('all')
   if (!isCanSubmit.value) return
   try {
-    const res = await register({ username: form.value.username, password: form.value.password })
+    // @ts-ignore
+    const res = await register({ username: form.value.username, password: form.value.password, inviteCode: +route.query?.inviteCode})
     storage.setItem('token', res.data.token)
     userStore.setUserInfo(res.data.user)
     showNotify({ type: 'success', teleport: '#app', message: res.msg });

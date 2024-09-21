@@ -47,6 +47,7 @@
     "gameh": "Histórico de Jogos",
     "withdrawh": "Histórico de Saques",
     "deposith": "Histórico de Depósitos",
+    "freeh": "Histórico de Giros Grátis",
     "changepwd": "Alterar Senha",
     "loginout": "Sair",
     "availableBalance": "Saldo disponível: ",
@@ -94,20 +95,25 @@
     "lose": "Falhou",
     "underConfirm": "em confirmação",
     "success": "sucesso",
-    "fail": "falha"
+    "fail": "falha",
+    "createTime": "tempo criado",
+    "type": "tipo"
   },
   "free": {
     "registrationInfo": "Estatísticas de registo através deste link",
     "registrations": "registos",
     "participants": "participantes no sorteio",
     "congratulations": "Parabéns",
+    "thanks": "Obrigado por participar",
     "srry": "Desculpe, melhor da próxima vez",
     "jinnw": "participar",
+    "unReach": "Desculpe, por favor, termine a tarefa primeiro",
     "join": "nova conta registrada",
     "upt": "Até ",
     "bnus": "bônus",
     "validusers": "Usuários válidos",
-    "desc3": "Compartilhe o link de registro, pelo menos",
+    "desc3": "A nova conta registrada deve participar do",
+    "desc3m": "sorteio pago",
     "daily": {
       "title": "Giro Diário Grátis",
       "desc1": "Nova conta registrada deve participar de um sorteio "

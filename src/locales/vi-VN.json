@@ -47,6 +47,7 @@
     "gameh": "Lịch sử trò chơi",
     "withdrawh": "Lịch sử rút tiền",
     "deposith": "Lịch sử nạp tiền",
+    "freeh": "Lịch sử Vòng quay Miễn phí",
     "changepwd": "Đổi mật khẩu",
     "loginout": "Đăng xuất",
     "availableBalance": "Số dư khả dụng: ",
@@ -94,20 +95,25 @@
     "lose": "Thua",
     "underConfirm": "đang xác nhận",
     "success": "thành công",
-    "fail": "thất bại"
+    "fail": "thất bại",
+    "createTime": "thời gian tạo",
+    "type": "loại"
   },
   "free": {
     "registrationInfo": "Thống kê đăng ký qua liên kết này",
     "registrations": "đăng ký",
     "participants": "người tham gia rút thăm",
-    "congratulations": "Chúc mừng🎉",
+    "congratulations": "Chúc mừng🎉 ",
+    "thanks": "Cảm ơn bạn đã tham gia",
     "srry": "Xin lỗi, may mắn lần sau",
     "jinnw": "Quay ngay",
+    "unReach": "Xin lỗi, vui lòng hoàn thành nhiệm vụ trước",
     "join": " tài khoản đăng ký mới",
     "upt": "Lên đến",
     "bnus": "tiền thưởng",
     "rules": "Làm thế nào để nhận quay miễn phí?",
-    "desc3": "Tài khoản đăng ký mới phải tham gia rút thăm",
+    "desc3": "Tài khoản đăng ký mới phải tham gia",
+    "desc3m": "quay số có trả phí",
     "daily": {
       "title": "Quay miễn phí hàng ngày",
       "desc1": "Chia sẻ liên kết đăng ký, ít nhất "

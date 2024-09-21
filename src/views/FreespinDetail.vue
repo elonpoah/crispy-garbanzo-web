@@ -24,14 +24,18 @@
         <div>
           <h2>{{ $t('free.registrationInfo') }}</h2>
           <p>{{ $t('free.registrations') }}： 
-            <span class="warning">{{ staticInfo.registrations }}</span>，
+            <span class="warning">{{ staticInfo.registrations}}</span>
+            /
+            <span class="warning">{{ descripCur.count }}</span>，
             {{ $t('free.participants') }}： 
             <span class="warning">{{ staticInfo.participants }}</span>
+            /
+            <span class="warning">{{ descripCur.count }}</span>
           </p>
         </div>
         <h2>{{ $t('free.rules') }}</h2>
         <p>1.{{ descripCur.desc1 }} <span class="warning">{{ descripCur.count }}</span> {{ $t('free.join')}}</p>
-        <p class="active">2.{{ $t('free.desc3') }}</p>
+        <p class="active">2.{{ $t('free.desc3') }} <span class="warning">1</span> {{ $t('free.desc3m') }}</p>
       </div>
     </div>
   </div>
@@ -46,6 +50,7 @@ import LuckyWheel from '@/lucky/lib/wheel';
 import { onMounted } from 'vue';
 import { showNotify, showDialog } from 'vant';
 import useUserStore from '@/stores/user';
+import { getInviteInfo, startInviteSpin } from '@/api/api';
 import dayjs from 'dayjs';
 
 import bf from '@/assets/images/lucky/bg.png';
@@ -58,6 +63,9 @@ const { t } = useI18n()
 const type = computed(()=> route.params.type)
 const openTimeCount = ref(0)
 const shareURL = ref('')
+const myLucky = ref()
+const bonus = ref(0)
+const loading = ref(false)
 const onSuccess = () => {
   showNotify({ type: 'success', teleport: '#app', message: t('others.copysuccess') });
 }
@@ -93,7 +101,7 @@ const descripCur = computed(()=> descrip[type.value as FreeType])
 
 const LuckyCanvasWheel = () => {
   // @ts-ignore
-  const myLucky = new LuckyWheel('#my-lucky', {
+  myLucky.value = new LuckyWheel('#my-lucky', {
     width: '375px',
     height: '375px',
     blocks: [
@@ -139,23 +147,51 @@ const LuckyCanvasWheel = () => {
       },
     ],
     start: function() {
-      // 开始游戏
-      myLucky.play()
-      // 假设接口的请求速度是1s
-      // @ts-ignore
-      setTimeout(_ => {
-        // 停止游戏
-        myLucky.stop(0)
-      }, 1000)
+      if( staticInfo.value.registrations >= descripCur.value.count && staticInfo.value.participants >= descripCur.value.count) {
+        startLuckyDraw()
+      } else {
+        showDialog({
+        message: t('free.unReach'),
+        }).then(() => {
+        });
+      }
     },
     end: function(prize:any) { // 游戏停止时触发
+      const msg = bonus.value > 0 ? t('free.congratulations')+'$'+ bonus.value : t('free.thanks')
       showDialog({
-        message: t('free.congratulations')+prize.fonts[0].text,
+        message: msg,
       }).then(() => {
         
       });
     }
   })
+}
+const startLuckyDraw = async () => {
+  if (loading.value) return
+  loading.value = true
+  try {
+    const res = await startInviteSpin(type.value == FreeType.daily ? 1 : type.value == FreeType.weekly ? 2 : 3)
+    bonus.value = res.data
+    myLucky.value.play()
+    setTimeout(()=> {
+      myLucky.value.stop(bonus.value > 0? 0 : 2)
+      loading.value = false
+    }, 1000)
+    if(bonus.value > 0) {
+      userStore.getInfo()
+    }
+  } catch (error) {
+    loading.value = false
+  }
+}
+const getInviteInfoFun = async () => {
+  try {
+    const res = await getInviteInfo(type.value == FreeType.daily ? 1 : type.value == FreeType.weekly ? 2 : 3)
+    staticInfo.value.registrations = res.data?.registrations || 0
+    staticInfo.value.participants = res.data?.participates || 0
+  } catch (error) {
+    
+  }
 }
 const getCountDown = () => {
   const now = dayjs();
@@ -176,16 +212,15 @@ const getCountDown = () => {
   }
 }
 onMounted(()=> {
-  shareURL.value = `${window.location.origin}?inviteCode=${userStore.info?.uid}`
+  shareURL.value = `${window.location.origin}/register?inviteCode=${userStore.info?.uid}`
   LuckyCanvasWheel()
   getCountDown()
+  getInviteInfoFun()
 })
 </script>
 <style lang="less" scoped>
 .page {
   height: 100vh;
-  background: url(/src/assets/images/lucky/bg.png);
-  background-position: center;
   overflow-y: auto;
 }
 .count-down {

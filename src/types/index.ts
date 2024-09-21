@@ -3,7 +3,9 @@ interface TypeLoginRequest {
 	password: string;
 }
 
-interface TypeRegisterRequest extends TypeLoginRequest {}
+interface TypeRegisterRequest extends TypeLoginRequest {
+  inviteCode?: number
+}
 
 interface TypePaginatin {
   page: number;
@@ -107,6 +109,13 @@ interface TypeGameHistoryItem {
   statusStr?: string,
   statusClass?: string,
 }
+
+interface TypeFreeSpinHistoryItem {
+  ID: string,
+  createdAt: number,
+  type: number,
+  amount: number,
+}
 interface TypeHashTrade {
   id: string,
   type: number,
@@ -115,7 +124,7 @@ interface TypeHashTrade {
   toAddress: string,
   txHash: string,
   status: number,
-  createTime: number,
+  createdAt: number,
   statusStr?: string,
   statusClass?: string,
 }
@@ -124,10 +133,18 @@ interface TypeHashTradeRes extends TypePaginatin {
   list: TypeHashTrade[],
   total: number
 }
-
+interface TypeFreeSpinHistoryRes extends TypePaginatin {
+  list: TypeFreeSpinHistoryItem[],
+  total: number
+}
 interface TypeGameHistoryRes extends TypePaginatin {
   list: TypeGameHistoryItem[],
   total: number
+}
+
+interface TypeInviteInfoRes {
+	registrations: number
+	participates: number
 }
 
 type SupportedLanguages = 'id-ID' | 'en-US' | 'zh-CN' | 'pt-BR' | 'ja-JP' | 'ko-KR' | 'th-TH' | 'vi-VN';

@@ -32,6 +32,10 @@ export const getWithdrawHistory = (data: TypePaginatin) => {
   return http.get<TypeHashTradeRes>('/withdraw/history', data)
 }
 
+export const getFreeSpinHistory = (data: TypePaginatin) => {
+  return http.get<TypeFreeSpinHistoryRes>('/freeSpin/history', data)
+}
+
 export const getHomeRecommand = () => {
   return http.post<TypeHomeRecommandSessionListRes>('/home/data')
 }
@@ -60,4 +64,10 @@ export const getSessionSummary = () => {
   return http.get<TypeUserSummary>('session/summary')
 }
 
+export const getInviteInfo = (type: number) => {
+  return http.post<TypeInviteInfoRes>('/free/inviteInfo', {type})
+}
 
+export const startInviteSpin = (type: number) => {
+  return http.post('/free/inviteSpin', {type})
+}

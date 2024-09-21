@@ -15,7 +15,10 @@
         </div>
         <div class="item">
           <p class="title">{{ $t('account.freespintimes') }}</p>
-          <p class="value"@click="navigateFn('/free-spin')">{{ sessionSummary?.freeCount || '0' }}</p>
+          <p class="value"@click="navigateFn('/freespin')">
+            <!-- {{ sessionSummary?.freeCount || '0' }} -->
+            -
+          </p>
         </div>
       </div>
     </div>
@@ -82,6 +85,11 @@ const actionLink = [
     icon: 'Deposit',
     name: 'account.deposith',
     path: '/deposit-history'
+  },
+  {
+    icon: 'Slots',
+    name: 'account.freeh',
+    path: '/freespin-history'
   },
   {
     icon: 'View',

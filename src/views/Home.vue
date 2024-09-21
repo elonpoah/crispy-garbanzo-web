@@ -2,7 +2,7 @@
   <van-pull-refresh class="home-page" v-model="loading" @refresh="onRefresh">
     <div class="home-banner">
       <p>{{ $t('home.get2') }}</p>
-      <p><span class="usd">$1,000,000</span> {{ $t('home.bonus') }}</p>
+      <p><span class="usd">$1,020,680</span> {{ $t('home.bonus') }}</p>
       <p class="desc">{{ $t('home.tobeRich') }}</p>
     </div>
     <div class="container">

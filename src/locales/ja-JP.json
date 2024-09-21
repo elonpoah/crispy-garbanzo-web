@@ -47,6 +47,7 @@
     "gameh": "ゲーム履歴",
     "withdrawh": "出金履歴",
     "deposith": "入金履歴",
+    "freeh": "フリースピン履歴",
     "changepwd": "パスワードを変更",
     "loginout": "ログアウト",
     "availableBalance": "利用可能な残高：",
@@ -94,20 +95,25 @@
     "lose": "敗北",
     "underConfirm": "確認中",
     "success": "成功",
-    "fail": "失敗"
+    "fail": "失敗",
+    "createTime": "作成時間",
+    "type": "タイプ"
   },
   "free": {
     "registrationInfo": "このリンク経由の登録統計",
     "registrations": "登録数",
     "participants": "抽選参加者",
     "congratulations": "おめでとうございます🎉",
+    "thanks": "参加ありがとうございます",
     "srry": "残念、次回に期待してください",
     "jinnw": "今すぐスピン",
+    "unReach": "申し訳ありませんが、まずタスクを完了してください",
     "join": "新規登録アカウント",
     "upt": "最大",
     "bnus": "ボーナス",
     "rules": "無料スピンを取得する方法は？",
-    "desc3": "新規登録アカウントは抽選に参加する必要があります",
+    "desc3": "新規登録アカウントは参加する必要があります",
+    "desc3m": "有料抽選",
     "daily": {
       "title": "毎日の無料スピン",
       "desc1": "登録リンクをシェア、少なくとも"

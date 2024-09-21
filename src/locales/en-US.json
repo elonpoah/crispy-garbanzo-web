@@ -38,7 +38,7 @@
   },
   "account": {
     "tobedrawn": "To Be Drawn",
-    "freespintimes": "Free Spin Times",
+    "freespintimes": "Free Spin",
     "wallet": "Wallet",
     "available": "Available",
     "frozen": "Frozen",
@@ -47,6 +47,7 @@
     "gameh": "Game History",
     "withdrawh": "Withdraw History",
     "deposith": "Deposit History",
+    "freeh": "Free Spin History",
     "changepwd": "Change Password",
     "loginout": "Login Out",
     "availableBalance": "Available balance: ",
@@ -94,7 +95,9 @@
     "lose": "Fail",
     "underConfirm": "pedding",
     "success": "success",
-    "fail": "fail"   
+    "fail": "fail",
+    "createTime": "created Time",
+    "type": "type"
   },
   "free": {
     "registrationInfo": "Registration statistics via this link",
@@ -102,12 +105,15 @@
     "participants": "participants in the draw",
     "congratulations": "Congratulations🎉",
     "srry": "Sorry, better next time",
+    "thanks": "Thank you for participating",
     "jinnw": "Spin Now",
+    "unReach": "Sorry, please finsh the task first",
     "join": " new register account",
     "upt": "Up to",
     "bnus": "bonus",
     "rules": "How can I get the free spin？",
-    "desc3": "New register account must participate in a lucky draw",
+    "desc3": "New register account must participate in ",
+    "desc3m": "paid lottery draw",
     "daily": {
       "title": "Daily Free Spin",
       "desc1": "Share registration link, at least "

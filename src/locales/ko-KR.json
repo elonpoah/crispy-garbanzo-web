@@ -47,6 +47,7 @@
     "gameh": "게임 기록",
     "withdrawh": "출금 기록",
     "deposith": "입금 기록",
+    "freeh": "무료 스핀 기록",
     "changepwd": "비밀번호 변경",
     "loginout": "로그아웃",
     "availableBalance": "사용 가능한 잔액: ",
@@ -94,20 +95,25 @@
     "lose": "실패",
     "underConfirm": "확인 중",
     "success": "성공",
-    "fail": "실패"
+    "fail": "실패",
+    "createTime": "생성 시간",
+    "type": "유형"
   },
   "free": {
     "registrationInfo": "이 링크를 통한 등록 통계",
     "registrations": "등록",
     "participants": "추첨 참가자",
-    "congratulations": "축하합니다🎉",
+    "congratulations": "축하합니다🎉 ",
+    "thanks": "참여해 주셔서 감사합니다",
     "srry": "죄송합니다, 다음에 더 잘하세요",
     "jinnw": "지금 스핀",
+    "unReach": "죄송합니다, 먼저 작업을 완료해 주세요",
     "join": "새 계정 등록",
     "upt": "최대",
     "bnus": "보너스",
     "rules": "무료 스핀을 얻으려면 어떻게 해야 하나요?",
-    "desc3": "새로 등록한 계정이 추첨에 참여해야 합니다",
+    "desc3": "새로 등록한 계정은 참여해야 합니다",
+    "desc3m": "유료 추첨",
     "daily": {
       "title": "일일 무료 스핀",
       "desc1": "등록 링크를 공유하고, 최소 "

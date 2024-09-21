@@ -5,7 +5,7 @@
       <div class="pitem purple" @click="router.push('/freespin/daily')">
         <div class="content">
           <p class="title">{{ $t('free.daily.title') }}</p>
-          <p class="bonus">{{ $t('free.upt') }} $5 {{ $t('free.bnus') }}</p>
+          <p class="bonus">{{ $t('free.upt') }} <span>$5</span>{{ $t('free.bnus') }}</p>
           <button class="button active join purple">{{ $t('free.jinnw') }}</button>
         </div>
         <img class="img" src="@/assets/images/bg1.png" alt="">
@@ -14,14 +14,14 @@
         <img class="img" src="@/assets/images/bg2.png" alt="">
         <div class="content">
           <p class="title">{{ $t('free.weekly.title') }}</p>
-          <p class="bonus">{{ $t('free.upt') }} $30 {{ $t('free.bnus') }}</p>
+          <p class="bonus">{{ $t('free.upt') }} <span>$30</span> {{ $t('free.bnus') }}</p>
           <button class="button active join orange"> {{ $t('free.jinnw') }}</button>
         </div>
       </div>
       <div class="pitem purple" @click="router.push('/freespin/monthly')">
         <div class="content">
           <p class="title">{{ $t('free.monthly.title') }}</p>
-          <p class="bonus">{{ $t('free.upt') }} $100 {{ $t('free.bnus') }}</p>
+          <p class="bonus">{{ $t('free.upt') }} <span>$100</span> {{ $t('free.bnus') }}</p>
           <button class="button active join purple"> {{ $t('free.jinnw') }}</button>
         </div>
         <img class="img" src="@/assets/images/bg3.png" alt="">
@@ -56,6 +56,13 @@ const router = useRouter()
       .bonus {
         font-size: 16px;
         font-weight: 500;
+        padding-bottom: 10px;
+        span {
+          font-size: 20px;
+          font-weight: 500;
+          padding: 0 4px;
+          color: gold;
+        }
       }
       .join {
         margin-top: 10px;

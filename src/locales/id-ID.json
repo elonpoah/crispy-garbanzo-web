@@ -47,6 +47,7 @@
     "gameh": "Riwayat Permainan",
     "withdrawh": "Riwayat Penarikan",
     "deposith": "Riwayat Setoran",
+    "freeh": "Riwayat Putaran Gratis",
     "changepwd": "Ganti Kata Sandi",
     "loginout": "Keluar",
     "availableBalance": "Saldo tersedia: ",
@@ -94,20 +95,25 @@
     "lose": "Gagal",
     "underConfirm": "sedang dikonfirmasi",
     "success": "berhasil",
-    "fail": "gagal"
+    "fail": "gagal",
+    "createTime": "waktu dibuat",
+    "type": "jenis"
   },
   "free": {
     "registrationInfo": "Statistik pendaftaran melalui tautan ini",
     "registrations": "pendaftaran",
     "participants": "peserta dalam undian",
-    "congratulations": "Selamat🎉",
+    "congratulations": "Selamat🎉 ",
+    "thanks": "Terima kasih atas partisipasinya",
     "srry": "Maaf, semoga berhasil lain kali",
     "jinnw": "Putar Sekarang",
+    "unReach": "Maaf, silakan selesaikan tugas terlebih dahulu",
     "join": " akun baru terdaftar",
     "upt": "Hingga",
     "bnus": "bonus",
     "rules": "Bagaimana cara mendapatkan putaran gratis?",
-    "desc3": "Akun baru terdaftar harus berpartisipasi dalam undian",
+    "desc3": "Akun yang baru terdaftar harus berpartisipasi dalam",
+    "desc3m": "undian berbayar",
     "daily": {
       "title": "Putaran Gratis Harian",
       "desc1": "Bagikan tautan pendaftaran, setidaknya "

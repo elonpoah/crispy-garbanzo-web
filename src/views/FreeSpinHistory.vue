@@ -1,19 +1,19 @@
 <template>
   <div class="page">
-    <NavBack :title="$t('account.gameh')" />
+    <NavBack title="Freespin" />
     <van-pull-refresh class="page-inner" v-model="loading" @refresh="onRefresh">
       <div class="list">
-        <div class="item" v-for="item in dataList" :key="item.sessionId">
+        <div class="item" v-for="item in dataList" :key="item.ID">
           <div class="top">
-            {{ $t('record.OpenTime') }}: {{ dayjs(item.openTime).format('YYYY-MM-DD HH:mm:ss')}}
+            {{ $t('record.createTime') }}: {{ dayjs(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}}
           </div>
           <div class="middle">
-            <div>{{ $t('record.SessionID') }}: {{ item.sessionId }}</div>
-            <div>{{ $t('record.TotalBonus') }}: <span class="amount">${{ item.activityBonus }}</span></div>
-          </div>
-          <div class="bottom">
-            <div>{{ $t('record.TicketPrice') }}: ${{ item.activitySpend }}</div>
-            <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
+            <div>{{ $t('record.type') }}: 
+              <span v-if="item.type == 1">{{ $t('free.daily.title') }}</span>
+              <span v-else-if="item.type == 2">{{ $t('free.weekly.title') }}</span>
+              <span v-else>{{ $t('free.monthly.title') }}</span>
+            </div>
+            <div>{{ $t('record.TotalBonus') }}: <span class="amount">${{ item.amount }}</span></div>
           </div>
         </div>
         <div v-show="showLoadMore" @click="loadMore" class="load-more">{{ $t('common.loadMore') }}</div>
@@ -28,7 +28,7 @@ import { useRoute } from 'vue-router';
 import { ref, computed, onMounted } from 'vue';
 import NavBack from "@/components/NavBack.vue";
 import EmptyData from "@/components/EmptyData.vue";
-import { getGameHistory } from '@/api/api';
+import { getFreeSpinHistory } from '@/api/api';
 import dayjs from 'dayjs'
 
 const loading = ref(false)
@@ -57,7 +57,7 @@ const searchParams = ref({
   pageSize: 20,
 })
 const total = ref(0)
-const dataList = ref<TypeGameHistoryItem[]>([])
+const dataList = ref<TypeFreeSpinHistoryItem[]>([])
 const showLoadMore = computed(()=> searchParams.value.page * searchParams.value.pageSize < total.value)
 
 const onRefresh = () => {
@@ -74,7 +74,7 @@ const loadMore = () => {
 
 const getDataList = (isMore = false) => {
   const status = route.query.status ? Number(route.query.status) : undefined
-  getGameHistory({...searchParams.value, status}).then((res)=> {
+  getFreeSpinHistory({...searchParams.value, status}).then((res)=> {
     const data = res.data.list.map(e => {
       const sjsn = formatStatus(e.status)
       return {
