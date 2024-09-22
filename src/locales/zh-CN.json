@@ -97,7 +97,8 @@
     "success": "成功",
     "fail": "失败",
     "createTime": "创建时间",
-    "type": "类型"    
+    "type": "类型",
+    "Sales": "份额"    
   },
   "free": {
     "registrationInfo": "通过该链接的注册信息",

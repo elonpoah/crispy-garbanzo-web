@@ -97,7 +97,8 @@
     "success": "sucesso",
     "fail": "falha",
     "createTime": "tempo criado",
-    "type": "tipo"
+    "type": "tipo",
+    "Sales": "Vendas"
   },
   "free": {
     "registrationInfo": "Estatísticas de registo através deste link",

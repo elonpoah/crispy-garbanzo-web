@@ -14,6 +14,7 @@ instance.interceptors.request.use(
         if(token) {
             config.headers['Authorization'] = token
         }
+        config.headers['Access-Language'] = storage.getItem('lang') || 'en-US'
         return config;
     },
     (error: AxiosError) => {

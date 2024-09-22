@@ -5,14 +5,17 @@
       <div class="list">
         <div class="item" v-for="item in dataList" :key="item.sessionId">
           <div class="top">
-            {{ $t('record.OpenTime') }}: {{ dayjs(item.openTime).format('YYYY-MM-DD HH:mm:ss')}}
+            {{ $t('record.OpenTime') }}: {{ dayjs(item.openTime*1000).format('YYYY-MM-DD HH:mm:ss')}}
           </div>
           <div class="middle">
-            <div>{{ $t('record.SessionID') }}: {{ item.sessionId }}</div>
-            <div>{{ $t('record.TotalBonus') }}: <span class="amount">${{ item.activityBonus }}</span></div>
+            <div>{{ $t('record.Sales') }}: {{ item.uids }} X ${{ item.activitySpend }}</div>
+            <div>{{ $t('record.TotalBonus') }}: 
+              <span v-if="item.uids == 1" class="amount">${{ item.uids * item.activitySpend }}</span>
+              <span v-else class="amount">${{ item.uids * item.activitySpend - 1 }}</span>
+            </div>
           </div>
           <div class="bottom">
-            <div>{{ $t('record.TicketPrice') }}: ${{ item.activitySpend }}</div>
+            <div>{{ $t('record.SessionID') }}: {{ item.sessionId }}</div>
             <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
           </div>
         </div>

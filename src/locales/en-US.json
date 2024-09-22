@@ -88,7 +88,7 @@
   "record": {
     "OpenTime": "Open Time",
     "SessionID": "Session ID",
-    "TotalBonus": "Total Bonus",
+    "TotalBonus": "Bonus",
     "TicketPrice": "Ticket Price",
     "underOpen": "To be drawn",
     "win": "Won",
@@ -97,7 +97,8 @@
     "success": "success",
     "fail": "fail",
     "createTime": "created Time",
-    "type": "type"
+    "type": "type",
+    "Sales": "Sales"
   },
   "free": {
     "registrationInfo": "Registration statistics via this link",

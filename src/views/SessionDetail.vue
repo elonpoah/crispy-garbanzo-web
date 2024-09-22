@@ -80,7 +80,7 @@ const userStore = useUserStore()
 
 const openTimeCount = computed(()=> {
   if(sessionInfo.value?.openTime) {
-    return sessionInfo.value?.openTime - new Date().getTime()
+    return sessionInfo.value?.openTime*1000 - new Date().getTime()
   }
   return 0
 })

@@ -27,7 +27,7 @@ const props = defineProps<{
 
 const openTimeCount = computed(()=> {
   if(props.openTime) {
-    return props.openTime - new Date().getTime()
+    return props.openTime*1000 - new Date().getTime()
   } else {
     return 0
   }

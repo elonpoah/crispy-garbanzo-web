@@ -97,7 +97,8 @@
     "success": "berhasil",
     "fail": "gagal",
     "createTime": "waktu dibuat",
-    "type": "jenis"
+    "type": "jenis",
+    "Sales": "Penjualan"
   },
   "free": {
     "registrationInfo": "Statistik pendaftaran melalui tautan ini",

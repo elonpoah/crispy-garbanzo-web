@@ -97,7 +97,8 @@
     "success": "成功",
     "fail": "失敗",
     "createTime": "作成時間",
-    "type": "タイプ"
+    "type": "タイプ",
+    "Sales": "販売"
   },
   "free": {
     "registrationInfo": "このリンク経由の登録統計",

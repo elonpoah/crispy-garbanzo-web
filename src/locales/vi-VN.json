@@ -97,7 +97,8 @@
     "success": "thành công",
     "fail": "thất bại",
     "createTime": "thời gian tạo",
-    "type": "loại"
+    "type": "loại",
+    "Sales": "Bán hàng"
   },
   "free": {
     "registrationInfo": "Thống kê đăng ký qua liên kết này",

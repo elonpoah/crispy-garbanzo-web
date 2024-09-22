@@ -97,7 +97,8 @@
     "success": "성공",
     "fail": "실패",
     "createTime": "생성 시간",
-    "type": "유형"
+    "type": "유형",
+    "Sales": "매상"
   },
   "free": {
     "registrationInfo": "이 링크를 통한 등록 통계",
