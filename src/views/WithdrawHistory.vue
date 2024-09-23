@@ -5,14 +5,15 @@
         <div class="list">
           <div class="item" v-for="item in dataList" :key="item.id">
             <div class="top">
-              Order ID: {{ item.id }}
+              <div>{{ dayjs(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}}</div>
+              <div>{{ item.type == 1 ? 'ERC20':'TRC20' }}</div>
             </div>
             <div class="middle">
-              <div :dataid="item.type">{{ item.type == 1 ? 'ERC20':'TRC20' }}</div>
+              <div>{{ item.toAddress }}</div>
               <div class="amount">${{ item.amount }}</div>
             </div>
             <div class="bottom">
-              <div>{{ item.createTime }}</div>
+              <div>OrderID: {{ item.id }}</div>
               <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
             </div>
           </div>
@@ -23,6 +24,7 @@
     </div>
   </template>
   <script setup lang="ts">
+  import dayjs from 'dayjs';
   import { useI18n } from 'vue-i18n';
   import { ref, onMounted, computed } from 'vue';
   // import { useRoute } from 'vue-router';

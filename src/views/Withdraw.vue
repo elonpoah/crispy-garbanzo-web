@@ -43,11 +43,14 @@
   </div>
   </template>
   <script setup lang="ts">
+  import { showNotify } from 'vant'
+  import { useI18n } from 'vue-i18n'
   import SvgIcon from "@/components/SvgIcon.vue";
   import SubmitSuccess from "@/components/SubmitSuccess.vue";
   import { ref } from "vue"
   import useUserStore from '@/stores/user'
   import { userWithdraw } from '@/api/api'
+  const { t } = useI18n()
   
   const userStore = useUserStore()
   const success = ref(false)
@@ -68,6 +71,10 @@
     selectNetworkType.value = selectedOptions[0];
   };
   const submitForm = () => {
+    if(+form.value.amount > Number(userStore.info?.balance)) {
+      showNotify({ type: 'warning', teleport: '#app', message: t('others.balanceNEnough') });
+      return
+    }
     if(form.value.address && form.value.amount) {
       userWithdraw({
         amount: +form.value.amount,
@@ -76,6 +83,7 @@
         userName: userStore.userInfo?.userName || ''
       }).then(()=> {
         success.value = true
+        userStore.getInfo()
       })
     }
   }

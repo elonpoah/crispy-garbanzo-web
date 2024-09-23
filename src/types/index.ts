@@ -127,6 +127,7 @@ interface TypeHashTrade {
   createdAt: number,
   statusStr?: string,
   statusClass?: string,
+  remark?: string
 }
 
 interface TypeHashTradeRes extends TypePaginatin {
