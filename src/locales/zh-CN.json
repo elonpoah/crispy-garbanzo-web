@@ -58,7 +58,12 @@
     "depositTips": "请您转账USDT至该充值地址。 6次网络确认后自动存币。不支持智能合约地址。",
     "notice": "提醒:",
     "copy": "复制",
-    "alreadysend": "我已完成转账"
+    "alreadysend": "我已完成转账",
+    "address": "地址",
+    "amount": "金额",
+    "total": "总提款金额",
+    "fee": "手续费",
+    "min": "最小提款金额"
   },
   "session_detail": {
     "pay": "支付",
@@ -83,7 +88,9 @@
     "loginAgain": "修改成功，请重新登录!",
     "copysuccess": "链接复制成功",
     "copyfail": "链接复制失败",
-    "balanceNEnough": " 余额不足，请充值"
+    "balanceNEnough": " 余额不足，请充值",
+    "inputAddress": "请输入钱包地址",
+    "balanceLtMin": "不能小于最小提款金额"
   },
   "record": {
     "OpenTime": "开奖时间",

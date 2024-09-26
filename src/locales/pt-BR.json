@@ -58,7 +58,12 @@
     "depositTips": " Envie apenas USDT para este endereço de depósito. As moedas serão depositadas automaticamente após 6 confirmações na rede. Endereços de contratos inteligentes não são suportados (Entre em contato conosco). ",
     "notice": "AVISO:",
     "copy": "copiar",
-    "alreadysend": "Já Enviado"
+    "alreadysend": "Já Enviado",
+    "address": "Endereço",
+    "amount": "Quantia",
+    "total": "total",
+    "fee": "Taxa",
+    "min": "mínima"
   },
   "session_detail": {
     "pay": "PAGAR",
@@ -83,7 +88,9 @@
     "loginAgain": "Atualização bem-sucedida, faça login novamente!",
     "copysuccess": "URL copiada com sucesso",
     "copyfail": "Falha ao copiar",
-    "balanceNEnough": "Saldo insuficiente, por favor recarregue"
+    "balanceNEnough": "Saldo insuficiente, por favor recarregue",
+    "inputAddress": "Por favor, insira o endereço da carteira",
+    "balanceLtMin": "O valor não pode ser inferior ao valor mínimo de saque"
   },
   "record": {
     "OpenTime": "Hora de Abertura",

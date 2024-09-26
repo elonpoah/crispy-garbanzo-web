@@ -58,7 +58,12 @@
     "depositTips": "이 입금 주소로 USDT만 송금하세요. 6회 네트워크 확인 후 자동으로 입금됩니다. 스마트 계약 주소는 지원되지 않습니다(문의해 주세요).",
     "notice": "알림:",
     "copy": "복사",
-    "alreadysend": "이미 송금됨"
+    "alreadysend": "이미 송금됨",
+    "address": "주소",
+    "amount": "금액",
+    "total": "총 출금 금액",
+    "fee": "수수료",
+    "min": "최소 출금 금액"
   },
   "session_detail": {
     "pay": "결제",
@@ -83,7 +88,9 @@
     "loginAgain": "업데이트 성공, 다시 로그인하세요!",
     "copysuccess": "복사 성공",
     "copyfail": "복사 실패",
-    "balanceNEnough": "잔액 부족"
+    "balanceNEnough": "잔액 부족",
+    "inputAddress": "지갑 주소를 입력하세요",
+    "balanceLtMin": "출금 금액은 최소 출금 금액보다 적을 수 없습니다"
   },
   "record": {
     "OpenTime": "오픈 시간",

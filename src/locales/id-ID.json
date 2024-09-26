@@ -58,7 +58,12 @@
     "depositTips": " Kirim hanya USDT ke alamat setoran ini. Koin akan disetor secara otomatis setelah 6 konfirmasi jaringan. Alamat kontrak pintar tidak didukung (Hubungi kami). ",
     "notice": "PEMBERITAHUAN:",
     "copy": "salin",
-    "alreadysend": "Sudah Dikirim"
+    "alreadysend": "Sudah Dikirim",
+    "address": "Alamat",
+    "amount": "Jumlah",
+    "total": "Total",
+    "fee": "Biaya",
+    "min": "Minimum"
   },
   "session_detail": {
     "pay": "BAYAR",
@@ -83,7 +88,9 @@
     "loginAgain": "Pembaruan Berhasil, Masuk Lagi!",
     "copysuccess": "Salin berhasil",
     "copyfail": "Salin gagal",
-    "balanceNEnough": "Saldo tidak cukup"
+    "balanceNEnough": "Saldo tidak cukup",
+    "inputAddress": "Harap masukkan alamat dompet",
+    "balanceLtMin": "Jumlah tidak boleh kurang dari jumlah penarikan minimum"
   },
   "record": {
     "OpenTime": "Waktu Buka",

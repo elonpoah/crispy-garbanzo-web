@@ -71,3 +71,8 @@ export const getInviteInfo = (type: number) => {
 export const startInviteSpin = (type: number) => {
   return http.post('/free/inviteSpin', {type})
 }
+
+export const getPlatformSetting = () => {
+  return http.get<TypesPlatformConfig>('/platform/setting')
+}
+

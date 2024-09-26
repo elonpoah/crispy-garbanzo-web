@@ -58,7 +58,12 @@
     "depositTips": " Send only USDT to this deposit address. Coins will be deposited automatically after 6 network confirmations. Smart contract addresses are not supported(Contact us). ",
     "notice": "NOTICE:",
     "copy": "copy",
-    "alreadysend": "Already Send"
+    "alreadysend": "Already Send",
+    "address": "Address",
+    "amount": "Amount",
+    "total": "Total Withdraw amount",
+    "fee": "Fee",
+    "min": "Min"
   },
   "session_detail": {
     "pay": "PAY",
@@ -83,7 +88,9 @@
     "loginAgain": "Update Success Login Again!",
     "copysuccess": "Copy success",
     "copyfail": "Copy fail",
-    "balanceNEnough": "balance not enough"
+    "balanceNEnough": "balance not enough",
+    "inputAddress": "Please input the wallet address",
+    "balanceLtMin": "Cannot be less than the minimum withdrawal amount"
   },
   "record": {
     "OpenTime": "Open Time",

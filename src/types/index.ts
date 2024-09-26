@@ -149,3 +149,13 @@ interface TypeInviteInfoRes {
 }
 
 type SupportedLanguages = 'id-ID' | 'en-US' | 'zh-CN' | 'pt-BR' | 'ja-JP' | 'ko-KR' | 'th-TH' | 'vi-VN';
+
+
+interface TypesPlatformConfig {
+  finance: {
+    "ercFee"?: number
+    "ercMin"?: number
+    "trcFee"?: number
+    "trcMin"?: number
+  }
+}

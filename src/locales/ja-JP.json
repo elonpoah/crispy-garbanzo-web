@@ -58,7 +58,12 @@
     "depositTips": "この入金アドレスにはUSDTのみを送信してください。6回のネットワーク確認後に自動的に入金されます。スマートコントラクトアドレスはサポートされていません（お問い合わせください）。",
     "notice": "注意：",
     "copy": "コピー",
-    "alreadysend": "すでに送信済み"
+    "alreadysend": "すでに送信済み",
+    "address": "アドレス",
+    "amount": "金額",
+    "total": "総出金額",
+    "fee": "手数料",
+    "min": "最低出金額"
   },
   "session_detail": {
     "pay": "支払う",
@@ -83,7 +88,9 @@
     "loginAgain": "更新成功！再度ログインしてください！",
     "copysuccess": "コピー成功",
     "copyfail": "コピー失敗",
-    "balanceNEnough": "残高が不足しています"
+    "balanceNEnough": "残高が不足しています",
+    "inputAddress": "ウォレットアドレスを入力してください",
+    "balanceLtMin": "出金額は最低額を下回ることはできません"
   },
   "record": {
     "OpenTime": "オープン時間",

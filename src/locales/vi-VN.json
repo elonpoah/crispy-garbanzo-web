@@ -58,7 +58,12 @@
     "depositTips": " Chỉ gửi USDT vào địa chỉ nạp tiền này. Tiền sẽ được nạp tự động sau 6 xác nhận mạng. Địa chỉ hợp đồng thông minh không được hỗ trợ (Liên hệ với chúng tôi). ",
     "notice": "THÔNG BÁO:",
     "copy": "sao chép",
-    "alreadysend": "Đã gửi"
+    "alreadysend": "Đã gửi",
+    "address": "Địa chỉ",
+    "amount": "Số tiền",
+    "total": "Tổng số tiền rút",
+    "fee": "Phí",
+    "min": "Số tiền rút tối thiểu"
   },
   "session_detail": {
     "pay": "THANH TOÁN",
@@ -83,7 +88,9 @@
     "loginAgain": "Cập nhật thành công! Đăng nhập lại!",
     "copysuccess": "Sao chép thành công",
     "copyfail": "Sao chép thất bại",
-    "balanceNEnough": "Số dư không đủ"
+    "balanceNEnough": "Số dư không đủ",
+    "inputAddress": "Vui lòng nhập địa chỉ ví",
+    "balanceLtMin": "Số tiền không được nhỏ hơn số tiền rút tối thiểu"
   },
   "record": {
     "OpenTime": "Thời gian mở",

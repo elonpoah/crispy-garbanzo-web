@@ -167,8 +167,9 @@ const transformConfim = () => {
   .fast-number {
     margin-top: 20px;
     .fast-title {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
+      color: rgb(179, 190, 193);
     }
     .number-wrap {
       margin-top: 10px;
