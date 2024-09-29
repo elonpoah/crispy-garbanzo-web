@@ -1,17 +1,16 @@
 import { defineStore } from 'pinia'
 import { getPlatformSetting } from '@/api/api'
 interface UserSate  {
-  config: TypesPlatformConfig
+  config: TypesPlatformConfig | null
 }
 
 export default defineStore('platform', {
   state: (): UserSate => ({
-    config: {
-      finance: {}
-    },
+    config: {},
   }),
   getters: {
-    finance: (state) => state.config.finance,
+    finance: (state) => state.config?.finance,
+    invite: (state) => state.config?.invite,
   },
   actions: {
     getPlatformConfig() {

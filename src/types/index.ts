@@ -152,10 +152,32 @@ type SupportedLanguages = 'id-ID' | 'en-US' | 'zh-CN' | 'pt-BR' | 'ja-JP' | 'ko-
 
 
 interface TypesPlatformConfig {
-  finance: {
-    "ercFee"?: number
-    "ercMin"?: number
-    "trcFee"?: number
-    "trcMin"?: number
+  finance?: {
+    "ercWithdrawFee": number
+    "ercDepositMin": number
+    "ercWithdrawMin": number
+    "trcDepositMin": number
+    "trcWithdrawFee": number
+    "trcWithdrawMin": number
+  },
+  invite?: {
+    daily: {
+      "bonus": number
+      "count": number
+      "enable": number
+      "participants": number
+    },
+    week: {
+      "bonus": number
+      "count": number
+      "enable": number
+      "participants": number
+    },
+    month: {
+      "bonus": number
+      "count": number
+      "enable": number
+      "participants": number
+    }
   }
 }

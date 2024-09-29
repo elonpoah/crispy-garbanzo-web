@@ -90,7 +90,8 @@
     "copyfail": "链接复制失败",
     "balanceNEnough": " 余额不足，请充值",
     "inputAddress": "请输入钱包地址",
-    "balanceLtMin": "不能小于最小提款金额"
+    "balanceLtMin": "不能小于最低提款金额",
+    "depositLtMin": "不能小于最低存款金额"
   },
   "record": {
     "OpenTime": "开奖时间",

@@ -90,7 +90,8 @@
     "copyfail": "Sao chép thất bại",
     "balanceNEnough": "Số dư không đủ",
     "inputAddress": "Vui lòng nhập địa chỉ ví",
-    "balanceLtMin": "Số tiền không được nhỏ hơn số tiền rút tối thiểu"
+    "balanceLtMin": "Số tiền không được nhỏ hơn số tiền rút tối thiểu",
+    "depositLtMin": "Không thể thấp hơn số tiền gửi tối thiểu"
   },
   "record": {
     "OpenTime": "Thời gian mở",

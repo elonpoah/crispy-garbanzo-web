@@ -90,7 +90,8 @@
     "copyfail": "복사 실패",
     "balanceNEnough": "잔액 부족",
     "inputAddress": "지갑 주소를 입력하세요",
-    "balanceLtMin": "출금 금액은 최소 출금 금액보다 적을 수 없습니다"
+    "balanceLtMin": "출금 금액은 최소 출금 금액보다 적을 수 없습니다",
+    "depositLtMin": "최소 입금액보다 적을 수 없습니다"
   },
   "record": {
     "OpenTime": "오픈 시간",

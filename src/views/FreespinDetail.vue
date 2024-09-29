@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <NavBack :title="descripCur.title" />
+    <NavBack :title="descripCur?.title" />
     <div class="page-inner">
       <div id="my-lucky"></div>
       <p class="count-down">
@@ -26,16 +26,16 @@
           <p>{{ $t('free.registrations') }}： 
             <span class="warning">{{ staticInfo.registrations}}</span>
             /
-            <span class="warning">{{ descripCur.count }}</span>，
+            <span class="warning">{{ descripCur?.count }}</span>，
             {{ $t('free.participants') }}： 
             <span class="warning">{{ staticInfo.participants }}</span>
             /
-            <span class="warning">{{ descripCur.count }}</span>
+            <span class="warning">{{ descripCur?.participants }}</span>
           </p>
         </div>
         <h2>{{ $t('free.rules') }}</h2>
-        <p>1.{{ descripCur.desc1 }} <span class="warning">{{ descripCur.count }}</span> {{ $t('free.join')}}</p>
-        <p class="active">2.{{ $t('free.desc3') }} <span class="warning">1</span> {{ $t('free.desc3m') }}</p>
+        <p>1.{{ descripCur?.desc1 }} <span class="warning">{{ descripCur?.count }}</span> {{ $t('free.join')}}</p>
+        <p class="active">2.{{ $t('free.desc3') }} <span class="warning">{{ descripCur?.participants }}</span> {{ $t('free.desc3m') }}</p>
       </div>
     </div>
   </div>
@@ -52,6 +52,8 @@ import { showNotify, showDialog } from 'vant';
 import useUserStore from '@/stores/user';
 import { getInviteInfo, startInviteSpin } from '@/api/api';
 import dayjs from 'dayjs';
+import usePlatformStore from '@/stores/platform'
+const platformStore = usePlatformStore()
 
 import bf from '@/assets/images/lucky/bg.png';
 import pr from '@/assets/images/lucky/prize.png';
@@ -77,27 +79,33 @@ const staticInfo = ref({
   participants: 0,
 })
 
-const descrip = {
-  [FreeType.daily]: {
-    bonus: 5,
-    count: 1,
-    title: t('free.daily.title'),
-    desc1: t('free.daily.desc1'),
-  },
-  [FreeType.weekly]: {
-    bonus: 30,
-    count: 5,
-    title: t('free.weekly.title'),
-    desc1: t('free.weekly.desc1'),
-  },
-  [FreeType.monthly]: {
-    bonus: 100,
-    count: 18,
-    title: t('free.monthly.title'),
-    desc1: t('free.monthly.desc1'),
+const descripCur = computed(()=> {
+  if(type.value == 'daily') {
+    return {
+      bonus: platformStore.invite?.daily.bonus || 0,
+      count: platformStore.invite?.daily.count || 0,
+      participants: platformStore.invite?.daily.participants || 0,
+      title: t('free.daily.title'),
+      desc1: t('free.daily.desc1'),
+    }
+  } else if(type.value == 'weekly') {
+    return {
+      bonus: platformStore.invite?.week.bonus || 0,
+      count: platformStore.invite?.week.count || 0,
+      participants: platformStore.invite?.week.participants || 0,
+      title: t('free.weekly.title'),
+      desc1: t('free.weekly.desc1'),
+    }
+  } else if(type.value == 'monthly') {
+    return {
+      bonus: platformStore.invite?.month.bonus || 0,
+      count: platformStore.invite?.month.count || 0,
+      participants: platformStore.invite?.month.participants || 0,
+      title: t('free.monthly.title'),
+      desc1: t('free.monthly.desc1'),
+    }
   }
-}
-const descripCur = computed(()=> descrip[type.value as FreeType])
+})
 
 const LuckyCanvasWheel = () => {
   // @ts-ignore
@@ -147,7 +155,7 @@ const LuckyCanvasWheel = () => {
       },
     ],
     start: function() {
-      if( staticInfo.value.registrations >= descripCur.value.count && staticInfo.value.participants >= descripCur.value.count) {
+      if( descripCur.value && staticInfo.value.registrations >= descripCur.value.count && staticInfo.value.participants >= descripCur.value.participants) {
         startLuckyDraw()
       } else {
         showDialog({

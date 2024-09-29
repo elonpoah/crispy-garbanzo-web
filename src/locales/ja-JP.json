@@ -90,7 +90,8 @@
     "copyfail": "コピー失敗",
     "balanceNEnough": "残高が不足しています",
     "inputAddress": "ウォレットアドレスを入力してください",
-    "balanceLtMin": "出金額は最低額を下回ることはできません"
+    "balanceLtMin": "出金額は最低額を下回ることはできません",
+    "depositLtMin": "最低入金額を下回ることはできません"
   },
   "record": {
     "OpenTime": "オープン時間",

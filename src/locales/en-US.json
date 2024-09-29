@@ -90,7 +90,8 @@
     "copyfail": "Copy fail",
     "balanceNEnough": "balance not enough",
     "inputAddress": "Please input the wallet address",
-    "balanceLtMin": "Cannot be less than the minimum withdrawal amount"
+    "balanceLtMin": "Cannot be less than the minimum withdrawal amount",
+    "depositLtMin": "Cannot be less than the minimum deposit amount"
   },
   "record": {
     "OpenTime": "Open Time",
@@ -123,15 +124,15 @@
     "desc3": "New register account must participate in ",
     "desc3m": "paid lottery draw",
     "daily": {
-      "title": "Daily Free Spin",
+      "title": "Daily Bonus",
       "desc1": "Share registration link, at least "
     },
     "weekly": {
-      "title": "Weekly Free Spin",
+      "title": "Weekly Bonus",
       "desc1": "Share registration link, at least "
     },
     "monthly": {
-      "title": "Monthly Free Spin",
+      "title": "Monthly Bonus",
       "desc1": "Share registration link, at least "
     }
   }

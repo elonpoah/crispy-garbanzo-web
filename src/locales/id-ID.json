@@ -90,7 +90,8 @@
     "copyfail": "Salin gagal",
     "balanceNEnough": "Saldo tidak cukup",
     "inputAddress": "Harap masukkan alamat dompet",
-    "balanceLtMin": "Jumlah tidak boleh kurang dari jumlah penarikan minimum"
+    "balanceLtMin": "Jumlah tidak boleh kurang dari jumlah penarikan minimum",
+    "depositLtMin": "Tidak boleh kurang dari jumlah setoran minimum"
   },
   "record": {
     "OpenTime": "Waktu Buka",

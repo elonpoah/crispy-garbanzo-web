@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="input-control">
-            <input v-model="form.amount" :min="20" type="number">
+            <input v-model="form.amount" type="number">
           </div>
           <div class="fast-title mt-title">
             {{ $t('account.available') }}: 
@@ -74,9 +74,8 @@ import SubmitSuccess from "@/components/SubmitSuccess.vue";
 import { ref } from "vue"
 import useUserStore from '@/stores/user'
 import usePlatformStore from '@/stores/platform'
-import { userWithdraw, getPlatformSetting } from '@/api/api'
+import { userWithdraw } from '@/api/api'
 import { computed } from 'vue';
-import { onMounted } from 'vue';
 const { t } = useI18n()
   
 const userStore = useUserStore()
@@ -96,13 +95,13 @@ const selectNetworkTypeStting = computed(()=> {
   //ERC20
   if(selectNetworkType.value.value == 1) {
     return {
-      fee: platformStore.finance.ercFee,
-      min: platformStore.finance.ercMin
+      fee: platformStore.finance?.ercWithdrawFee,
+      min: platformStore.finance?.ercWithdrawMin
     }
   } else {
     return {
-      fee: platformStore.finance.trcFee,
-      min: platformStore.finance.trcMin
+      fee: platformStore.finance?.trcWithdrawFee,
+      min: platformStore.finance?.trcWithdrawMin
     }
   }
 })
@@ -139,9 +138,6 @@ const submitForm = () => {
     })
   }
 }
-onMounted(()=> {
-  getPlatformSetting()
-})
 
 </script>
 <style lang="less" scoped>

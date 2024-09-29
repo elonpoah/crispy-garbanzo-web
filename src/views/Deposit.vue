@@ -26,7 +26,7 @@
         <div class="fast-number">
           <div class="fast-title">{{ $t('account.entervalue') }}</div>
           <div class="input-control">
-            <input v-model="coinValue" type="text" :placeholder="$t('account.entervalue')">
+            <input v-model="coinValue" type="number" :placeholder="$t('account.entervalue')">
           </div>
         </div>
         <div class="submit">
@@ -44,6 +44,7 @@
         <qrcode-vue :value="tokenAddress" :level="level" :margin="2" :size="140" :render-as="renderAs" />
         <van-count-down class="time-down-value" format="mm m ss s" :time="5*60*1000" />
       </div>
+      <p class="address-tip">{{ $t('account.deposit') }} {{ $t('account.amount') }}： <span class="amount">{{ coinValue }}</span></p>
       <p class="address-tip">{{ $t('account.tokenaddress') }}</p>
       <div class="address-block">
         <p class="text">{{ tokenAddress }}</p>
@@ -80,16 +81,18 @@ import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import type { Level, RenderAs } from 'qrcode.vue'
 import useUserStore from '@/stores/user'
+import usePlatformStore from '@/stores/platform'
 import { userDeposit } from '@/api/api'
 
 const userStore = useUserStore()
+const platformStore = usePlatformStore()
 const { t } = useI18n()
 const tokenAddress = ref('qrcode')
 const level = ref<Level>('M')
 const renderAs = ref<RenderAs>('svg')
 
 const router = useRouter()
-const fastNum = [10, 50, 100, 200, 500, 1000]
+const fastNum = [20, 50, 100, 200, 500, 1000]
 const coinValue = ref()
 const success = ref(false)
 
@@ -119,7 +122,15 @@ const onError = () => {
   showNotify({ type: 'warning', teleport: '#app', message: t('others.copyfail') });
 }
 const submitForm = () => {
-  if(!coinValue.value || coinValue.value <= 0) return
+  const type = selectNetworkType.value?.value
+  if(type == 1 && +coinValue.value < (platformStore.finance?.ercDepositMin || 0)) {
+    showNotify({ type: 'warning', teleport: '#app', message: t('others.depositLtMin') });
+    return
+  }
+  if(type == 2 && +coinValue.value < (platformStore.finance?.trcDepositMin || 0)) {
+    showNotify({ type: 'warning', teleport: '#app', message: t('others.depositLtMin') });
+    return
+  }
   userDeposit({
     userName: userStore.userInfo?.userName || '',
     type: selectNetworkType.value?.value,
@@ -225,7 +236,7 @@ const transformConfim = () => {
       margin-bottom: 20px;
     }
     .time-down-value {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
       opacity: 0.8;
       color: var(--primary-color);
@@ -236,6 +247,11 @@ const transformConfim = () => {
     .address-tip {
       font-size: 14px;
       margin-top: 20px;
+    }
+    .amount {
+      color: var(--primary-color);
+      font-size: 18px;
+      font-weight: 600;
     }
     .address-block {
       margin-top: 10px;

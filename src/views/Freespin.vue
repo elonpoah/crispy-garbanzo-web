@@ -2,26 +2,26 @@
   <div class="page">
     <NavBack title="Freespin" />
     <div class="page-inner">
-      <div class="pitem purple" @click="router.push('/freespin/daily')">
+      <div v-if="platformStore.invite?.daily?.enable == 1" class="pitem purple" @click="router.push('/freespin/daily')">
         <div class="content">
           <p class="title">{{ $t('free.daily.title') }}</p>
-          <p class="bonus">{{ $t('free.upt') }} <span>$5</span>{{ $t('free.bnus') }}</p>
+          <p class="bonus">{{ $t('free.upt') }} <span>${{ platformStore.invite.daily?.bonus }}</span></p>
           <button class="button active join purple">{{ $t('free.jinnw') }}</button>
         </div>
         <img class="img" src="@/assets/images/bg1.png" alt="">
       </div>
-      <div class="pitem orange" @click="router.push('/freespin/weekly')">
+      <div v-if="platformStore.invite?.week?.enable == 1" class="pitem orange" @click="router.push('/freespin/weekly')">
         <img class="img" src="@/assets/images/bg2.png" alt="">
         <div class="content">
           <p class="title">{{ $t('free.weekly.title') }}</p>
-          <p class="bonus">{{ $t('free.upt') }} <span>$30</span> {{ $t('free.bnus') }}</p>
+          <p class="bonus">{{ $t('free.upt') }} <span>${{ platformStore.invite.week?.bonus }}</span></p>
           <button class="button active join orange"> {{ $t('free.jinnw') }}</button>
         </div>
       </div>
-      <div class="pitem purple" @click="router.push('/freespin/monthly')">
+      <div v-if="platformStore.invite?.month?.enable == 1" class="pitem purple" @click="router.push('/freespin/monthly')">
         <div class="content">
           <p class="title">{{ $t('free.monthly.title') }}</p>
-          <p class="bonus">{{ $t('free.upt') }} <span>$100</span> {{ $t('free.bnus') }}</p>
+          <p class="bonus">{{ $t('free.upt') }} <span>${{ platformStore.invite.month?.bonus }}</span></p>
           <button class="button active join purple"> {{ $t('free.jinnw') }}</button>
         </div>
         <img class="img" src="@/assets/images/bg3.png" alt="">
@@ -32,7 +32,9 @@
 <script setup lang="ts">
 import NavBack from "@/components/NavBack.vue";
 import { useRouter } from 'vue-router';
+import usePlatformStore from '@/stores/platform'
 
+const platformStore = usePlatformStore()
 const router = useRouter()
 </script>
 <style lang="less" scoped>
@@ -57,6 +59,7 @@ const router = useRouter()
         font-size: 16px;
         font-weight: 500;
         padding-bottom: 10px;
+        text-transform: uppercase;
         span {
           font-size: 20px;
           font-weight: 500;
