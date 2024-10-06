@@ -74,10 +74,10 @@
     "desc1": "1.Sebelum waktu buka, beli tiket",
     "desc2": "2.Setiap akun hanya bisa membeli satu tiket",
     "title2": "Kapan undian akan diundi?",
-    "desc3": "1.Setelah semua tiket terjual, undian akan diundi secara otomatis dan tidak akan dipengaruhi oleh waktu undian akhir.",
-    "desc4": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 10 tiket terjual, bonus adalah $99",
+    "desc3": "1.Setelah semua tiket terjual, undian akan diadakan pada waktu undian terakhir.",
+    "desc4": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 10 tiket terjual, bonus adalah $100",
     "desc5": "2.Ketika waktu undian tiba dan tiket tidak terjual habis, hadiah akhir akan didasarkan pada penjualan.",
-    "desc6": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 9 tiket terjual, bonus adalah $89"
+    "desc6": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 9 tiket terjual, bonus adalah $90"
   },
   "resetpwd": {
     "old": "Kata sandi lama",

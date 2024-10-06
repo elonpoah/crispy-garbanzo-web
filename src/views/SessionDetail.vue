@@ -93,7 +93,7 @@ const currentRate = computed(()=> {
 
 const entryFee = computed(()=> {
   if(sessionInfo.value) {
-    return (+sessionInfo.value?.activityBonus + 1)/sessionInfo.value?.activityLimitCount
+    return (+sessionInfo.value?.activityBonus)/sessionInfo.value?.activityLimitCount
   }
   return 0
 })

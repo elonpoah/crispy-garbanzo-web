@@ -74,10 +74,10 @@
     "desc1": "1.Trước thời gian mở, Mua một vé",
     "desc2": "2.Mỗi tài khoản chỉ có thể mua một vé",
     "title2": "Khi nào xổ số sẽ được rút?",
-    "desc3": "1.Sau khi tất cả vé được bán hết, xổ số sẽ được rút tự động và không bị ảnh hưởng bởi thời gian rút cuối cùng.",
-    "desc4": "ví dụ: đây là phiên $100, có 10 vé bán, Cuối cùng, 10 vé được bán, tiền thưởng là $99",
+    "desc3": "1.Sau khi tất cả vé được bán hết, xổ số sẽ được quay theo thời gian quay cuối cùng.",
+    "desc4": "ví dụ: đây là phiên $100, có 10 vé bán, Cuối cùng, 10 vé được bán, tiền thưởng là $100",
     "desc5": "2.Khi đến giờ rút thăm và các vé chưa bán hết, giải thưởng cuối cùng sẽ dựa trên doanh số bán hàng.",
-    "desc6": "ví dụ: đây là phiên $100, có 10 vé bán, Cuối cùng, 9 vé được bán, tiền thưởng là $89"
+    "desc6": "ví dụ: đây là phiên $100, có 10 vé bán, Cuối cùng, 9 vé được bán, tiền thưởng là $90"
   },
   "resetpwd": {
     "old": "Mật khẩu cũ",

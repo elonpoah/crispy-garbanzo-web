@@ -2,6 +2,7 @@ import axios from 'axios';
 import type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig, AxiosError } from 'axios'
 import { showNotify } from 'vant'
 import storage from '@/utils/storage'
+import useUserStore from '@/stores/user'
 
 const instance: AxiosInstance = axios.create({
     baseURL: "/api",
@@ -28,13 +29,17 @@ instance.interceptors.response.use(
             const cusRes = response.data
             if(cusRes.code !== 0) {
                 showNotify({ type: 'danger', teleport: '#app', message: cusRes.msg || '接口异常，稍后重试' });
+                if(cusRes.code === 401) {
+                  const userStore = useUserStore()
+                  userStore.loginOut()
+                }
                 return Promise.reject(cusRes)
             }
             return cusRes
         } else {
-            showNotify({ type: 'danger', teleport: '#app', message: '服务异常，稍后重试' });
-            return Promise.reject(response)
-        }
+          showNotify({ type: 'danger', teleport: '#app', message: response.data.msg || '' });
+          return Promise.reject(response)
+      }
     },
     (error: AxiosError) => {
         // return Promise.reject(error);

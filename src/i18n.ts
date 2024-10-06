@@ -1,7 +1,6 @@
 import { createI18n } from 'vue-i18n'
 import storage from '@/utils/storage'
 import enUS from './locales/en-US.json'
-import ptBR from './locales/pt-BR.json'
 import zhCN from './locales/zh-CN.json'
 
 import idID from './locales/id-ID.json'
@@ -18,7 +17,6 @@ const i18n = createI18n({
   messages: {
       'en-US': enUS,
       'zh-CN': zhCN,
-      'pt-BR': ptBR,
       'id-ID': idID,
       'ja-JP': jaJP,
       'ko-KR': koKR,

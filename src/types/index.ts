@@ -148,7 +148,7 @@ interface TypeInviteInfoRes {
 	participates: number
 }
 
-type SupportedLanguages = 'id-ID' | 'en-US' | 'zh-CN' | 'pt-BR' | 'ja-JP' | 'ko-KR' | 'th-TH' | 'vi-VN';
+type SupportedLanguages = 'id-ID' | 'en-US' | 'zh-CN' | 'ja-JP' | 'ko-KR' | 'th-TH' | 'vi-VN';
 
 
 interface TypesPlatformConfig {

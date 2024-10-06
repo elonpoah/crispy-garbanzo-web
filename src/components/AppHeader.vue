@@ -52,8 +52,7 @@ const languageList = [
   { name: 'ภาษาไทย', key: 'th-TH' },
   { name: 'Tiếng việt', key: 'vi-VN' },
   { name: 'Indonesian', key: 'id-ID' },
-  { name: '简体中文', key: 'zh-CN' },
-  { name: 'Português', key: 'pt-BR' }
+  { name: '简体中文', key: 'zh-CN' }
 ]
 const setLang = (lang: SupportedLanguages) => {
   setCurrentLang(lang)
