@@ -110,3 +110,6 @@ input {
 .input-control input:focus,.input-control input:hover {
   border: 1px solid var(--primary-color);
 }
+.text-label {
+  color: #8d9792;
+}

@@ -13,7 +13,9 @@
               <div class="amount">${{ item.amount }}</div>
             </div>
             <div class="bottom">
-              <div>OrderID: {{ item.id }}</div>
+              <div>
+                <span class="text-label">OrderID:</span>
+                 {{ item.id }}</div>
               <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
             </div>
           </div>
@@ -134,6 +136,7 @@
       .amount {
         font-size: 16px;
         font-weight: 700;
+        color: gold;
       }
     }
   }

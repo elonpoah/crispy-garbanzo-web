@@ -5,17 +5,26 @@
       <div class="list">
         <div class="item" v-for="item in dataList" :key="item.sessionId">
           <div class="top">
-            {{ $t('record.OpenTime') }}: {{ dayjs(item.openTime*1000).format('YYYY-MM-DD HH:mm:ss')}}
+            <span class="text-label">
+              {{ $t('record.OpenTime') }}: 
+            </span>
+            {{ dayjs(item.openTime*1000).format('YYYY-MM-DD HH:mm:ss')}}
           </div>
           <div class="middle">
-            <div>{{ $t('record.Sales') }}: {{ item.uids }} X ${{ item.activitySpend }}</div>
-            <div>{{ $t('record.TotalBonus') }}: 
-              <span v-if="item.uids == 1" class="amount">${{ item.uids * item.activitySpend }}</span>
-              <span v-else class="amount">${{ item.uids * item.activitySpend - 1 }}</span>
+            <div>
+              <span class="text-label">{{ $t('record.Sales') }}:</span>
+              {{ item.uids }} X ${{ item.activitySpend }}</div>
+            <div>
+              <span class="text-label">{{ $t('record.TotalBonus') }}:</span>
+              <span class="amount">${{ item.uids * item.activitySpend }}</span>
             </div>
           </div>
           <div class="bottom">
-            <div>{{ $t('record.SessionID') }}: {{ item.sessionId }}</div>
+            <div>
+              <span class="text-label">
+                {{ $t('record.SessionID') }}:
+              </span>
+              {{ item.sessionId }}</div>
             <div :class="[item?.statusClass]">{{ item?.statusStr }}</div>
           </div>
         </div>

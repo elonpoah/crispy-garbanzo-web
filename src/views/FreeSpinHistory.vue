@@ -5,16 +5,20 @@
       <div class="list">
         <div class="item" v-for="item in dataList" :key="item.ID">
           <div class="top">
-            {{ $t('record.createTime') }}: {{ dayjs(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}}
+            <span class="text-label">
+              {{ $t('record.createTime') }}: 
+            </span>
+             {{ dayjs(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}}
           </div>
           <div class="middle">
-            <div>{{ $t('record.type') }}: 
+            <div>
+              <span class="text-label">{{ $t('record.type') }}: </span>
               <span v-if="item.type == 1">{{ $t('free.daily.title') }}</span>
               <span v-else-if="item.type == 2">{{ $t('free.weekly.title') }}</span>
               <span v-else-if="item.type == 3">{{ $t('free.monthly.title') }}</span>
               <span v-else-if="item.type == 4">{{ $t('draw.luckydraw') }}</span>
             </div>
-            <div>{{ $t('record.TotalBonus') }}: <span class="amount">${{ item.amount }}</span></div>
+            <div><span class="amount">${{ item.amount }}</span></div>
           </div>
         </div>
         <div v-show="showLoadMore" @click="loadMore" class="load-more">{{ $t('common.loadMore') }}</div>
@@ -35,24 +39,6 @@ import dayjs from 'dayjs'
 const loading = ref(false)
 const route = useRoute()
 const { t } = useI18n()
-const formatStatus = (status: number) => {
-  if (status == 1) return {
-    statusStr: t('record.underOpen'),
-    statusClass: 'none'
-  }
-  if (status == 2) return {
-    statusStr: t('record.win'),
-    statusClass: 'win'
-  }
-  if (status == 3) return {
-    statusStr: t('record.lose'),
-    statusClass: 'lose'
-  }
-  return {
-    statusStr: '',
-    statusClass: 'none'
-  }
-}
 const searchParams = ref({
   page: 1,
   pageSize: 20,
@@ -75,15 +61,8 @@ const loadMore = () => {
 
 const getDataList = (isMore = false) => {
   const status = route.query.status ? Number(route.query.status) : undefined
-  getFreeSpinHistory({...searchParams.value, status}).then((res)=> {
-    const data = res.data.list.map(e => {
-      const sjsn = formatStatus(e.status)
-      return {
-        ...e,
-        statusStr: sjsn.statusStr,
-        statusClass: sjsn.statusClass
-      }
-    })
+  getFreeSpinHistory({...searchParams.value}).then((res)=> {
+    const data = res.data.list
     dataList.value = isMore ? dataList.value.concat(data) : data
     total.value = res.data.total
     loading.value = false
