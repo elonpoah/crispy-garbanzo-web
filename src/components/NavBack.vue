@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-back">
-      <button v-if="showBack" class="close-icon" @click="router.go(-1)">
+      <button v-if="showBack" class="close-icon" @click="handleBack">
         <svg-icon class="action-back-icon" name="Arrow" />
       </button>
       <span class="title">{{ title }}</span>
@@ -26,6 +26,15 @@ const props = withDefaults(
   }
 );
 const router = useRouter()
+const handleBack = () => {
+      // 判断是否是直接访问页面
+      // const isDirectAccess = !document.referrer || !document.referrer.includes(window.location.host);
+      // if (isDirectAccess) {
+      //   router.push('/');
+      // } else {
+        router.go(-1);
+      // }
+    }
 </script>
 <style lang="less" scoped>
 .size-box-nav{

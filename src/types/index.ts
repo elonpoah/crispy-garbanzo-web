@@ -181,3 +181,31 @@ interface TypesPlatformConfig {
     }
   }
 }
+
+interface TypesMakeDraw {
+  userName: string
+  bonus: number
+  count: number
+  bonusType: number
+}
+
+interface TypesMakeDrawItem {
+  bonus: number
+  count: number
+  bonusType: number
+  participants: number
+  status: number
+  distribute: number
+  createdAt: string
+  drawId: string
+  bonusTypeStr?: string
+  statusClass?: string
+  statusStr?: string
+  totalBonus: number
+  userName?: string
+}
+
+interface TypeDrawHistoryRes extends TypePaginatin {
+  list: TypesMakeDrawItem[],
+  total: number
+}

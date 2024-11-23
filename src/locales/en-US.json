@@ -47,7 +47,7 @@
     "gameh": "Game History",
     "withdrawh": "Withdraw History",
     "deposith": "Deposit History",
-    "freeh": "Free Spin History",
+    "freeh": "Claim History",
     "changepwd": "Change Password",
     "loginout": "Login Out",
     "availableBalance": "Available balance: ",
@@ -135,5 +135,30 @@
       "title": "Monthly Bonus",
       "desc1": "Share registration link, at least "
     }
+  },
+  "draw": {
+    "type": "Draw Type",
+    "fixed": "Fixed",
+    "random": "Random",
+    "input": "Please Enter",
+    "count": "Count",
+    "placeHolder": "Enter a number greater than 0",
+    "everyBonus": "Amount Per Entry",
+    "bonus": "Amount",
+    "tips": "Ends automatically after hours, remaining amount will be refunded to wallet balance",
+    "generateUrl": "Generate Draw Link",
+    "copyUrl": "Share Link",
+    "whoisDraw": "'s Draw",
+    "open": "Open",
+    "congratulations1": "Wishing you prosperity,",
+    "congratulations2": "Best wishes for success",
+    "getMoreBonus": "Get More Bonus",
+    "processing": "In Progress",
+    "end": "Ended",
+    "last2Total": "Remaining/Total Count",
+    "last2Bonus": "Remaining/Total Amount",
+    "luckydraw": "Claim Bonus",
+    "mydraw": "My Draws",
+    "makeAdraw": "New Draw"
   }
 }

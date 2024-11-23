@@ -47,7 +47,7 @@
     "gameh": "게임 기록",
     "withdrawh": "출금 기록",
     "deposith": "입금 기록",
-    "freeh": "무료 스핀 기록",
+    "freeh": "청구 내역",
     "changepwd": "비밀번호 변경",
     "loginout": "로그아웃",
     "availableBalance": "사용 가능한 잔액: ",
@@ -135,5 +135,31 @@
       "title": "월간 무료 스핀",
       "desc1": "등록 링크를 공유하고, 최소 "
     }
+  },
+  "draw": {
+    "type": "추첨 유형",
+    "fixed": "고정",
+    "random": "랜덤",
+    "input": "입력하세요",
+    "count": "개수",
+    "placeHolder": "0보다 큰 숫자를 입력하세요",
+    "everyBonus": "항목당 금액",
+    "bonus": "금액",
+    "tips": "시간 후 자동 종료되며, 남은 금액은 지갑 잔액으로 반환됩니다",
+    "generateUrl": "추첨 링크 생성",
+    "copyUrl": "링크 공유",
+    "whoisDraw": "의 추첨",
+    "open": "열기",
+    "congratulations1": "축하합니다,",
+    "congratulations2": "행운을 빕니다",
+    "getMoreBonus": "더 많은 보너스 받기",
+    "processing": "진행 중",
+    "end": "종료됨",
+    "last2Total": "남은/총 개수",
+    "last2Bonus": "남은/총 금액",
+    "luckydraw": "보너스 받기",
+    "mydraw": "내 추첨",
+    "makeAdraw": "추첨 시작하기"
   }
+
 }

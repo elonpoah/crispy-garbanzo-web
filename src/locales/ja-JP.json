@@ -47,7 +47,7 @@
     "gameh": "ゲーム履歴",
     "withdrawh": "出金履歴",
     "deposith": "入金履歴",
-    "freeh": "フリースピン履歴",
+    "freeh": "請求履歴",
     "changepwd": "パスワードを変更",
     "loginout": "ログアウト",
     "availableBalance": "利用可能な残高：",
@@ -135,5 +135,30 @@
       "title": "毎月の無料スピン",
       "desc1": "登録リンクをシェア、少なくとも"
     }
+  },
+  "draw": {
+    "type": "抽選タイプ",
+    "fixed": "固定",
+    "random": "ランダム",
+    "input": "入力してください",
+    "count": "個数",
+    "placeHolder": "0以上の数値を入力してください",
+    "everyBonus": "1つあたりの金額",
+    "bonus": "金額",
+    "tips": "時間後に自動的に終了し、残額はウォレット残高に返金されます",
+    "generateUrl": "抽選リンクを生成",
+    "copyUrl": "リンクを共有",
+    "whoisDraw": "の抽選",
+    "open": "開く",
+    "congratulations1": "おめでとうございます！",
+    "congratulations2": "",
+    "getMoreBonus": "さらにボーナスを獲得",
+    "processing": "進行中",
+    "end": "終了済み",
+    "last2Total": "残り/総数",
+    "last2Bonus": "残り/総金額",
+    "luckydraw": "ボーナスを受け取る",
+    "mydraw": "私の抽選",
+    "makeAdraw": "抽選を開始"
   }
 }

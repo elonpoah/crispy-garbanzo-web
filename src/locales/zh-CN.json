@@ -47,7 +47,7 @@
     "gameh": "抽奖记录",
     "withdrawh": "提现记录",
     "deposith": "充值记录",
-    "freeh": "免费旋转记录",
+    "freeh": "领取记录",
     "changepwd": "修改密码",
     "loginout": "退出登录",
     "availableBalance": "可提现金额: ",
@@ -135,5 +135,30 @@
       "title": "每月免费转",
       "desc1": "每月累计注册有效用户数达"
     }
+  },
+  "draw": {
+    "type": "抽奖类型",
+    "fixed": "固定",
+    "random": "随机",
+    "input": "请输入",
+    "count": "个数",
+    "placeHolder": "输入大于0的数",
+    "everyBonus": "每个金额",
+    "bonus": "金额",
+    "tips": "小时后自动结束，剩余金额返回钱包余额",
+    "generateUrl": "生成抽奖链接",
+    "copyUrl": "分享链接",
+    "whoisDraw": "的抽奖",
+    "open": "開",
+    "congratulations1": "恭喜发财",
+    "congratulations2": "大吉大利",
+    "getMoreBonus": "获得更多奖金",
+    "processing": "进行中",
+    "end": "已结束",
+    "last2Total": "剩余/总个数",
+    "last2Bonus": "剩余/总金额",
+    "luckydraw": "领取红包",
+    "mydraw": "我的抽奖",
+    "makeAdraw": "发起抽奖"
   }
 }

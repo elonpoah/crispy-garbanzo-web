@@ -147,6 +147,32 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Deposit.vue')
     },
+    {
+      path: '/draw-make',
+      name: 'DrawMake',
+      meta: {auth: true},
+      // route level code-splitting
+      // this generates a separate chunk (makeDraw.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/MakeDraw.vue')
+    },
+    {
+      path: '/draw-history',
+      name: 'DrawHistory',
+      meta: {auth: true},
+      // route level code-splitting
+      // this generates a separate chunk (drawHistory.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/MyDraw.vue')
+    },
+    {
+      path: '/lucky/:id',
+      name: 'DrawDetail',
+      // route level code-splitting
+      // this generates a separate chunk (drawDetail.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/DrawDetail.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if(savedPosition) {      

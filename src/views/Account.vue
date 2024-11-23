@@ -7,17 +7,20 @@
           <div class="name">{{ userStore.userInfo?.userName || 'Welcome To HACHO.GAME' }}</div>
           <div class="id">User ID: {{ userStore.userInfo?.uid || '-' }}</div>
         </div>
+        <button class="button make-draw" @click="navigateFn('/draw-make')">
+          {{ $t('draw.makeAdraw') }}
+        </button>
       </div>
       <div class="content">
-        <div class="item">
+        <div class="item" @click="navigateFn('/game-history?status=1')">
           <p class="title">{{ $t('account.tobedrawn') }}</p>
-          <p class="value" @click="navigateFn('/game-history?status=1')">{{ sessionSummary?.sessionCount || '0' }}</p>
+          <p class="value">{{ sessionSummary?.sessionCount || '0' }}</p>
         </div>
-        <div class="item">
-          <p class="title">{{ $t('account.freespintimes') }}</p>
-          <p class="value"@click="navigateFn('/freespin')">
+        <div class="item" @click="navigateFn('/draw-history')">
+          <p class="title">{{ $t('draw.mydraw') }}</p>
+          <p class="value">
             <!-- {{ sessionSummary?.freeCount || '0' }} -->
-            -
+            ^o^
           </p>
         </div>
       </div>
@@ -140,6 +143,13 @@ onMounted(()=> {
         font-size: 12px;
       }
     }
+    .make-draw {
+      width: 100px;
+      font-size: 14px;
+      background: #3e4049;
+      border-radius: 17px;
+      color: var(--primary-color);
+    }
   }
   .content {
     margin-top: 10px;
@@ -177,7 +187,7 @@ onMounted(()=> {
       fill: var(--primary-color);
     }
     p {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       color: #d8e3ed;
       margin-left: 5px;

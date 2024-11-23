@@ -47,7 +47,7 @@
     "gameh": "Lịch sử trò chơi",
     "withdrawh": "Lịch sử rút tiền",
     "deposith": "Lịch sử nạp tiền",
-    "freeh": "Lịch sử Vòng quay Miễn phí",
+    "freeh": "Lịch sử Yêu cầu",
     "changepwd": "Đổi mật khẩu",
     "loginout": "Đăng xuất",
     "availableBalance": "Số dư khả dụng: ",
@@ -135,5 +135,31 @@
       "title": "Quay miễn phí hàng tháng",
       "desc1": "Chia sẻ liên kết đăng ký, ít nhất "
     }
+  },
+  "draw": {
+    "type": "Loại Rút Thăm",
+    "fixed": "Cố Định",
+    "random": "Ngẫu Nhiên",
+    "input": "Vui Lòng Nhập",
+    "count": "Số Lượng",
+    "placeHolder": "Nhập một số lớn hơn 0",
+    "everyBonus": "Số Tiền Mỗi Phần",
+    "bonus": "Số Tiền",
+    "tips": "Tự động kết thúc sau giờ, số tiền còn lại sẽ được hoàn lại vào số dư ví",
+    "generateUrl": "Tạo Liên Kết Rút Thăm",
+    "copyUrl": "Chia Sẻ Liên Kết",
+    "whoisDraw": "Rút thăm của",
+    "open": "Mở",
+    "congratulations1": "chúc bạn may mắn",
+    "congratulations2": "",
+    "getMoreBonus": "Nhận thêm tiền thưởng",
+    "processing": "Đang Tiến Hành",
+    "end": "Đã Kết Thúc",
+    "last2Total": "Còn Lại/Tổng Số",
+    "last2Bonus": "Còn Lại/Tổng Số Tiền",
+    "luckydraw": "Nhận Thưởng",
+    "mydraw": "Rút Thăm Của Tôi",
+    "makeAdraw": "Tạo Rút Thăm"
   }
+
 }

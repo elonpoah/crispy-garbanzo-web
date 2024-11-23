@@ -76,3 +76,18 @@ export const getPlatformSetting = () => {
   return http.get<TypesPlatformConfig>('/platform/setting')
 }
 
+export const getDrawHistory = (data: TypePaginatin) => {
+  return http.get<TypeDrawHistoryRes>('/draw/history', data)
+}
+
+export const makeDraw = (data: TypesMakeDraw) => {
+  return http.post('/draw/make', data)
+}
+
+export const drawDetail = (id: string) => {
+  return http.post<TypesMakeDrawItem>('/draw/detail', {id})
+}
+
+export const joinDraw = (id: string) => {
+  return http.post('/draw/join', {id})
+}

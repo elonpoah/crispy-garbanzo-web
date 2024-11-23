@@ -11,7 +11,8 @@
             <div>{{ $t('record.type') }}: 
               <span v-if="item.type == 1">{{ $t('free.daily.title') }}</span>
               <span v-else-if="item.type == 2">{{ $t('free.weekly.title') }}</span>
-              <span v-else>{{ $t('free.monthly.title') }}</span>
+              <span v-else-if="item.type == 3">{{ $t('free.monthly.title') }}</span>
+              <span v-else-if="item.type == 4">{{ $t('draw.luckydraw') }}</span>
             </div>
             <div>{{ $t('record.TotalBonus') }}: <span class="amount">${{ item.amount }}</span></div>
           </div>

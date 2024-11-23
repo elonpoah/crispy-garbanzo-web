@@ -47,7 +47,7 @@
     "gameh": "Riwayat Permainan",
     "withdrawh": "Riwayat Penarikan",
     "deposith": "Riwayat Setoran",
-    "freeh": "Riwayat Putaran Gratis",
+    "freeh": "Riwayat Klaim",
     "changepwd": "Ganti Kata Sandi",
     "loginout": "Keluar",
     "availableBalance": "Saldo tersedia: ",
@@ -135,5 +135,30 @@
       "title": "Putaran Gratis Bulanan",
       "desc1": "Bagikan tautan pendaftaran, setidaknya "
     }
+  },
+  "draw": {
+    "type": "Jenis Undian",
+    "fixed": "Tetap",
+    "random": "Acak",
+    "input": "Silakan Masukkan",
+    "count": "Jumlah",
+    "placeHolder": "Masukkan angka lebih besar dari 0",
+    "everyBonus": "Jumlah Per Entri",
+    "bonus": "Jumlah",
+    "tips": "Berakhir otomatis setelah jam, jumlah yang tersisa akan dikembalikan ke saldo dompet",
+    "generateUrl": "Buat Tautan Undian",
+    "copyUrl": "Bagikan Tautan",
+    "whoisDraw": "Undian milik",
+    "open": "Buka",
+    "congratulations1": "Semoga beruntung！",
+    "congratulations2": "",
+    "getMoreBonus": "Dapatkan Bonus Lebih Banyak",
+    "processing": "Sedang Berlangsung",
+    "end": "Berakhir",
+    "last2Total": "Sisa/Total Jumlah",
+    "last2Bonus": "Sisa/Total Jumlah",
+    "luckydraw": "Klaim Bonus",
+    "mydraw": "Undian Saya",
+    "makeAdraw": "Mulai Undian"
   }
 }
