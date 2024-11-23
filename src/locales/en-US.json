@@ -143,7 +143,7 @@
     "input": "Please Enter",
     "count": "Count",
     "placeHolder": "Enter a number greater than 0",
-    "everyBonus": "Amount Per Entry",
+    "everyBonus": "Each Amount",
     "bonus": "Amount",
     "tips": "Ends automatically after hours, remaining amount will be refunded to wallet balance",
     "generateUrl": "Generate Draw Link",

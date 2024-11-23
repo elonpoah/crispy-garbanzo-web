@@ -25,7 +25,7 @@
           name="bonus"
           v-model="loginForm.bonus" 
           type="digit"
-          placeholder="请输入"
+          :placeholder="$t('draw.input')"
           :label="loginForm.bonusType == 2 ?$t('draw.everyBonus'):$t('draw.bonus')" 
           :rules="[{ pattern, message: $t('draw.placeHolder') }]" 
         />

@@ -143,7 +143,7 @@
     "input": "입력하세요",
     "count": "개수",
     "placeHolder": "0보다 큰 숫자를 입력하세요",
-    "everyBonus": "항목당 금액",
+    "everyBonus": "각 금액",
     "bonus": "금액",
     "tips": "시간 후 자동 종료되며, 남은 금액은 지갑 잔액으로 반환됩니다",
     "generateUrl": "추첨 링크 생성",

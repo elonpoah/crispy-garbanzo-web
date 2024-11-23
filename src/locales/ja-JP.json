@@ -143,7 +143,7 @@
     "input": "入力してください",
     "count": "個数",
     "placeHolder": "0以上の数値を入力してください",
-    "everyBonus": "1つあたりの金額",
+    "everyBonus": "各金額",
     "bonus": "金額",
     "tips": "時間後に自動的に終了し、残額はウォレット残高に返金されます",
     "generateUrl": "抽選リンクを生成",
