@@ -77,7 +77,10 @@
     "desc3": "1.After all tickets are sold, the lottery will be drawn by the final draw time.",
     "desc4": "example: this is $100 session, 10 tickets for sale, Finally, 10 tickets were sold, bonus is $100",
     "desc5": "2.When the lottery drawing time arrives and the tickets are not sold out, the final prize will be based on sales.",
-    "desc6": "example: this is $100 session, 10 tickets for sale, Finally, 9 tickets were sold, bonus is $90"
+    "desc6": "example: this is $100 session, 10 tickets for sale, Finally, 9 tickets were sold, bonus is $90",
+    "desc7": "3. Platform fee",
+    "desc8": "The number of participants in the current session >= 2, $1 will be deducted from the final prize"
+
   },
   "resetpwd": {
     "old": "Old password",

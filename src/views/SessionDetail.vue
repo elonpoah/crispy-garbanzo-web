@@ -56,6 +56,8 @@
           <p>{{ $t('session_detail.desc4') }}</p>
           <p>{{ $t('session_detail.desc5') }}</p>
           <p>{{ $t('session_detail.desc6') }}</p>
+          <p>{{ $t('session_detail.desc7') }}</p>
+          <p>{{ $t('session_detail.desc8') }}</p>
         </div>
       </div>
     </van-pull-refresh>

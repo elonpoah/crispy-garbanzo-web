@@ -77,7 +77,9 @@
     "desc3": "1.Setelah semua tiket terjual, undian akan diadakan pada waktu undian terakhir.",
     "desc4": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 10 tiket terjual, bonus adalah $100",
     "desc5": "2.Ketika waktu undian tiba dan tiket tidak terjual habis, hadiah akhir akan didasarkan pada penjualan.",
-    "desc6": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 9 tiket terjual, bonus adalah $90"
+    "desc6": "contoh: ini adalah sesi $100, 10 tiket dijual, Akhirnya, 9 tiket terjual, bonus adalah $90",
+    "desc7": "3. Biaya platform",
+    "desc8": "Jumlah peserta dalam sesi saat ini >= 2, $1 akan dikurangkan dari hadiah akhir"
   },
   "resetpwd": {
     "old": "Kata sandi lama",

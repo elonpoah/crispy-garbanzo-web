@@ -5,12 +5,17 @@
     <div>
       <div class="header">
         <div class="header-item">
-          <img class="usdt-icon" src="@/assets/images/USDT.webp" alt="">
-          <div class="value">USDT</div>
+          <div class="header-item-c">
+            <svg-icon class="usdt-icon" name="Usdt" />
+            <span class="value">USDT</span>
+          </div>
           <svg-icon class="arrow-icon" name="Arrow" />
         </div>
         <div class="header-item" @click="openTypePicker">
-          <div class="value">{{ selectNetworkType?.text || '' }}</div>
+          <div class="header-item-c">
+            <svg-icon class="usdt-icon" :name="selectNetworkType?.text" />
+            <span class="value">{{ selectNetworkType?.text || '' }}</span>
+          </div>
           <svg-icon class="arrow-icon" name="Arrow" />
         </div>
       </div>
@@ -162,6 +167,13 @@ const transformConfim = () => {
       justify-content: space-between;
       align-items: center;
       padding: 0 10px 0 15px;
+      .header-item-c {
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 10px;
+        }
+      }
       &:last-child {
         margin-left: 10px;
       }
