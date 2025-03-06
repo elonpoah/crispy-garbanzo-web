@@ -11,12 +11,15 @@
             {{ dayjs(item.openTime*1000).format('YYYY-MM-DD HH:mm:ss')}}
           </div>
           <div class="middle">
-            <div>
-              <span class="text-label">{{ $t('record.Sales') }}:</span>
-              {{ item.uids }} X ${{ item.activitySpend }}</div>
+            <div v-if="item.activitySpend > 0">
+                <span class="text-label">{{ $t('record.Sales') }}:</span>
+                {{ item.uids }} X ${{ item.activitySpend }}
+            </div>
+            <div v-else>{{ $t('home.dailycash') }}</div>
             <div>
               <span class="text-label">{{ $t('record.TotalBonus') }}:</span>
-              <span class="amount">${{ item.uids * item.activitySpend }}</span>
+              <span class="amount" v-if="item.activitySpend > 0">${{ item.uids * item.activitySpend }}</span>
+              <span class="amount" v-else>${{ item.activityBonus }}</span>
             </div>
           </div>
           <div class="bottom">

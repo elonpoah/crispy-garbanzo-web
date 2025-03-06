@@ -29,7 +29,10 @@
     "hightrate": "高中奖率",
     "popular": "热门",
     "hightwrate": "高中奖率",
-    "viewall": "更多"
+    "viewall": "更多",
+    "dailycash": "每日现金",
+    "tryfree": "免费参与",
+    "joinedandwait": "已参与，等待开奖"
   },
   "search": {
     "desc": "搜索活动场次",

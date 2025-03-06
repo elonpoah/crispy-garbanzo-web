@@ -35,17 +35,46 @@
         </div>
       </div>
     </div>
+    <van-dialog v-model:show="show" title="" :show-cancel-button="false" :show-confirm-button="false"
+    :closeOnClickOverlay="true">
+      <div class="join-container">
+        <div class="join-free">
+          <p class="join-free-title">{{ $t('home.dailycash') }}</p>
+          <p class="join-free-coin">${{ freeData?.activityBonus }}</p>
+          <div class="join-free-btn" @click="tryNow">
+            {{ $t('home.tryfree') }}
+          </div>
+          <van-count-down format="DD d HH h mm m ss s" :time="openTimeCount">
+            <template #default="timeData">
+              <span class="time-block">{{ timeData.hours }}h</span>
+              <span class="time-colon">:</span>
+              <span class="time-block">{{ timeData.minutes }}m</span>
+              <span class="time-colon">:</span>
+              <span class="time-block">{{ timeData.seconds }}s</span>
+            </template>
+          </van-count-down>
+        </div>
+      </div>
+    </van-dialog>
   </van-pull-refresh>
 </template>
+
 <script setup lang="ts">
+import { showDialog } from 'vant';
 import SvgIcon from "@/components/SvgIcon.vue";
 import SessionItem from "@/components/SessionItem.vue";
 import { useRouter } from 'vue-router';
 import { getHomeRecommand } from '@/api/api'
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { SessionType } from '@/constant'
+import useUserStore from '@/stores/user'
+import { buySessionTicket } from '@/api/api'
+import { useI18n } from 'vue-i18n';
 
 const router = useRouter()
+const { t } = useI18n()
+const userStore = useUserStore()
+const show = ref(false);
 const gameClassifyData = ref<TypeHomeRecommandSessionList[]>(
   [
   {
@@ -73,6 +102,8 @@ const gameClassifyData = ref<TypeHomeRecommandSessionList[]>(
     list: [],
   },
 ])
+const freeData = ref<TypeSessionItem | null>(null)
+const isGetFreeSession = ref(false)
 function navigateFn(path: string) {
   router.push(path)
 }
@@ -86,13 +117,90 @@ const onRefresh = () => {
       }
     })
     loading.value = false
+    if(res.data[SessionType.free].length){
+      freeData.value = res.data[SessionType.free][0]
+      show.value = true
+    }
   })
+}
+const openTimeCount = computed(()=> {
+  if(freeData.value?.openTime) {
+    return freeData.value?.openTime*1000 - new Date().getTime()
+  }
+  return 0
+})
+const tryNow = ()=> {
+  if(userStore.isLogin) {
+    buySessionTicket(Number(freeData.value?.id)).then(res => {
+      show.value = false
+      showDialog({
+        message: t('home.joinedandwait'),
+      }).then(() => {
+        
+      });
+    })
+  } else {
+    router.replace(`/login`)
+  }
 }
 onMounted(()=> {
   onRefresh()
 })
 </script>
 <style lang="less" scoped>
+.join-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time-block {
+  color: #fff;
+  text-align: center;
+  width: 38px;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  line-height: 28px;
+}
+.time-colon {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--default-color);
+  padding: 0 5px;
+}
+.join-free {
+  width: 280px;
+  border-radius: 10px;
+  background-color: #5b0688;
+  padding: 50px 10px;
+  text-align: center;
+  &-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #d5c0e0;
+  }
+  &-coin {
+    color: #e2b88a;
+    font-size: 56px;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  &-btn {
+    border: 1px solid #e2b88a;
+    height: 50px;
+    width: 180px;
+    margin: 0 auto;
+    line-height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 800;
+    color: #e2b88a;
+    margin-bottom: 30px;
+  }
+}
 .home-page {
   padding: 17px 10px;
   .home-banner {

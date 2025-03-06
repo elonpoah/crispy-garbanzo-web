@@ -29,7 +29,10 @@
     "hightrate": "高レート",
     "popular": "人気",
     "hightwrate": "高勝率",
-    "viewall": "すべて表示"
+    "viewall": "すべて表示",
+    "dailycash": "デイリーキャッシュ",
+    "tryfree": "無料でお試し",
+    "joinedandwait": "参加済み、抽選待ち"
   },
   "search": {
     "desc": "セッションコードを検索",

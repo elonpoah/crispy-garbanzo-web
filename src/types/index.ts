@@ -77,13 +77,15 @@ interface TypeHomeRecommandSessionList {
 enum SessionType {
   hot = 'hot',
   hugebonus = 'hugebonus',
-  hightwrate = 'hightwrate'
+  hightwrate = 'hightwrate',
+  free = 'free'
 }
 
 interface TypeHomeRecommandSessionListRes {
   [SessionType.hot]: TypeSessionItem[],
   [SessionType.hightwrate]: TypeSessionItem[],
-  [SessionType.hugebonus]: TypeSessionItem[]
+  [SessionType.hugebonus]: TypeSessionItem[],
+  [SessionType.free]: TypeSessionItem[],
 }
 
 interface TypeSessionListRes extends TypePaginatin {

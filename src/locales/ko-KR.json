@@ -29,7 +29,10 @@
     "hightrate": "높은 비율",
     "popular": "인기",
     "hightwrate": "높은 당첨률",
-    "viewall": "모두 보기"
+    "viewall": "모두 보기",
+    "dailycash": "데일리 캐시",
+    "tryfree": "무료 체험",
+    "joinedandwait": "참여 완료, 추첨 대기"
   },
   "search": {
     "desc": "세션 코드 검색",

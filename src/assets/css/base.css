@@ -47,7 +47,8 @@
 }
 
 :root:root {
-  --van-primary-color: #3BC117
+  --van-primary-color: #3BC117;
+  /* --van-background-2: transparent; */
 }
 
 @media (prefers-color-scheme: dark) {

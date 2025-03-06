@@ -1,7 +1,8 @@
 export enum SessionType {
   hot = 'hot',
   hugebonus = 'hugebonus',
-  hightwrate = 'hightwrate'
+  hightwrate = 'hightwrate',
+  free = 'free'
 }
 
 export enum FreeType {

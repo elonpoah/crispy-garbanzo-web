@@ -29,7 +29,10 @@
     "hightrate": "Hight Rate",
     "popular": "Popular",
     "hightwrate": "Hight Winning Rate",
-    "viewall": "View all"
+    "viewall": "View all",
+    "dailycash": "Daily Cash",
+    "tryfree": "TRY FREE",
+    "joinedandwait": "Joined, Awaiting Draw"
   },
   "search": {
     "desc": "Seach session code",
