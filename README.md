@@ -32,4 +32,4 @@ npm run dev
 npm run build
 ```
 
-👉[演示](./docs/demo.gif)
+![演示](./docs/demo.gif)
