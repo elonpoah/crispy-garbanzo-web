@@ -32,4 +32,4 @@ npm run dev
 npm run build
 ```
 
-👉 [点击这里查看演示视频](https://elonpoah.github.io/crispy-garbanzo-web/)
+👉[演示](./docs/demo.gif)
