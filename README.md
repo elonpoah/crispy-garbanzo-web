@@ -31,3 +31,5 @@ npm run dev
 ```sh
 npm run build
 ```
+
+👉 [点击这里查看演示视频](https://github.com/elonpoah/crispy-garbanzo-web/tree/main/screenshot/index.html)
